@@ -8,10 +8,10 @@ project's name and a short description of what the project is.
 
 ## How we work
 
-This project follows **the-way** — a generic method for carrying a thought
+This project follows **decision-trail** — a generic method for carrying a thought
 through its whole life (idea → proposal → decision → plan → execution) in plain
 markdown. The full method is in [`docs/working-method.md`](docs/working-method.md);
 decision records live in [`docs/decisions/`](docs/decisions/), starting with
-[`0001-adopt-the-way.md`](docs/decisions/0001-adopt-the-way.md).
+[`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on the-way vX.Y — https://github.com/ckluth/the-way
+Based on decision-trail vX.Y — https://github.com/ckluth/decision-trail

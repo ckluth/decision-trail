@@ -1,6 +1,6 @@
-# the-way — Copilot instructions
+# decision-trail — Copilot instructions
 
-This file is intentionally thin. The single source of truth for `the-way` — its
+This file is intentionally thin. The single source of truth for `decision-trail` — its
 contract, lifecycle, layout, conventions, and agent guidance — lives in
 [`AGENTS.md`](../AGENTS.md) at the repository root.
 

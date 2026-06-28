@@ -1,11 +1,24 @@
 # Changelog
 
-All notable changes to **the-way** (the method) are recorded here. The method is
+All notable changes to **decision-trail** (the method) are recorded here. The method is
 versioned with semver; adopting projects cite the version they copied (ADR-0008).
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
-## [1.3.0] - 2026-06-28
+## [2.0.0] - 2026-06-28
+
+### Changed
+
+- ADR-0013 — the method is renamed from **the-way** to **decision-trail**
+  (idea 0005). The provenance citation string becomes `Based on decision-trail vX.Y`;
+  the canonical repo URL becomes https://github.com/ckluth/decision-trail.
+  All live method surfaces updated: `AGENTS.md`, `README.md`,
+  `.github/copilot-instructions.md`, `starter/` skeleton (including the seed
+  adoption ADR renamed to `0001-adopt-decision-trail.md`). Historical artifacts
+  (ideas, ADRs, plans 0001–0012) retain the old name as a dated record.
+  Major bump because the citation string is adopter-visible (ADR-0008).
+
+## [1.4.0] - 2026-06-28
 
 ### Added
 - ADR-0011 — `overview.md`, a derived status index over all ideas, decisions,

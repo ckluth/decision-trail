@@ -1,4 +1,4 @@
-# the-way
+# decision-trail
 
 A generic, reusable way to work on projects — economic, transparent, agile.
 This is the **single source of truth** and the entry point: read it first, then
@@ -9,11 +9,11 @@ back to this file.
 > **Status: settled (not frozen).** The concept phase is logically complete —
 > the contract and all mechanics below are decided and recorded as ADRs in
 > [`decisions/`](decisions/). The method now exists to be *used*; real use will
-> bring improvements, and any such change is made *the-way* — as a new ADR.
+> bring improvements, and any such change is made *decision-trail* — as a new ADR.
 
 ## What this is
 
-`the-way` is a method for carrying a thought through its whole life, in plain
+`decision-trail` is a method for carrying a thought through its whole life, in plain
 markdown, borrowing existing standards rather than inventing new ones.
 
 ### How it arose (two shifts)
@@ -82,10 +82,10 @@ This layout is for *this* repository — the method's own home, where the famili
 sit at the repo root. An **adopting project does not copy this layout**; it uses
 conventional `docs/` locations instead (see below and ADR-0009).
 
-## Adopting the-way in another project
+## Adopting decision-trail in another project
 
 Real projects live in their **own** repos, not here. This repository is the
-versioned *standard*; a project *adopts* it. There is **no branded `the-way/`
+versioned *standard*; a project *adopts* it. There is **no branded `decision-trail/`
 folder** — an adopting repo just gains conventional, self-descriptive files (see
 [ADR-0008](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md),
 [ADR-0009](decisions/0009-adopters-use-conventional-unbranded-locations.md) and
@@ -95,7 +95,7 @@ The [`starter/`](starter/) skeleton mirrors the target shape:
 
 ```
 AGENTS.md               repo root — points to the method ("How we work")
-docs/working-method.md  the full method (cites "Based on the-way vX.Y")
+docs/working-method.md  the full method (cites "Based on decision-trail vX.Y")
 docs/ideas/             idea artifacts
 docs/decisions/         ADRs — the conventional location, recognizable on sight
 docs/plans/             plan + execution artifacts
@@ -111,13 +111,13 @@ To adopt:
    `## How we work` section (a fixed pointer to `docs/working-method.md` and
    `docs/decisions/`). The method text itself always lives in
    `docs/working-method.md`, so nothing needs hand-merging.
-3. Fill in the seed `docs/decisions/0001-adopt-the-way.md` (project name, the-way
-   version, date).
-4. From there, work the project the-way — its own ADR log starts at 0001 and
+3. Fill in the seed `docs/decisions/0001-adopt-decision-trail.md` (project name,
+   decision-trail version, date).
+4. From there, work the project decision-trail — its own ADR log starts at 0001 and
    never inherits this repo's construction ADRs.
 
 From the outside the repo simply looks well-organized: standard ADRs under
-`docs/decisions/`. The name "the-way" appears only as a provenance citation.
+`docs/decisions/`. The name "decision-trail" appears only as a provenance citation.
 
 The method is versioned (semver git tags + [`CHANGELOG.md`](CHANGELOG.md)); an
 adopting project cites the version it took. Promoting `starter/` to a GitHub
@@ -159,7 +159,7 @@ documents its own construction.
 ## Working in this repo (agent guidance)
 
 - **The method is settled.** Use it; don't redesign it casually. Any change to
-  the-way itself is made the-way — proposed and recorded as a new ADR, with
+  decision-trail itself is made decision-trail — proposed and recorded as a new ADR, with
   amended or superseded ADRs cross-linked (never edited away).
 - **Confirmation guard.** Never rush into writing, editing, or implementing.
   First briefly explain what you intend to do, then wait for explicit approval.

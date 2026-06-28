@@ -1,13 +1,13 @@
-# the-way
+# decision-trail
 
 A generic, reusable way to work on projects — economic, transparent, agile.
 
 **Status: settled (not frozen).** The concept phase is logically complete — the
 contract and all mechanics are decided and recorded as ADRs. The method now
-exists to be *used*; real use will bring improvements, each made *the-way* as a
-new ADR.
+exists to be *used*; real use will bring improvements, each made *decision-trail*
+as a new ADR.
 
-`the-way` carries a thought through its whole life — **idea → proposal →
+`decision-trail` carries a thought through its whole life — **idea → proposal →
 decision → plan → execution** — in plain markdown, borrowing existing standards
 (ADRs, spec-driven stages, agent hand-off files) rather than inventing new ones.
 

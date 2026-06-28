@@ -21,7 +21,7 @@ You can ask the agent to **regenerate the overview** at any time.
 
 | Name | Created | State |
 |------|---------|-------|
-| [0001 Adopt the-way](decisions/0001-adopt-the-way.md) | | proposed |
+| [0001 Adopt decision-trail](decisions/0001-adopt-decision-trail.md) | | proposed |
 
 ## Plans
 

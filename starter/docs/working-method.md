@@ -1,10 +1,10 @@
-# Working method — the-way
+# Working method — decision-trail
 
-> This project works **the-way** — a generic, reusable method for carrying a
+> This project works **decision-trail** — a generic, reusable method for carrying a
 > thought through its whole life (idea → proposal → decision → plan →
 > execution) in plain markdown.
 >
-> Based on **the-way vX.Y** — https://github.com/ckluth/the-way
+> Based on **decision-trail vX.Y** — https://github.com/ckluth/decision-trail
 
 This file is the full description of *how we work*. The repository's root
 `AGENTS.md` only points here. What the project *is* belongs in its own README.
@@ -95,5 +95,5 @@ accumulates (one parent → many children; one ADR → many plans).
 4. Write a `docs/plans/` file that `Implements:` the decision and lists tasks.
 5. Execute by moving the plan `active` → `done`, ticking checkboxes.
 
-This repo's own `docs/decisions/0001-adopt-the-way.md` records the decision to
-adopt the-way. Everything else starts from there.
+This repo's own `docs/decisions/0001-adopt-decision-trail.md` records the decision to
+adopt decision-trail. Everything else starts from there.
