@@ -61,12 +61,17 @@ has a home, across three artifact families:
   plan is the *how*, and execution is the plan in motion. Tasks use GitHub
   task-list markdown (`- [ ]` / `- [x]`).
 
+Every artifact carries a `Date:` (creation date) in its header — **mandatory**
+for ideas, decisions, and plans. It is the source the `overview.md` index reads
+for each row's *Created* column (ADR-0011).
+
 ## Layout
 
 ```
 ideas/        idea artifacts
 decisions/    proposal + decision artifacts (ADRs)
 plans/        plan + execution artifacts
+overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
 starter/      clean skeleton an adopting project copies (see ADR-0008)
 .github/      the contract and agent hand-off files
 AGENTS.md     this entry point
@@ -126,13 +131,16 @@ greppable field names in their headers:
 | From | Field | To | Meaning |
 |------|-------|----|---------|
 | idea | `Parent:` | idea | budded from another idea |
-| idea | `Promoted to:` | ADR | matured into a proposal |
+| idea | `Promoted to:` / ADR `Promoted from:` | ADR | matured into a proposal (reciprocal) |
 | ADR | `Amends:` / `Amended by:` | ADR | part of a decision changed |
 | ADR | `Supersedes:` / `Superseded by:` | ADR | one decision replaces another |
 | plan | `Implements:` | ADR | carries out a decision |
 
-Forward link always; add the reciprocal back-link for amend/supersede so the
-trail is walkable from either end.
+Forward link always; add the reciprocal back-link for amend/supersede **and
+promotion** so the trail is walkable from either end. A link is made reciprocal
+only when *both* ends are single and write-once (promotion: one idea ↔ one ADR);
+`Parent` and `Implements` stay forward-only because their reverse side
+accumulates (one parent → many children; one ADR → many plans). See ADR-0012.
 
 ## How to start working
 
@@ -156,3 +164,9 @@ documents its own construction.
 - **Confirmation guard.** Never rush into writing, editing, or implementing.
   First briefly explain what you intend to do, then wait for explicit approval.
   Discussing and proposing is always fine — acting requires a green light.
+- **Keep `overview.md` current.** It is a derived snapshot, regenerated wholesale
+  from the artifact headers (never hand-patched) and stamped "as of <date>"
+  (ADR-0011). Regenerate it — and update the stamp — after any work that creates
+  an artifact or changes a state, and whenever the user asks. Keeping it current
+  is the agent's responsibility, never the user's; a user may flip a state
+  directly in an artifact, and the next regeneration reconciles the index.

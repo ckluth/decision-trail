@@ -5,6 +5,28 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.3.0] - 2026-06-28
+
+### Added
+- ADR-0011 — `overview.md`, a derived status index over all ideas, decisions,
+  and plans (name / creation date / state). It is regenerated wholesale from the
+  artifact headers as a dated "as of" snapshot — produced on explicit user
+  request and as part of the agent's definition of done — rather than
+  hand-patched. Keeping it current is the agent's responsibility, never the
+  user's. The `starter/` skeleton gains `docs/overview.md`.
+
+### Changed
+- ADR-0011 also makes a `Date:` (creation date) header field **mandatory** for
+  ideas and plans (ADRs already carried one); it is the source for the
+  overview's *Created* column. Amends ADR-0005. Existing idea files were
+  backfilled.
+- ADR-0012 — the promotion link becomes **reciprocal**: an ADR gains a
+  `Promoted from:` header pointing back to its founding idea, mirroring the
+  idea's `Promoted to:`. Establishes the criterion that a cross-link is made
+  reciprocal only when both ends are single and write-once (so `Parent` and
+  `Implements`, whose reverse side accumulates, stay forward-only). Amends
+  ADR-0005. Existing promotion targets ADR-0008 and ADR-0011 were backfilled.
+
 ## [1.2.0] - 2026-06-28
 
 ### Changed

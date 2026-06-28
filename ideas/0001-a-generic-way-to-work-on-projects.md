@@ -1,6 +1,7 @@
 # 1. A generic way to work on projects
 
 - Status: promoted
+- Date: 2026-06-28
 - Parent: (none — this is the root idea)
 
 ## Idea

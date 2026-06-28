@@ -1,0 +1,44 @@
+# Overview
+
+A derived status index over all ideas, decisions, and plans — a plain
+*to-do / what's-done* list. It is **regenerated wholesale from the artifact
+headers** (never hand-patched) and stamped with the moment it was true. The
+artifacts themselves are the source of truth; this file is a convenience
+snapshot. Keeping it current is the agent's responsibility (see
+[ADR-0011](decisions/0011-an-always-up-to-date-overview-as-a-derived-status-index.md)).
+
+You can ask the agent to **regenerate the overview** at any time.
+
+**As of: 2026-06-28**
+
+## Ideas
+
+| Name | Created | State |
+|------|---------|-------|
+| [0001 A generic way to work on projects](ideas/0001-a-generic-way-to-work-on-projects.md) | 2026-06-28 | promoted |
+| [0002 Adopting the-way in other project repos](ideas/0002-adopting-the-way-in-other-repos.md) | 2026-06-28 | promoted |
+| [0003 An always up-to-date overview.md](ideas/0003-an-always-up-to-date-overview.md) | 2026-06-28 | promoted |
+
+## Decisions
+
+| Name | Created | State |
+|------|---------|-------|
+| [0001 Record decisions as ADRs](decisions/0001-record-decisions-as-adrs.md) | 2026-06-28 | accepted |
+| [0002 Capture an idea as a small markdown file](decisions/0002-capture-an-idea-as-a-small-markdown-file.md) | 2026-06-28 | accepted |
+| [0003 A proposal is an ADR in the `proposed` status](decisions/0003-a-proposal-is-an-adr-in-the-proposed-status.md) | 2026-06-28 | accepted |
+| [0004 A plan carries a decision into action](decisions/0004-a-plan-carries-a-decision-into-action.md) | 2026-06-28 | accepted |
+| [0005 Repo layout and cross-linking conventions](decisions/0005-repo-layout-and-cross-linking-conventions.md) | 2026-06-28 | accepted |
+| [0006 A single tool-agnostic entry point (AGENTS.md)](decisions/0006-a-single-tool-agnostic-entry-point.md) | 2026-06-28 | accepted |
+| [0007 Seal the method: AGENTS.md is the single source of truth](decisions/0007-seal-the-method-agents-md-single-source-of-truth.md) | 2026-06-28 | accepted |
+| [0008 Adopt the-way via a copied starter skeleton](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md) | 2026-06-28 | accepted |
+| [0009 Adopters use conventional, unbranded locations](decisions/0009-adopters-use-conventional-unbranded-locations.md) | 2026-06-28 | accepted |
+| [0010 Adopters keep the method text in `working-method.md`](decisions/0010-adopters-keep-the-method-text-in-working-method-md.md) | 2026-06-28 | accepted |
+| [0011 An `overview.md` status index, regenerated as a dated snapshot](decisions/0011-an-always-up-to-date-overview-as-a-derived-status-index.md) | 2026-06-28 | accepted |
+| [0012 Promotion carries a reciprocal `Promoted from:` back-link](decisions/0012-promotion-carries-a-reciprocal-promoted-from-back-link.md) | 2026-06-28 | accepted |
+
+## Plans
+
+| Name | Created | State |
+|------|---------|-------|
+| [0001 Build overview.md and the mandatory `Date:` convention](plans/0001-build-overview-and-mandatory-date.md) | 2026-06-28 | done |
+| [0002 Make the `Promoted` link reciprocal](plans/0002-make-the-promoted-link-reciprocal.md) | 2026-06-28 | done |

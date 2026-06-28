@@ -1,6 +1,7 @@
 # 2. Adopting the-way in other project repos
 
 - Status: promoted
+- Date: 2026-06-28
 - Promoted to: [ADR-0008](../decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md)
 
 ## Idea

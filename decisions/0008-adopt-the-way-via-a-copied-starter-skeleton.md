@@ -2,6 +2,7 @@
 
 - Status: accepted
 - Date: 2026-06-28
+- Promoted from: [idea 0002](../ideas/0002-adopting-the-way-in-other-repos.md)
 - Amended by: ADR-0009 (starter restructured to unbranded `docs/` layout)
 - Implements idea: [ideas/0002](../ideas/0002-adopting-the-way-in-other-repos.md)
 
