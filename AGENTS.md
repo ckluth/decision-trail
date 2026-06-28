@@ -1,14 +1,45 @@
 # the-way
 
 A generic, reusable way to work on projects — economic, transparent, agile.
-This is the entry point: read it first, then navigate from here.
+This is the **single source of truth** and the entry point: read it first, then
+navigate from here. Tool-specific files (e.g.
+[`.github/copilot-instructions.md`](.github/copilot-instructions.md)) only point
+back to this file.
+
+> **Status: settled & sealed.** The concept phase is complete. The contract and
+> all mechanics below are decided and recorded as ADRs in [`decisions/`](decisions/).
+> The method now exists to be *used*; further changes to it are themselves made
+> the-way — as new ADRs.
 
 ## What this is
 
 `the-way` is a method for carrying a thought through its whole life, in plain
-markdown, borrowing existing standards rather than inventing new ones. Its
-**contract** — the eight promises it keeps — is the single source of truth and
-lives in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+markdown, borrowing existing standards rather than inventing new ones.
+
+### How it arose (two shifts)
+
+1. Started on a concrete project (**my-second-brain**) and wanted a *reasonable,
+   structured, reproducible, economic way to work* on it.
+2. Realized that way-of-working should be **generic** — reusable for any project.
+
+So the subject became *"a generic way to work on projects,"* developed
+concept-first. my-second-brain becomes simply the first project that will adopt
+the method. A quiet irony: this method, fully formed, is exactly the thing that
+would tell us how to develop ideas like itself. It is its own first subject.
+
+### The contract — eight promises
+
+1. **Continuity** — pick up cheaply after the session ends and context is gone.
+2. **Economy** — minimize the cost of re-gathering; cheap to write, cheap to resume.
+3. **Transparency** — everything in plain, human-readable markdown; nothing hidden in a tool.
+4. **Lifecycle for thoughts** — a thought can travel: idea → proposal → decision → plan → execution.
+5. **Agility** — any thread can be refined or overthrown at any time; nothing is locked.
+6. **Budding** — one idea can spawn another; the parent-child link is kept.
+7. **Genericity** — none of this is bound to a particular project.
+8. **Borrow, don't invent** — lean on existing portable standards (ADRs,
+   spec-driven stages, agent hand-off files like `AGENTS.md` /
+   `copilot-instructions.md`); invent nothing we can borrow. Guards against
+   building a proprietary harness.
 
 ## The lifecycle
 
@@ -73,3 +104,16 @@ trail is walkable from either end.
 Every mechanic above was decided one step at a time, each recorded as an ADR.
 Read [`decisions/`](decisions/) in order to see the reasoning — the method
 documents its own construction.
+
+## Working in this repo (agent guidance)
+
+- **The method is settled.** Use it; don't redesign it casually. Any change to
+  the-way itself is made the-way — proposed and recorded as a new ADR, with
+  amended or superseded ADRs cross-linked (never edited away).
+- **Confirmation guard.** Never rush into writing, editing, or implementing.
+  First briefly explain what you intend to do, then wait for explicit approval.
+  Discussing and proposing is always fine — acting requires a green light.
+- **Custom agents.** This repo defines specialized agents in
+  `.github/agents/*.agent.md`. At session start, read only the YAML frontmatter
+  of each to learn its name and description; read the rest only if you actually
+  delegate to it.

@@ -26,7 +26,7 @@ us how to develop ideas like itself. It is its own first subject.
 ## Promotion
 
 This idea has been promoted into the project itself. Its contract — the eight
-promises — is settled and recorded in `.github/copilot-instructions.md`, and its
-mechanics are being decided one ADR at a time under `decisions/` (starting with
+promises — is settled and recorded in the canonical [`AGENTS.md`](../AGENTS.md),
+and its mechanics are decided one ADR at a time under `decisions/` (starting with
 ADR-0001 and ADR-0002, which together defined how decisions and ideas are
 captured — the very mechanism this file uses).

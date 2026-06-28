@@ -2,6 +2,7 @@
 
 - Status: accepted
 - Date: 2026-06-28
+- Amended by: ADR-0007 (contract migrated into AGENTS.md; repo sealed)
 
 ## Context
 
