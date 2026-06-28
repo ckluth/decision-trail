@@ -18,6 +18,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0001 A generic way to work on projects](ideas/0001-a-generic-way-to-work-on-projects.md) | 2026-06-28 | promoted |
 | [0002 Adopting the-way in other project repos](ideas/0002-adopting-the-way-in-other-repos.md) | 2026-06-28 | promoted |
 | [0003 An always up-to-date overview.md](ideas/0003-an-always-up-to-date-overview.md) | 2026-06-28 | promoted |
+| [0004 Updating an adopted the-way should be easy](ideas/0004-updating-an-adopted-the-way-should-be-easy.md) | 2026-06-28 | seed |
 
 ## Decisions
 
