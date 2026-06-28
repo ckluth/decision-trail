@@ -4,7 +4,7 @@
 > thought through its whole life (idea → proposal → decision → plan →
 > execution) in plain markdown.
 >
-> Based on **the-way v1.0.0** — https://github.com/ckluth/the-way
+> Based on **the-way vX.Y** — https://github.com/ckluth/the-way
 > Replace this notice with your project's own description; keep the line above.
 
 This file is the project's single source of truth for *how we work*. What the
@@ -29,11 +29,11 @@ has a home, across three artifact families:
 
 | Stage | Where it lives | Status values |
 |-------|----------------|---------------|
-| idea | `ideas/NNNN-*.md` | `seed` → `promoted` / `dropped` |
-| proposal | `decisions/NNNN-*.md` | `proposed` |
-| decision | `decisions/NNNN-*.md` (same file) | `accepted` / `rejected` |
-| plan | `plans/NNNN-*.md` | `draft` → `active` → `done` / `abandoned` |
-| execution | `plans/NNNN-*.md` (same file) | the plan ticking its checkboxes |
+| idea | `docs/ideas/NNNN-*.md` | `seed` → `promoted` / `dropped` |
+| proposal | `docs/decisions/NNNN-*.md` | `proposed` |
+| decision | `docs/decisions/NNNN-*.md` (same file) | `accepted` / `rejected` |
+| plan | `docs/plans/NNNN-*.md` | `draft` → `active` → `done` / `abandoned` |
+| execution | `docs/plans/NNNN-*.md` (same file) | the plan ticking its checkboxes |
 
 - **Ideas** are cheap to write; a matured idea is *promoted* to a proposal.
 - **Decisions** are ADRs — a proposal *becomes* a decision in place when accepted.
@@ -47,11 +47,15 @@ has a home, across three artifact families:
 ## Layout
 
 ```
-ideas/        idea artifacts
-decisions/    proposal + decision artifacts (ADRs)
-plans/        plan + execution artifacts
-AGENTS.md     this file — how we work
+AGENTS.md         this file — how we work (kept at the repo root)
+docs/ideas/       idea artifacts
+docs/decisions/   proposal + decision artifacts (ADRs)
+docs/plans/       plan + execution artifacts
 ```
+
+The decision records use `docs/decisions/` — the conventional location for
+ADRs — so the structure reads as a normal, well-organized repo, with no
+project-specific folders imposed.
 
 ## Cross-link vocabulary
 
@@ -71,11 +75,11 @@ trail is walkable from either end.
 
 ## How to start working
 
-1. Capture a thought as an idea in `ideas/`.
-2. When it matures, open an ADR in `decisions/` with `Status: proposed`.
+1. Capture a thought as an idea in `docs/ideas/`.
+2. When it matures, open an ADR in `docs/decisions/` with `Status: proposed`.
 3. Accept or reject it; an accepted ADR is a decision.
-4. Write a `plans/` file that `Implements:` the decision and lists tasks.
+4. Write a `docs/plans/` file that `Implements:` the decision and lists tasks.
 5. Execute by moving the plan `active` → `done`, ticking checkboxes.
 
-This repo's own `decisions/0001-adopt-the-way.md` records the decision to adopt
-the-way. Everything else starts from there.
+This repo's own `docs/decisions/0001-adopt-the-way.md` records the decision to
+adopt the-way. Everything else starts from there.

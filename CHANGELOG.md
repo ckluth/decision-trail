@@ -5,6 +5,14 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Changed
+- ADR-0009 — adopting projects use conventional, unbranded locations
+  (`docs/decisions/` for ADRs, plus `docs/ideas/`, `docs/plans/`); the branded
+  `the-way/` subfolder is dropped. Amends ADR-0005 and ADR-0008. The `starter/`
+  skeleton is restructured to `AGENTS.md` + `docs/{ideas,decisions,plans}/`.
+
 ## [1.0.0] - 2026-06-28
 
 First settled release of the method. The full lifecycle is mechanized in plain

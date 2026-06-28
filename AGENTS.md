@@ -73,21 +73,40 @@ AGENTS.md     this entry point
 CHANGELOG.md  released versions of the method
 ```
 
-When the method is adopted into another project, these families nest under a
-single `the-way/` root to avoid colliding with the host project's folders. In
-*this* repository, the repo root itself is that root.
+This layout is for *this* repository — the method's own home, where the families
+sit at the repo root. An **adopting project does not copy this layout**; it uses
+conventional `docs/` locations instead (see below and ADR-0009).
 
 ## Adopting the-way in another project
 
 Real projects live in their **own** repos, not here. This repository is the
-versioned *standard*; a project *adopts* it. See
-[ADR-0008](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md).
+versioned *standard*; a project *adopts* it. There is **no branded `the-way/`
+folder** — an adopting repo just gains conventional, self-descriptive files (see
+[ADR-0008](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md) and
+[ADR-0009](decisions/0009-adopters-use-conventional-unbranded-locations.md)).
 
-1. Copy the contents of [`starter/`](starter/) into a fresh repo.
-2. Fill in the seed `decisions/0001-adopt-the-way.md` (project name, the-way
+The [`starter/`](starter/) skeleton mirrors the target shape:
+
+```
+AGENTS.md         how the project works (root; cites "Based on the-way vX.Y")
+docs/ideas/       idea artifacts
+docs/decisions/   ADRs — the conventional location, recognizable on sight
+docs/plans/       plan + execution artifacts
+```
+
+To adopt:
+
+1. Copy the contents of [`starter/`](starter/) into the project's repo root.
+   `docs/` merges cleanly with anything already there.
+2. If the repo **already has an `AGENTS.md`**, don't overwrite it — merge a short
+   "How we work" pointer (to `docs/decisions/`) into it instead.
+3. Fill in the seed `docs/decisions/0001-adopt-the-way.md` (project name, the-way
    version, date).
-3. From there, work the project the-way — its own ADR log starts at 0001 and
-   never inherits this repo's construction ADRs (0001–0008).
+4. From there, work the project the-way — its own ADR log starts at 0001 and
+   never inherits this repo's construction ADRs.
+
+From the outside the repo simply looks well-organized: standard ADRs under
+`docs/decisions/`. The name "the-way" appears only as a provenance citation.
 
 The method is versioned (semver git tags + [`CHANGELOG.md`](CHANGELOG.md)); an
 adopting project cites the version it took. Promoting `starter/` to a GitHub
