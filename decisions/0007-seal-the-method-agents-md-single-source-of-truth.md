@@ -3,6 +3,7 @@
 - Status: accepted
 - Date: 2026-06-28
 - Amends: ADR-0006 (reverses where the contract lives)
+- Amended by: ADR-0014 (re-frames the single source of truth as the lean spec in `working-method.md`; this repo's `AGENTS.md` becomes a derived rendering)
 
 ## Context
 

@@ -3,6 +3,7 @@
 - Status: accepted
 - Date: 2026-06-28
 - Amends: ADR-0009 (pins down the merge text; relocates the method body out of the adopter's `AGENTS.md`)
+- Amended by: ADR-0014 (splits the method body: the didactic guide moves to `docs/guide.md`, leaving `working-method.md` the lean spec)
 
 ## Context
 

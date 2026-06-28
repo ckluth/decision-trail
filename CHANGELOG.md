@@ -5,6 +5,27 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.1.0] - 2026-06-28
+
+### Added
+- ADR-0014 — the method text is split into **three registers** (idea 0006): a
+  didactic human **guide** (`docs/guide.md`), a terse **reference/spec**
+  (`docs/working-method.md`), and an **agent operating guidance** block. The
+  `starter/` skeleton gains `docs/guide.md`, and `starter/AGENTS.md` now carries
+  the agent operating guidance (confirmation guard, keep-overview-current, method
+  settled) — closing a gap where adopting projects' agents received none.
+
+### Changed
+- ADR-0014 also **single-sources the spec**: `starter/docs/working-method.md` is
+  canonical, and this repo's `AGENTS.md` (plus this repo's `guide.md`) are derived
+  renderings, regenerated wholesale with an enumerated set of allowed deltas
+  (paths, construction-ADR links, citation, entry-point framing) recorded in
+  header sync notes. Amends ADR-0007 (re-frames the single source of truth) and
+  ADR-0010 (splits the method body). This repo's `README.md` is slimmed to a thin
+  human landing page pointing at `guide.md` and `AGENTS.md`.
+  Minor bump: additive and backward-compatible — the provenance citation string is
+  unchanged, and existing adopters are not broken.
+
 ## [2.0.0] - 2026-06-28
 
 ### Changed

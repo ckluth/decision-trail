@@ -1,27 +1,28 @@
 # decision-trail
 
 A generic, reusable way to work on projects — economic, transparent, agile.
-
-**Status: settled (not frozen).** The concept phase is logically complete — the
-contract and all mechanics are decided and recorded as ADRs. The method now
-exists to be *used*; real use will bring improvements, each made *decision-trail*
-as a new ADR.
-
-`decision-trail` carries a thought through its whole life — **idea → proposal →
+decision-trail carries a thought through its whole life — **idea → proposal →
 decision → plan → execution** — in plain markdown, borrowing existing standards
 (ADRs, spec-driven stages, agent hand-off files) rather than inventing new ones.
 
-| Stage | Lives in |
-|-------|----------|
-| idea | `ideas/` |
-| proposal + decision | `decisions/` (ADRs) |
-| plan + execution | `plans/` |
-
 ## Start here
 
-Read **[`AGENTS.md`](AGENTS.md)** — the single source of truth and entry point.
-It holds the eight-promise contract, the full lifecycle and layout, the
-cross-link conventions, and agent guidance.
+- **New to the method?** Read the guide: **[`guide.md`](guide.md)**.
+- **Quick reference / working in this repo?** See **[`AGENTS.md`](AGENTS.md)** —
+  the terse contract, lifecycle, layout, and cross-link conventions, plus the
+  agent operating guidance.
+
+## How this repo is organized
+
+| Path | What's there |
+|------|--------------|
+| [`guide.md`](guide.md) | narrative introduction to the method |
+| [`AGENTS.md`](AGENTS.md) | terse reference + agent guidance (entry point) |
+| [`overview.md`](overview.md) | derived status index — to-do / what's-done |
+| [`ideas/`](ideas/) | idea artifacts |
+| [`decisions/`](decisions/) | proposals + decisions (ADRs) |
+| [`plans/`](plans/) | plans + execution |
+| [`starter/`](starter/) | clean skeleton an adopting project copies |
 
 To see *why* the method is the way it is, read [`decisions/`](decisions/) in
 order: it documents its own construction.

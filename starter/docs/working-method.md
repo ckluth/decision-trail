@@ -1,30 +1,48 @@
-# Working method — decision-trail
+# Working method — decision-trail (reference)
 
-> This project works **decision-trail** — a generic, reusable method for carrying a
-> thought through its whole life (idea → proposal → decision → plan →
-> execution) in plain markdown.
+> This project works **decision-trail** — carrying a thought through its whole life
+> (idea → proposal → decision → plan → execution) in plain markdown.
 >
 > Based on **decision-trail vX.Y** — https://github.com/ckluth/decision-trail
 
-This file is the full description of *how we work*. The repository's root
-`AGENTS.md` only points here. What the project *is* belongs in its own README.
+<!--
+Sync note — this file is CANONICAL.
+This is the single source of truth for the method spec. This repo's `AGENTS.md`
+(in the decision-trail repo) is a DERIVED rendering of this file; it is regenerated
+wholesale, never hand-patched. The only legitimate differences (deltas) between
+the two renderings are:
+  - paths: adopters use `docs/`-prefixed families (`docs/ideas/`, `docs/decisions/`,
+    `docs/plans/`); the decision-trail repo uses repo-root families;
+  - construction-ADR cross-references (ADR-00NN) appear only in the decision-trail
+    repo's rendering, not here;
+  - the `Based on decision-trail vX.Y` provenance citation is adopter-only (this file);
+  - entry-point framing: here `AGENTS.md` points to this file; in the decision-trail
+    repo `AGENTS.md` carries the text.
+Edit the method here; regenerate the other rendering.
+-->
+
+This file is the terse **reference** for *how we work* — the contract, lifecycle,
+layout, cross-link vocabulary, and how to start. For a narrative introduction that
+teaches the method, read [`guide.md`](guide.md). The repository's root `AGENTS.md`
+points here and carries the agent operating guidance. What the project *is* belongs
+in its own README.
 
 ## The contract — eight promises
 
-1. **Continuity** — pick up cheaply after the session ends and context is gone.
-2. **Economy** — minimize the cost of re-gathering; cheap to write, cheap to resume.
-3. **Transparency** — everything in plain, human-readable markdown; nothing hidden in a tool.
-4. **Lifecycle for thoughts** — a thought can travel: idea → proposal → decision → plan → execution.
-5. **Agility** — any thread can be refined or overthrown at any time; nothing is locked.
+1. **Continuity** — pick up cheaply after the session ends.
+2. **Economy** — cheap to write, cheap to resume.
+3. **Transparency** — plain, human-readable markdown; nothing hidden in a tool.
+4. **Lifecycle for thoughts** — idea → proposal → decision → plan → execution.
+5. **Agility** — any thread can be refined or overthrown; nothing is locked.
 6. **Budding** — one idea can spawn another; the parent-child link is kept.
-7. **Genericity** — none of this is bound to a particular project.
+7. **Genericity** — nothing is bound to a particular project.
 8. **Borrow, don't invent** — lean on existing portable standards (ADRs,
    spec-driven stages, agent hand-off files); invent nothing we can borrow.
 
 ## The lifecycle
 
-A thought travels: **idea → proposal → decision → plan → execution.** Each stage
-has a home, across three artifact families:
+A thought travels **idea → proposal → decision → plan → execution**, across three
+artifact families:
 
 | Stage | Where it lives | Status values |
 |-------|----------------|---------------|
@@ -36,37 +54,35 @@ has a home, across three artifact families:
 
 - **Ideas** are cheap to write; a matured idea is *promoted* to a proposal.
 - **Decisions** are ADRs — a proposal *becomes* a decision in place when accepted.
-  Use the classic template (Status / Context / Decision / Consequences); add the
-  optional **Decision Drivers** / **Considered Options** sections when weighing
-  alternatives.
-- **Plans** carry an accepted decision into action; the ADR is the spec, the plan
-  is the *how*, and execution is the plan in motion. Tasks use GitHub task-list
+  Use the classic template (Status / Context / Decision / Consequences); add
+  **Decision Drivers** / **Considered Options** when weighing alternatives.
+- **Plans** carry an accepted decision into action: the ADR is the spec, the plan
+  is the *how*, execution is the plan in motion. Tasks use GitHub task-list
   markdown (`- [ ]` / `- [x]`).
 
-Every artifact carries a `Date:` (creation date) in its header — **mandatory**
-for ideas, decisions, and plans. `docs/overview.md` is a derived status index
-over all three families: a single dated snapshot listing each artifact's name,
-creation date, and state — a plain *to-do / what's-done* list. It is
-**regenerated wholesale from the artifact headers** (never hand-patched) and
-stamped "as of <date>". Keeping it current is the **agent's** responsibility, not
-the user's: the agent regenerates it after any work that creates an artifact or
-changes a state, and whenever the user asks. The user may flip a state directly
-in an artifact; the next regeneration reconciles the index.
+Every idea, decision, and plan carries a `Date:` (creation date) in its header —
+**mandatory**. `docs/overview.md` is a derived status index over all three
+families: a single dated snapshot of each artifact's name, creation date, and
+state. It is **regenerated wholesale from the artifact headers** (never
+hand-patched) and stamped "as of <date>". Keeping it current is the **agent's**
+responsibility — regenerated after any work that creates an artifact or changes a
+state, and whenever asked.
 
 ## Layout
 
 ```
-AGENTS.md             repo root — points here (the "How we work" pointer)
-docs/working-method.md  this file — the full method
-docs/overview.md      derived status index (regenerated dated snapshot)
-docs/ideas/           idea artifacts
-docs/decisions/       proposal + decision artifacts (ADRs)
-docs/plans/           plan + execution artifacts
+AGENTS.md               repo root — points here; carries agent guidance
+docs/guide.md           narrative introduction (read this first)
+docs/working-method.md  this file — the terse reference
+docs/overview.md        derived status index (regenerated dated snapshot)
+docs/ideas/             idea artifacts
+docs/decisions/         proposal + decision artifacts (ADRs)
+docs/plans/             plan + execution artifacts
 ```
 
-The decision records use `docs/decisions/` — the conventional location for
-ADRs — so the structure reads as a normal, well-organized repo, with no
-project-specific folders imposed.
+Decision records use `docs/decisions/` — the conventional location for ADRs — so
+the structure reads as a normal, well-organized repo, with no project-specific
+folders imposed.
 
 ## Cross-link vocabulary
 
@@ -82,10 +98,10 @@ field names in their headers:
 | plan | `Implements:` | ADR | carries out a decision |
 
 Forward link always; add the reciprocal back-link for amend/supersede **and
-promotion** so the trail is walkable from either end. A link is made reciprocal
-only when *both* ends are single and write-once (promotion: one idea ↔ one ADR);
-`Parent` and `Implements` stay forward-only because their reverse side
-accumulates (one parent → many children; one ADR → many plans).
+promotion**. A link is reciprocal only when *both* ends are single and write-once
+(promotion: one idea ↔ one ADR); `Parent` and `Implements` stay forward-only
+because their reverse side accumulates (one parent → many children; one ADR → many
+plans).
 
 ## How to start working
 
@@ -95,5 +111,5 @@ accumulates (one parent → many children; one ADR → many plans).
 4. Write a `docs/plans/` file that `Implements:` the decision and lists tasks.
 5. Execute by moving the plan `active` → `done`, ticking checkboxes.
 
-This repo's own `docs/decisions/0001-adopt-decision-trail.md` records the decision to
-adopt decision-trail. Everything else starts from there.
+This repo's own `docs/decisions/0001-adopt-decision-trail.md` records the decision
+to adopt decision-trail. Everything else starts from there.

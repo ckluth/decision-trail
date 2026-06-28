@@ -1,50 +1,48 @@
 # decision-trail
 
 A generic, reusable way to work on projects — economic, transparent, agile.
-This is the **single source of truth** and the entry point: read it first, then
-navigate from here. Tool-specific files (e.g.
-[`.github/copilot-instructions.md`](.github/copilot-instructions.md)) only point
-back to this file.
 
-> **Status: settled (not frozen).** The concept phase is logically complete —
-> the contract and all mechanics below are decided and recorded as ADRs in
+<!--
+Sync note — this file is a DERIVED rendering.
+The canonical method spec is `starter/docs/working-method.md`. This file's method
+text is regenerated wholesale from it, never hand-patched. The only legitimate
+differences (deltas) from the canonical text are:
+  - paths: this repo uses repo-root families (`ideas/`, `decisions/`, `plans/`);
+    adopters use `docs/`-prefixed ones;
+  - construction-ADR cross-references (ADR-00NN) appear here, not in the canonical
+    text;
+  - no `Based on decision-trail vX.Y` provenance citation (this repo IS the method);
+  - entry-point framing: here `AGENTS.md` carries the method text; an adopter's
+    `AGENTS.md` points to `docs/working-method.md`.
+Edit the method in `starter/docs/working-method.md`; regenerate this file.
+-->
+
+This file is the terse **reference** for *how we work* — the contract, lifecycle,
+layout, cross-link vocabulary, and how to start. For a narrative introduction that
+teaches the method, read [`guide.md`](guide.md). For *why* the method is the way it
+is, read [`decisions/`](decisions/) in order — it documents its own construction.
+
+> **Status: settled (not frozen).** The concept phase is logically complete — the
+> contract and all mechanics below are decided and recorded as ADRs in
 > [`decisions/`](decisions/). The method now exists to be *used*; real use will
 > bring improvements, and any such change is made *decision-trail* — as a new ADR.
 
-## What this is
+## The contract — eight promises
 
-`decision-trail` is a method for carrying a thought through its whole life, in plain
-markdown, borrowing existing standards rather than inventing new ones.
-
-### How it arose (two shifts)
-
-1. Started on a concrete project (**my-second-brain**) and wanted a *reasonable,
-   structured, reproducible, economic way to work* on it.
-2. Realized that way-of-working should be **generic** — reusable for any project.
-
-So the subject became *"a generic way to work on projects,"* developed
-concept-first. my-second-brain becomes simply the first project that will adopt
-the method. A quiet irony: this method, fully formed, is exactly the thing that
-would tell us how to develop ideas like itself. It is its own first subject.
-
-### The contract — eight promises
-
-1. **Continuity** — pick up cheaply after the session ends and context is gone.
-2. **Economy** — minimize the cost of re-gathering; cheap to write, cheap to resume.
-3. **Transparency** — everything in plain, human-readable markdown; nothing hidden in a tool.
-4. **Lifecycle for thoughts** — a thought can travel: idea → proposal → decision → plan → execution.
-5. **Agility** — any thread can be refined or overthrown at any time; nothing is locked.
+1. **Continuity** — pick up cheaply after the session ends.
+2. **Economy** — cheap to write, cheap to resume.
+3. **Transparency** — plain, human-readable markdown; nothing hidden in a tool.
+4. **Lifecycle for thoughts** — idea → proposal → decision → plan → execution.
+5. **Agility** — any thread can be refined or overthrown; nothing is locked.
 6. **Budding** — one idea can spawn another; the parent-child link is kept.
-7. **Genericity** — none of this is bound to a particular project.
+7. **Genericity** — nothing is bound to a particular project.
 8. **Borrow, don't invent** — lean on existing portable standards (ADRs,
-   spec-driven stages, agent hand-off files like `AGENTS.md` /
-   `copilot-instructions.md`); invent nothing we can borrow. Guards against
-   building a proprietary harness.
+   spec-driven stages, agent hand-off files); invent nothing we can borrow.
 
 ## The lifecycle
 
-A thought travels: **idea → proposal → decision → plan → execution.** Each stage
-has a home, across three artifact families:
+A thought travels **idea → proposal → decision → plan → execution**, across three
+artifact families:
 
 | Stage | Where it lives | Status values |
 |-------|----------------|---------------|
@@ -55,78 +53,46 @@ has a home, across three artifact families:
 | execution | `plans/NNNN-*.md` (same file) | the plan ticking its checkboxes |
 
 - **Ideas** are cheap to write; a matured idea is *promoted* to a proposal.
-- **Decisions** are [ADRs](decisions/) — a proposal *becomes* a decision in
-  place when accepted.
-- **Plans** carry an accepted decision into action; the ADR is the spec, the
-  plan is the *how*, and execution is the plan in motion. Tasks use GitHub
-  task-list markdown (`- [ ]` / `- [x]`).
+- **Decisions** are [ADRs](decisions/) — a proposal *becomes* a decision in place
+  when accepted. Use the classic template (Status / Context / Decision /
+  Consequences); add **Decision Drivers** / **Considered Options** when weighing
+  alternatives.
+- **Plans** carry an accepted decision into action: the ADR is the spec, the plan
+  is the *how*, execution is the plan in motion. Tasks use GitHub task-list
+  markdown (`- [ ]` / `- [x]`).
 
-Every artifact carries a `Date:` (creation date) in its header — **mandatory**
-for ideas, decisions, and plans. It is the source the `overview.md` index reads
-for each row's *Created* column (ADR-0011).
+Every idea, decision, and plan carries a `Date:` (creation date) in its header —
+**mandatory**. `overview.md` is a derived status index over all three families: a
+single dated snapshot of each artifact's name, creation date, and state. It is
+**regenerated wholesale from the artifact headers** (never hand-patched) and
+stamped "as of <date>" (ADR-0011). Keeping it current is the **agent's**
+responsibility — regenerated after any work that creates an artifact or changes a
+state, and whenever asked.
 
 ## Layout
 
 ```
+guide.md      narrative introduction (read this first)
+AGENTS.md     this file — the terse reference + agent guidance
+overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
 ideas/        idea artifacts
 decisions/    proposal + decision artifacts (ADRs)
 plans/        plan + execution artifacts
-overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
 starter/      clean skeleton an adopting project copies (see ADR-0008)
-.github/      the contract and agent hand-off files
-AGENTS.md     this entry point
+.github/      tool-specific agent hand-off files
 CHANGELOG.md  released versions of the method
 ```
 
 This layout is for *this* repository — the method's own home, where the families
 sit at the repo root. An **adopting project does not copy this layout**; it uses
-conventional `docs/` locations instead (see below and ADR-0009).
-
-## Adopting decision-trail in another project
-
-Real projects live in their **own** repos, not here. This repository is the
-versioned *standard*; a project *adopts* it. There is **no branded `decision-trail/`
-folder** — an adopting repo just gains conventional, self-descriptive files (see
-[ADR-0008](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md),
-[ADR-0009](decisions/0009-adopters-use-conventional-unbranded-locations.md) and
-[ADR-0010](decisions/0010-adopters-keep-the-method-text-in-working-method-md.md)).
-
-The [`starter/`](starter/) skeleton mirrors the target shape:
-
-```
-AGENTS.md               repo root — points to the method ("How we work")
-docs/working-method.md  the full method (cites "Based on decision-trail vX.Y")
-docs/ideas/             idea artifacts
-docs/decisions/         ADRs — the conventional location, recognizable on sight
-docs/plans/             plan + execution artifacts
-```
-
-To adopt:
-
-1. Copy the contents of [`starter/`](starter/) into the project's repo root.
-   `docs/` (including `docs/working-method.md`) merges cleanly with anything
-   already there.
-2. For `AGENTS.md`: if the repo has none, use the starter's. If it **already has
-   an `AGENTS.md`**, don't overwrite it — append only the starter's
-   `## How we work` section (a fixed pointer to `docs/working-method.md` and
-   `docs/decisions/`). The method text itself always lives in
-   `docs/working-method.md`, so nothing needs hand-merging.
-3. Fill in the seed `docs/decisions/0001-adopt-decision-trail.md` (project name,
-   decision-trail version, date).
-4. From there, work the project decision-trail — its own ADR log starts at 0001 and
-   never inherits this repo's construction ADRs.
-
-From the outside the repo simply looks well-organized: standard ADRs under
-`docs/decisions/`. The name "decision-trail" appears only as a provenance citation.
-
-The method is versioned (semver git tags + [`CHANGELOG.md`](CHANGELOG.md)); an
-adopting project cites the version it took. Promoting `starter/` to a GitHub
-*template repository* is the deferred next step.
+conventional `docs/` locations instead (see ADR-0009). To adopt decision-trail in
+another project, copy the [`starter/`](starter/) skeleton — see its `AGENTS.md`,
+`docs/guide.md`, and `docs/working-method.md`.
 
 ## Cross-link vocabulary
 
-Artifacts reference each other with relative markdown links and fixed,
-greppable field names in their headers:
+Artifacts reference each other with relative markdown links and fixed, greppable
+field names in their headers:
 
 | From | Field | To | Meaning |
 |------|-------|----|---------|
@@ -137,10 +103,10 @@ greppable field names in their headers:
 | plan | `Implements:` | ADR | carries out a decision |
 
 Forward link always; add the reciprocal back-link for amend/supersede **and
-promotion** so the trail is walkable from either end. A link is made reciprocal
-only when *both* ends are single and write-once (promotion: one idea ↔ one ADR);
-`Parent` and `Implements` stay forward-only because their reverse side
-accumulates (one parent → many children; one ADR → many plans). See ADR-0012.
+promotion**. A link is reciprocal only when *both* ends are single and write-once
+(promotion: one idea ↔ one ADR); `Parent` and `Implements` stay forward-only
+because their reverse side accumulates (one parent → many children; one ADR → many
+plans). See ADR-0012.
 
 ## How to start working
 
@@ -150,19 +116,15 @@ accumulates (one parent → many children; one ADR → many plans). See ADR-0012
 4. Write a `plans/` file that `Implements:` the decision and lists tasks.
 5. Execute by moving the plan `active` → `done`, ticking checkboxes.
 
-## Why it is this way
+## Agent operating guidance
 
-Every mechanic above was decided one step at a time, each recorded as an ADR.
-Read [`decisions/`](decisions/) in order to see the reasoning — the method
-documents its own construction.
+These rules are for an AI agent working in this repo:
 
-## Working in this repo (agent guidance)
-
-- **The method is settled.** Use it; don't redesign it casually. Any change to
-  decision-trail itself is made decision-trail — proposed and recorded as a new ADR, with
-  amended or superseded ADRs cross-linked (never edited away).
-- **Confirmation guard.** Never rush into writing, editing, or implementing.
-  First briefly explain what you intend to do, then wait for explicit approval.
+- **The method is settled.** Use it; don't redesign decision-trail casually. Any
+  change to the method itself is made decision-trail — proposed and recorded as a
+  new ADR, with amended or superseded ADRs cross-linked (never edited away).
+- **Confirmation guard.** Never rush into writing, editing, or implementing. First
+  briefly explain what you intend to do, then wait for explicit approval.
   Discussing and proposing is always fine — acting requires a green light.
 - **Keep `overview.md` current.** It is a derived snapshot, regenerated wholesale
   from the artifact headers (never hand-patched) and stamped "as of <date>"

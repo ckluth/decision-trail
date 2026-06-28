@@ -20,6 +20,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0003 An always up-to-date overview.md](ideas/0003-an-always-up-to-date-overview.md) | 2026-06-28 | promoted |
 | [0004 Updating an adopted the-way should be easy](ideas/0004-updating-an-adopted-the-way-should-be-easy.md) | 2026-06-28 | seed |
 | [0005 The name "the-way" may be too pretentious to share](ideas/0005-renaming-the-way.md) | 2026-06-28 | promoted |
+| [0006 Documentation flaw — sync and audience](ideas/0006-documentation-flaw-sync-and-audience.md) | 2026-06-28 | promoted |
 
 ## Decisions
 
@@ -38,6 +39,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0011 An `overview.md` status index, regenerated as a dated snapshot](decisions/0011-an-always-up-to-date-overview-as-a-derived-status-index.md) | 2026-06-28 | accepted |
 | [0012 Promotion carries a reciprocal `Promoted from:` back-link](decisions/0012-promotion-carries-a-reciprocal-promoted-from-back-link.md) | 2026-06-28 | accepted |
 | [0013 Rename the method from "the-way" to "decision-trail"](decisions/0013-rename-the-way-to-decision-trail.md) | 2026-06-28 | accepted |
+| [0014 Single-source method renderings; split into guide / spec / agent guidance](decisions/0014-sync-method-renderings-and-separate-audiences.md) | 2026-06-28 | accepted |
 
 ## Plans
 
@@ -46,3 +48,4 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0001 Build overview.md and the mandatory `Date:` convention](plans/0001-build-overview-and-mandatory-date.md) | 2026-06-28 | done |
 | [0002 Make the `Promoted` link reciprocal](plans/0002-make-the-promoted-link-reciprocal.md) | 2026-06-28 | done |
 | [0003 Rename the-way to decision-trail](plans/0003-rename-the-way-to-decision-trail.md) | 2026-06-28 | done |
+| [0004 Split the method text into guide / spec / agent guidance](plans/0004-split-method-into-guide-spec-agent-guidance.md) | 2026-06-28 | done |
