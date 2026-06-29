@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail vX.Y** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.2** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -71,6 +71,10 @@ families: a single dated snapshot of each artifact's name, creation date, and
 state. It is **regenerated wholesale from the artifact headers** (never
 hand-patched) and stamped "as of <date>". Regenerate it whenever the user
 explicitly asks.
+
+  **Refresh procedure:** scan each family for `# N. Title` (line 1) and
+  `- Status:` / `- Date:` (header block) → rewrite the three tables in
+  `docs/overview.md`. Nothing else is needed.
 
 ## Layout
 

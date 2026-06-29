@@ -120,6 +120,13 @@ plans). See ADR-0012.
 
 These rules are for an AI agent working in this repo:
 
+- **`AGENTS.md` has a derived method body.** When `starter/docs/working-method.md`
+  changes, regenerate only the section from `## The contract` through `## How to
+  start working` — applying the enumerated deltas (repo-root paths instead of
+  `docs/`-prefixed ones, construction-ADR cross-references added, no provenance
+  citation, entry-point framing adjusted). The preamble above that section and
+  this `## Agent operating guidance` section below it are **not derived and must
+  not be touched**.
 - **Artifact numbers are ordinal only.** When creating an artifact, assign the
   next unused number in that family (`ideas/`, `decisions/`, `plans/` are
   independent sequences). Never derive a number from a related artifact — a plan
@@ -134,6 +141,9 @@ These rules are for an AI agent working in this repo:
   Discussing and proposing is always fine — acting requires a green light.
 - **Keep `overview.md` current.** It is a derived snapshot, regenerated wholesale
   from the artifact headers (never hand-patched) and stamped "as of <date>"
-  (ADR-0011). Regenerate it — and update the stamp — whenever the user explicitly
-  asks. A user may flip a state directly in an artifact; the next regeneration
-  reconciles the index.
+  (ADR-0011). Regenerate it whenever the user explicitly asks. A user may flip a
+  state directly in an artifact; the next regeneration reconciles the index.
+
+  **Refresh procedure:** scan each family for `# N. Title` (line 1) and
+  `- Status:` / `- Date:` (header block) → rewrite the three tables in
+  `overview.md`. Nothing else is needed.
