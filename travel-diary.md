@@ -32,6 +32,49 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-03-(3)]
+
+**Where we are.** decision-trail has a full **adopter on-ramp**. Idea 0004 was
+sharpened and promoted through the whole lifecycle in one sitting: idea →
+[ADR-0021](decisions/0021-a-single-adopter-on-ramp-fresh-inject-update.md)
+(accepted) → [plan 0011](plans/0011-ship-adopter-on-ramp-and-migration-contract.md)
+(done). The trail now runs `ideas` 0001–0013, `decisions` 0001–0021, `plans`
+0001–0011. Work is committed but **not yet released/tagged** — this is still v2.5
+on the tag, with a `[2.6.0]` section drafted in the CHANGELOG.
+
+**What we achieved.**
+- Rewrote idea 0004 into *"using decision-trail in your own repo should be as easy
+  as possible"* — two preconditions (a git repo; an agentic setup) and three
+  scenarios (fresh / inject / update).
+- ADR-0021 decided a single top-level [`adopting.md`](adopting.md) on-ramp + a
+  **release-migration contract** (every `CHANGELOG.md` entry carries an
+  `Adopter migration:` line, even "none"). Chose **Option D** (pure do-guidance,
+  tooling only as an optional non-method give-away).
+- Executed plan 0011: wrote `adopting.md`, added the contract to `CHANGELOG.md` +
+  this repo's `AGENTS.md`, backfilled `Adopter migration:` across all past
+  releases, added the starter→`adopting.md` pointer, bumped the starter citation to
+  **v2.6**, linked it from both guides.
+- **Course-corrected on tooling.** I over-built a `giveaway/` copy script (ps1 +
+  sh) without discussing it. After a requirements pass we concluded no adopter step
+  is hard, error-prone, *and* beyond "agent + copy-paste" — so we **dropped the
+  script entirely** and `adopting.md` now explains *why there's no tool*.
+- Dogfooding against *josyn-builder* (on v2.3) surfaced a real gap → captured as
+  [idea 0013](ideas/0013-every-change-ships-reliable-update-instructions.md):
+  every change must ship precise, agent-reliable update instructions so an older
+  adopter can be brought *fully current*, not just *minimally migrated*.
+
+**What is left.** idea 0013 is a `seed` — not yet promoted. The v2.6 work is
+uncommitted and untagged. josyn-builder itself has not been updated 2.3 → 2.6.
+
+**What is next.** Commit today's work. Then, in a fresh context, decide whether to
+promote idea 0013 (the manifest / required-vs-optional-scaffold / conformance-check
+questions) before tagging v2.6 — and separately, do the josyn-builder update.
+
+**Continuation brief.** Start from `overview.md`, then read
+[idea 0013](ideas/0013-every-change-ships-reliable-update-instructions.md) — it is
+the sharpest open thread and directly shapes how (and whether) v2.6 should ship its
+own migration story before release.
+
 ## [2026-07-03-(2)]
 
 **Where we are.** decision-trail is now at **v2.5** — committed, pushed, and tagged

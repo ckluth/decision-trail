@@ -190,3 +190,6 @@ itself:
   **agent operating guidance** (how an agent should behave when working this repo:
   the confirmation guard, keeping the overview current, treating the method as
   settled).
+- To **update or (re)adopt** decision-trail, see `adopting.md` in the standard
+  repo: https://github.com/ckluth/decision-trail/blob/main/adopting.md — it covers
+  starting fresh, injecting into an existing repo, and moving to a newer version.

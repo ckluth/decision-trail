@@ -58,7 +58,7 @@ artifact families:
   Consequences); add **Decision Drivers** / **Considered Options** when weighing
   alternatives.
 - **Plans** carry an accepted decision into action: the ADR is the spec, the plan
-  is the *how*, execution is the plan in motion. Tasks use GitHub task-list
+  is the *how*, execution is the plan in motion. Tasks use portable task-list
   markdown (`- [ ]` / `- [x]`).
 
 Every idea, decision, and plan carries a `Date:` (creation date) in its header —
@@ -239,3 +239,9 @@ These rules are for an AI agent working in this repo:
   no plan, and no confirmation guard** — because it touches nothing authoritative.
   Its internal organization is the project's business; it is committed by default
   (a repo may gitignore it) and left to rot harmlessly once a plan is done.
+- **Release-migration contract (release-author rule, ADR-0021).** When cutting a
+  new release of decision-trail, every `CHANGELOG.md` entry **must** carry an
+  **`Adopter migration:`** line — **even when it is "none"** — written as
+  agent-executable steps. Adopters follow these, in version order, via the update
+  path in [`adopting.md`](adopting.md), the adopter-facing on-ramp. No adoption
+  *tool* ships: adopting/updating is plain do-guidance the agent executes directly.

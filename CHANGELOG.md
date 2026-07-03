@@ -5,6 +5,42 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+**Release-author rule (ADR-0021):** every release **must** carry an
+**`Adopter migration:`** line stating the work an already-adopting repo must do to
+take this version — **even when it is "none."** Write it as steps an agent can
+execute (e.g. "backfill any missing `Date:` header, then regenerate `overview.md`").
+This is the contract the [`adopting.md`](adopting.md) update path relies on.
+
+## [2.6.0] - 2026-07-03
+
+### Added
+- ADR-0021 — a single adopter **on-ramp** (idea 0004): a top-level
+  [`adopting.md`](adopting.md) that walks an agent (or a human) through all three
+  ways of using decision-trail in a repo — **fresh** (copy `starter/`), **inject**
+  into an existing repo (non-destructive drop-in of `starter/docs/` + append the
+  fixed `## How we work` pointer block; the decision-trail ADR log starts fresh at
+  0001 and existing history is untouched), and **update** `X.Y → X.Y+n` (replace
+  the copied method text, bump the citation, and apply each release's
+  `Adopter migration:` steps in order). Delivered as **pure do-guidance** (Option
+  D): no adoption tool ships, because the agentic precondition means the agent
+  already executes the copy/edit and migration steps — a script would only
+  duplicate trivial copying and can't know future migrations.
+- A **release-migration contract**: every `CHANGELOG.md` entry now carries an
+  **`Adopter migration:`** line — **even when "none"** — as agent-executable steps,
+  so the `adopting.md` update path always knows what work a version entails. The
+  rule is recorded in this CHANGELOG's intro and in this repo's `AGENTS.md` agent
+  operating guidance, and every existing release entry has been backfilled with its
+  migration line.
+
+### Changed
+- `starter/docs/working-method.md` gains a forward pointer to the standard repo's
+  `adopting.md` (for update/(re)adopt guidance), and both `starter/` renderings
+  bump their provenance citation to **v2.6**.
+
+- **Adopter migration:** none — additive; new adopter-facing guidance and optional
+  tooling only. (You may re-copy `docs/working-method.md` to pick up the new
+  `adopting.md` pointer, and bump your citation to v2.6.)
+
 ## [2.5.0] - 2026-07-03
 
 ### Added
@@ -29,6 +65,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   both `guide.md` renderings. Provenance citation bumped to v2.5. Minor/additive bump
   — repos without the folder are unchanged.
 
+- **Adopter migration:** none — additive; the `intermediate-artifacts/` folder is
+  optional. Take the new method text if you want the mechanism documented.
+
 ## [2.4.0] - 2026-07-03
 
 ### Added
@@ -50,6 +89,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   `starter/AGENTS.md`), and mentioned in both `guide.md` renderings. Provenance
   citation bumped to v2.4. Minor/additive bump — repos without a diary are unchanged.
 
+- **Adopter migration:** none — additive; `travel-diary.md` is optional.
+
 ## [2.3.0] - 2026-07-03
 
 ### Added
@@ -64,6 +105,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   empty "recommended tags" placeholder and this repo defines none. A filtered
   by-tag view is explicitly deferred. Minor/additive bump — existing artifacts
   without a `Tags:` line are unchanged.
+
+- **Adopter migration:** none — additive; the `Tags:` field is optional.
 
 ## [2.2.0] - 2026-06-29
 
@@ -81,6 +124,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   stamp makes staleness visible; eliminating automatic regeneration honours
   promise #2 (Economy). Rule updated in `AGENTS.md`, `starter/docs/working-method.md`,
   and `starter/AGENTS.md`.
+
+- **Adopter migration:** none — behavioral rules only; no artifact changes
+  required. (Optionally adopt the new numbering and overview-regeneration habits.)
 
 ## [2.1.0] - 2026-06-28
 
@@ -103,6 +149,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   Minor bump: additive and backward-compatible — the provenance citation string is
   unchanged, and existing adopters are not broken.
 
+- **Adopter migration:** copy the new `docs/guide.md` from the starter, and append
+  the `## Agent operating guidance` block from `starter/AGENTS.md` to your
+  `AGENTS.md`; refresh the `## How we work` pointer block (it now points at
+  `docs/guide.md` as well as `docs/working-method.md`).
+
 ## [2.0.0] - 2026-06-28
 
 ### Changed
@@ -115,6 +166,12 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   adoption ADR renamed to `0001-adopt-decision-trail.md`). Historical artifacts
   (ideas, ADRs, plans 0001–0012) retain the old name as a dated record.
   Major bump because the citation string is adopter-visible (ADR-0008).
+
+- **Adopter migration:** rename references from "the-way" to "decision-trail" on
+  your *live* surfaces — update the provenance citation string to
+  `Based on decision-trail vX.Y` and the repo URL, and rename the seed adoption ADR
+  to `0001-adopt-decision-trail.md`. Historical artifacts may keep the old name as a
+  dated record.
 
 ## [1.4.0] - 2026-06-28
 
@@ -138,6 +195,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   `Implements`, whose reverse side accumulates, stay forward-only). Amends
   ADR-0005. Existing promotion targets ADR-0008 and ADR-0011 were backfilled.
 
+- **Adopter migration:** backfill a `Date:` (creation date) header on every idea
+  and plan (ADRs already carry one); create `docs/overview.md` by regenerating it
+  wholesale from the artifact headers; and add reciprocal `Promoted from:`
+  back-links on any ADR promoted from an idea.
+
 ## [1.2.0] - 2026-06-28
 
 ### Changed
@@ -148,6 +210,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   text nowhere. Amends ADR-0009. The `starter/` skeleton moves its method body
   to `starter/docs/working-method.md`.
 
+- **Adopter migration:** move the method body out of your `AGENTS.md` into
+  `docs/working-method.md`, and reduce `AGENTS.md` to the fixed `## How we work`
+  pointer block (same in every repo).
+
 ## [1.1.0] - 2026-06-28
 
 ### Changed
@@ -155,6 +221,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
   (`docs/decisions/` for ADRs, plus `docs/ideas/`, `docs/plans/`); the branded
   `the-way/` subfolder is dropped. Amends ADR-0005 and ADR-0008. The `starter/`
   skeleton is restructured to `AGENTS.md` + `docs/{ideas,decisions,plans}/`.
+
+- **Adopter migration:** move your artifacts out of the branded `the-way/`
+  subfolder into conventional `docs/` locations (`docs/ideas/`, `docs/decisions/`,
+  `docs/plans/`).
 
 ## [1.0.0] - 2026-06-28
 
@@ -172,3 +242,5 @@ markdown, every choice borrowed from an existing standard and recorded as an ADR
 - ADR-0007 — `AGENTS.md` as the single source of truth; concept phase settled.
 - ADR-0008 — adopt the-way via a copied `starter/` skeleton; version this repo
   as the standard.
+
+- **Adopter migration:** none — first release.

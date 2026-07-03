@@ -192,3 +192,6 @@ itself:
   agent should behave in this repo).
 - [`decisions/`](decisions/) — read in order, it shows *why* the method is the way
   it is: decision-trail documents its own construction.
+- [`adopting.md`](adopting.md) — the on-ramp for using decision-trail in **your own
+  repo**: how to start fresh, inject it into an existing repo, or update to a newer
+  version.

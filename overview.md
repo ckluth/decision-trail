@@ -18,7 +18,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0001 A generic way to work on projects](ideas/0001-a-generic-way-to-work-on-projects.md) | 2026-06-28 | promoted | |
 | [0002 Adopting the-way in other project repos](ideas/0002-adopting-the-way-in-other-repos.md) | 2026-06-28 | promoted | |
 | [0003 An always up-to-date overview.md](ideas/0003-an-always-up-to-date-overview.md) | 2026-06-28 | promoted | |
-| [0004 Updating an adopted the-way should be easy](ideas/0004-updating-an-adopted-the-way-should-be-easy.md) | 2026-06-28 | seed | |
+| [0004 Using decision-trail in your own repo should be as easy as possible](ideas/0004-using-decision-trail-in-your-own-repo-should-be-easy.md) | 2026-06-28 | promoted | |
 | [0005 The name "the-way" may be too pretentious to share](ideas/0005-renaming-the-way.md) | 2026-06-28 | promoted | |
 | [0006 Documentation flaw — sync and audience](ideas/0006-documentation-flaw-sync-and-audience.md) | 2026-06-28 | promoted | |
 | [0007 Artifact numbering is ordinal only — always use the next free slot](ideas/0007-artifact-numbering-is-ordinal-only.md) | 2026-06-29 | promoted | |
@@ -27,6 +27,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0010 A human-friendly travel diary for the human-machine interface](ideas/0010-a-human-friendly-travel-diary.md) | 2026-07-03 | promoted | |
 | [0011 The confirmation guard is never perfectly safe — scope lives in the "yes"](ideas/0011-confirmation-guard-never-perfectly-safe.md) | 2026-07-03 | promoted | |
 | [0012 Intermediate artifacts — a scratch persistence layer for execution](ideas/0012-intermediate-artifacts-a-scratch-layer-for-execution.md) | 2026-07-03 | promoted | |
+| [0013 Every change must ship precise, agent-reliable update instructions for older adopters](ideas/0013-every-change-ships-reliable-update-instructions.md) | 2026-07-03 | seed | |
 
 ## Decisions
 
@@ -52,6 +53,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0018 A travel diary for the human-machine interface](decisions/0018-a-travel-diary-for-the-human-machine-interface.md) | 2026-07-03 | accepted | |
 | [0019 Teach that the confirmation guard is never perfectly safe](decisions/0019-confirmation-guard-never-perfectly-safe.md) | 2026-07-03 | accepted | |
 | [0020 Intermediate artifacts — a scratch persistence layer for execution](decisions/0020-intermediate-artifacts-a-scratch-layer-for-execution.md) | 2026-07-03 | accepted | |
+| [0021 A single adopter on-ramp covering fresh, inject, and update](decisions/0021-a-single-adopter-on-ramp-fresh-inject-update.md) | 2026-07-03 | accepted | |
 
 ## Plans
 
@@ -67,3 +69,4 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0008 Ship the travel diary as an optional human-facing companion](plans/0008-ship-the-travel-diary.md) | 2026-07-03 | done | |
 | [0009 Teach that the confirmation guard is never perfectly safe](plans/0009-teach-confirmation-guard-fragility.md) | 2026-07-03 | done | |
 | [0010 Ship intermediate artifacts as an optional execution-stage companion](plans/0010-ship-intermediate-artifacts.md) | 2026-07-03 | done | |
+| [0011 Ship the adopter on-ramp (`adopting.md`) and the release-migration contract](plans/0011-ship-adopter-on-ramp-and-migration-contract.md) | 2026-07-03 | done | |

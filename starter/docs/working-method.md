@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.5** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.6** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -57,7 +57,7 @@ artifact families:
   Use the classic template (Status / Context / Decision / Consequences); add
   **Decision Drivers** / **Considered Options** when weighing alternatives.
 - **Plans** carry an accepted decision into action: the ADR is the spec, the plan
-  is the *how*, execution is the plan in motion. Tasks use GitHub task-list
+  is the *how*, execution is the plan in motion. Tasks use portable task-list
   markdown (`- [ ]` / `- [x]`).
 
 Every idea, decision, and plan carries a `Date:` (creation date) in its header —
@@ -197,3 +197,7 @@ give it a cheap, conventional place to live.
 
 This repo's own `docs/decisions/0001-adopt-decision-trail.md` records the decision
 to adopt decision-trail. Everything else starts from there.
+
+To **(re)adopt or update** decision-trail — including how to move to a newer
+version and apply each release's `Adopter migration:` steps — see `adopting.md` in
+the standard repo: https://github.com/ckluth/decision-trail/blob/main/adopting.md
