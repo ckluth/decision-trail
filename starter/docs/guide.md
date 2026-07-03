@@ -123,6 +123,13 @@ stay findable. Tags show up as a `Tags` column in the overview. The vocabulary i
 recommended, not enforced, and curated per repo; a repo with no need simply uses
 no tags.
 
+Alongside the overview sits an optional, human-facing companion: the **travel
+diary** (`docs/travel-diary.md`). Where the overview is a terse, derived status
+board, the diary is loose prose — a growing, newest-first logbook you can skim
+after a break to catch up on *where we are, what changed, what's left, and what's
+next*. It touches no artifact and is never a source of truth; adding a chapter is a
+guard-free, informal task. A repo that doesn't want one simply has none.
+
 ## How to start
 
 1. Capture a thought as an idea in `docs/ideas/`.

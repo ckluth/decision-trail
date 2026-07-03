@@ -5,6 +5,27 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.4.0] - 2026-07-03
+
+### Added
+- ADR-0018 — the **travel diary** (idea 0010): an optional, human-facing companion
+  file (`travel-diary.md`) that narrates the journey in loose, newest-first prose —
+  *where we are / what we achieved / what is left / what is next* — so a human
+  catching up reads one short entry instead of synthesizing across `overview.md`,
+  the active plan, and recent ADRs. It is the human-facing counterpart to the
+  machine-facing overview: authored/prose/narrative vs. derived/terse/state. The
+  diary is **self-describing** (carries its own agent-instructions header), sits
+  **outside the lifecycle and cross-link vocabulary**, is explicitly **not a source
+  of truth** (so its drift is harmless), and is maintained **guard-free** — "add a
+  chapter" is a light-weight task with no ADR, no plan, and no confirmation guard.
+  The method ships the **mechanism + a `starter/docs/travel-diary.md` template**;
+  unlike the project-specific `Tags:` vocabulary, this home repo **dogfoods a live
+  `travel-diary.md`**. Documented in `starter/docs/working-method.md` (new **Travel
+  diary** section + layout entry), rendered into this repo's `AGENTS.md`, noted as a
+  guard-free exception in the agent operating guidance (this repo and
+  `starter/AGENTS.md`), and mentioned in both `guide.md` renderings. Provenance
+  citation bumped to v2.4. Minor/additive bump — repos without a diary are unchanged.
+
 ## [2.3.0] - 2026-07-03
 
 ### Added

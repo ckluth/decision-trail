@@ -77,6 +77,7 @@ state, and whenever asked.
 guide.md      narrative introduction (read this first)
 AGENTS.md     this file — the terse reference + agent guidance
 overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
+travel-diary.md optional human-facing logbook (companion, not a source of truth)
 ideas/        idea artifacts
 decisions/    proposal + decision artifacts (ADRs)
 plans/        plan + execution artifacts
@@ -126,6 +127,31 @@ because tags name a *project's* recurring themes (Genericity #7). See ADR-0017.
 **Recommended tags for this repo:** _(none yet — decision-trail's home repo needs
 no tags of its own; adopting repos list their recurring themes here.)_
 
+## Travel diary (optional companion)
+
+The travel diary is an optional, **human-facing** companion to the machine-facing
+`overview.md`. Where the overview is *derived, terse, and state-oriented*, the
+diary is *authored, prose, and narrative* — a single growing logbook, newest entry
+first, that a colleague can skim after a break to learn *where we are, what changed
+last session, what is left, and what is next* without synthesizing across every
+artifact.
+
+- **One file, `travel-diary.md`.** Newest entry first. Each entry is headed with
+  the date in brackets — `## [YYYY-MM-DD]` — with same-day entries disambiguated by
+  a counter: `## [YYYY-MM-DD-(2)]`, `-(3)`, and so on.
+- **Each entry** is brief friendly prose covering roughly **where we are**, **what
+  we achieved** (since the last entry), **what is left**, and **what is next**,
+  optionally closing with a one- or two-sentence **continuation brief** that links
+  the relevant plan or ADR.
+- **Self-describing.** The file carries its own short agent-instructions header, so
+  the mechanism travels with the artifact.
+- **Maintained guard-free.** Adding a chapter is a light-weight task — no ADR, no
+  plan, and **no confirmation guard** — because the diary touches nothing
+  authoritative.
+- **Not a source of truth.** The ideas, decisions, and plans remain the only source
+  of truth; the diary is prose narration over them, sits outside the lifecycle and
+  cross-link vocabulary, and may drift harmlessly. It is optional. See ADR-0018.
+
 ## How to start working
 
 1. Capture a thought as an idea in `ideas/`.
@@ -165,3 +191,11 @@ These rules are for an AI agent working in this repo:
   **Refresh procedure:** scan each family for `# N. Title` (line 1) and
   `- Status:` / `- Date:` / `- Tags:` (header block) → rewrite the three tables
   in `overview.md`. Nothing else is needed.
+- **Travel diary — guard-free.** `travel-diary.md` is an optional, informal
+  human-facing logbook, outside the lifecycle and **not a source of truth**
+  (ADR-0018). When the user says *"add a chapter to the travel diary"* (or
+  similar), prepend a new dated `## [YYYY-MM-DD]` section (same-day entries
+  disambiguated `-(2)`, `-(3)`, …) covering where we are / what we achieved / what
+  is left / what is next, with an optional continuation brief. This is a
+  light-weight task — **no ADR, no plan, and no confirmation guard**. Full
+  instructions live in the diary's own header.

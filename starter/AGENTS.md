@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.3 — https://github.com/ckluth/decision-trail
+Based on decision-trail v2.4 — https://github.com/ckluth/decision-trail
 
 ## Agent operating guidance
 
@@ -39,3 +39,10 @@ These rules are for an AI agent working in this repo:
   <date>". Regenerate it — and update the stamp — whenever the user explicitly
   asks. A user may flip a state directly in an artifact; the next regeneration
   reconciles the index.
+- **Travel diary — guard-free.** `docs/travel-diary.md` is an optional, informal
+  human-facing logbook, outside the lifecycle and **not a source of truth**. When
+  the user says *"add a chapter to the travel diary"* (or similar), prepend a new
+  dated `## [YYYY-MM-DD]` section (same-day entries disambiguated `-(2)`, `-(3)`,
+  …) covering where we are / what we achieved / what is left / what is next, with
+  an optional continuation brief. This is a light-weight task — **no ADR, no plan,
+  and no confirmation guard**. Full instructions live in the diary's own header.

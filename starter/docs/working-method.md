@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.3** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.4** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -85,6 +85,7 @@ AGENTS.md               repo root — points here; carries agent guidance
 docs/guide.md           narrative introduction (read this first)
 docs/working-method.md  this file — the terse reference
 docs/overview.md        derived status index (regenerated dated snapshot)
+docs/travel-diary.md    optional human-facing logbook (companion, not a source of truth)
 docs/ideas/             idea artifacts
 docs/decisions/         proposal + decision artifacts (ADRs)
 docs/plans/             plan + execution artifacts
@@ -128,6 +129,32 @@ because tags name a *project's* recurring themes (Genericity #7).
 
 **Recommended tags for this repo:** _(none yet — list your project's recurring
 themes here, e.g. `auth`, `api`, `docs`)_
+
+## Travel diary (optional companion)
+
+The travel diary is an optional, **human-facing** companion to the machine-facing
+`docs/overview.md`. Where the overview is *derived, terse, and state-oriented*, the
+diary is *authored, prose, and narrative* — a single growing logbook, newest entry
+first, that a colleague can skim after a break to learn *where we are, what changed
+last session, what is left, and what is next* without synthesizing across every
+artifact.
+
+- **One file, `docs/travel-diary.md`.** Newest entry first. Each entry is headed
+  with the date in brackets — `## [YYYY-MM-DD]` — with same-day entries
+  disambiguated by a counter: `## [YYYY-MM-DD-(2)]`, `-(3)`, and so on.
+- **Each entry** is brief friendly prose covering roughly **where we are**, **what
+  we achieved** (since the last entry), **what is left**, and **what is next**,
+  optionally closing with a one- or two-sentence **continuation brief** that links
+  the relevant plan or ADR.
+- **Self-describing.** The file carries its own short agent-instructions header, so
+  the mechanism travels with the artifact.
+- **Maintained guard-free.** Adding a chapter is a light-weight task — no ADR, no
+  plan, and **no confirmation guard** — because the diary touches nothing
+  authoritative.
+- **Not a source of truth.** The ideas, decisions, and plans remain the only source
+  of truth; the diary is prose narration over them, sits outside the lifecycle and
+  cross-link vocabulary, and may drift harmlessly. It is optional — a repo that does
+  not want one simply has none.
 
 ## How to start working
 
