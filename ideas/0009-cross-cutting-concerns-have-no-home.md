@@ -1,7 +1,8 @@
 # Idea: cross-cutting concerns have no navigable home — is a "spine" missing?
 
 Date: 2026-07-03
-Status: seed
+Status: promoted
+Promoted to: [ADR-0017](../decisions/0017-optional-tags-axis-for-cross-cutting-navigation.md)
 
 ## Observation
 

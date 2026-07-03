@@ -62,7 +62,9 @@ artifact families:
   markdown (`- [ ]` / `- [x]`).
 
 Every idea, decision, and plan carries a `Date:` (creation date) in its header —
-**mandatory**. `overview.md` is a derived status index over all three families: a
+**mandatory**. It may also carry an optional `Tags:` line — comma-separated theme
+words, omitted when empty (see **Tags** below). `overview.md` is a derived status
+index over all three families: a
 single dated snapshot of each artifact's name, creation date, and state. It is
 **regenerated wholesale from the artifact headers** (never hand-patched) and
 stamped "as of <date>" (ADR-0011). Keeping it current is the **agent's**
@@ -108,6 +110,22 @@ promotion**. A link is reciprocal only when *both* ends are single and write-onc
 because their reverse side accumulates (one parent → many children; one ADR → many
 plans). See ADR-0012.
 
+## Tags (optional)
+
+Any idea, decision, or plan may carry an optional `Tags:` header line — a
+comma-separated list of theme words that re-slice the artifacts along a
+shared-theme axis, so cross-cutting threads become findable without reading every
+artifact in order. Tags surface as a `Tags` column in the derived `overview.md`.
+
+Governance is deliberately light: the vocabulary is **recommended, not enforced**,
+and **curated per repo**. Off-list tags are always allowed and nothing rejects
+them; over-tagging or vague tags only make a tag less useful — they never break or
+spoil the trail. A repo defines its own vocabulary below; the method ships none,
+because tags name a *project's* recurring themes (Genericity #7). See ADR-0017.
+
+**Recommended tags for this repo:** _(none yet — decision-trail's home repo needs
+no tags of its own; adopting repos list their recurring themes here.)_
+
 ## How to start working
 
 1. Capture a thought as an idea in `ideas/`.
@@ -145,5 +163,5 @@ These rules are for an AI agent working in this repo:
   state directly in an artifact; the next regeneration reconciles the index.
 
   **Refresh procedure:** scan each family for `# N. Title` (line 1) and
-  `- Status:` / `- Date:` (header block) → rewrite the three tables in
-  `overview.md`. Nothing else is needed.
+  `- Status:` / `- Date:` / `- Tags:` (header block) → rewrite the three tables
+  in `overview.md`. Nothing else is needed.

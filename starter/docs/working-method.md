@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.2** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.3** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -61,7 +61,9 @@ artifact families:
   markdown (`- [ ]` / `- [x]`).
 
 Every idea, decision, and plan carries a `Date:` (creation date) in its header —
-**mandatory**. Artifact numbers are **ordinal only**: assign the next unused
+**mandatory**. It may also carry an optional `Tags:` line — comma-separated tag
+words naming cross-cutting themes; omit the line when empty (see **Tags** below).
+Artifact numbers are **ordinal only**: assign the next unused
 number in that family (`docs/ideas/`, `docs/decisions/`, `docs/plans/` are
 independent sequences). Never derive a number from a related artifact — a plan
 implementing ADR-0004 is not named `0004`; it takes the next free plan slot.
@@ -73,8 +75,8 @@ hand-patched) and stamped "as of <date>". Regenerate it whenever the user
 explicitly asks.
 
   **Refresh procedure:** scan each family for `# N. Title` (line 1) and
-  `- Status:` / `- Date:` (header block) → rewrite the three tables in
-  `docs/overview.md`. Nothing else is needed.
+  `- Status:` / `- Date:` / `- Tags:` (header block) → rewrite the three tables
+  in `docs/overview.md`. Nothing else is needed.
 
 ## Layout
 
@@ -110,6 +112,22 @@ promotion**. A link is reciprocal only when *both* ends are single and write-onc
 (promotion: one idea ↔ one ADR); `Parent` and `Implements` stay forward-only
 because their reverse side accumulates (one parent → many children; one ADR → many
 plans).
+
+## Tags (optional)
+
+Any idea, decision, or plan may carry an optional `Tags:` header line — a
+comma-separated list of theme words that re-slice the artifacts along a
+shared-theme axis, so cross-cutting threads become findable without reading every
+artifact in order. Tags surface as a `Tags` column in the derived `docs/overview.md`.
+
+Governance is deliberately light: the vocabulary is **recommended, not enforced**,
+and **curated per repo**. Off-list tags are always allowed and nothing rejects
+them; over-tagging or vague tags only make a tag less useful — they never break or
+spoil the trail. A repo defines its own vocabulary below; the method ships none,
+because tags name a *project's* recurring themes (Genericity #7).
+
+**Recommended tags for this repo:** _(none yet — list your project's recurring
+themes here, e.g. `auth`, `api`, `docs`)_
 
 ## How to start working
 

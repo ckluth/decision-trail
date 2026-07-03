@@ -5,6 +5,21 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.3.0] - 2026-07-03
+
+### Added
+- ADR-0017 — an optional **`Tags:`** header field (idea 0009) plus a derived
+  `Tags` column in `overview.md`, re-slicing artifacts along a cross-cutting
+  theme axis so parallel threads stay findable without an O(n) read. The method
+  ships only the **mechanism and governance rule** (recommended-but-not-enforced,
+  **curated per repo**) — no content vocabulary, since tags name a *project's*
+  themes (Genericity #7). Documented in `starter/docs/working-method.md` (new
+  **Tags** section + refresh procedure), rendered into this repo's `AGENTS.md`,
+  and mentioned in both `guide.md` renderings; the `starter/` skeleton carries an
+  empty "recommended tags" placeholder and this repo defines none. A filtered
+  by-tag view is explicitly deferred. Minor/additive bump — existing artifacts
+  without a `Tags:` line are unchanged.
+
 ## [2.2.0] - 2026-06-29
 
 ### Added

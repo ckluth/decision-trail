@@ -117,6 +117,12 @@ it current is the **agent's** job, not yours. If you flip a state directly in an
 artifact, the next regeneration reconciles the overview. You can ask the agent to
 regenerate it at any time.
 
+Artifacts may also carry an optional `Tags:` header line — comma-separated theme
+words that re-slice the work along a shared-theme axis, so cross-cutting threads
+stay findable. Tags show up as a `Tags` column in the overview. The vocabulary is
+recommended, not enforced, and curated per repo; a repo with no need simply uses
+no tags.
+
 ## How to start
 
 1. Capture a thought as an idea in `docs/ideas/`.

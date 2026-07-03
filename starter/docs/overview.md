@@ -13,18 +13,18 @@ You can ask the agent to **regenerate the overview** at any time.
 
 ## Ideas
 
-| Name | Created | State |
-|------|---------|-------|
-| _none yet_ | | |
+| Name | Created | State | Tags |
+|------|---------|-------|------|
+| _none yet_ | | | |
 
 ## Decisions
 
-| Name | Created | State |
-|------|---------|-------|
-| [0001 Adopt decision-trail](decisions/0001-adopt-decision-trail.md) | | proposed |
+| Name | Created | State | Tags |
+|------|---------|-------|------|
+| [0001 Adopt decision-trail](decisions/0001-adopt-decision-trail.md) | | proposed | |
 
 ## Plans
 
-| Name | Created | State |
-|------|---------|-------|
-| _none yet_ | | |
+| Name | Created | State | Tags |
+|------|---------|-------|------|
+| _none yet_ | | | |
