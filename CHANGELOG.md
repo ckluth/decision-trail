@@ -5,6 +5,30 @@ versioned with semver; adopting projects cite the version they copied (ADR-0008)
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.5.0] - 2026-07-03
+
+### Added
+- ADR-0020 — **intermediate artifacts** (idea 0012): an optional, informal
+  `intermediate-artifacts/` folder that gives the *execution* stage a scratch
+  persistence layer for material a plan gathers along the way (data, findings,
+  intermediate outputs) to work on later, across steps or sessions. It is the
+  execution-stage counterpart to the human-facing travel diary: it sits **outside
+  the lifecycle and cross-link vocabulary**, is explicitly **not a source of truth**
+  (so its drift is harmless), is **internally unstructured** (organization is the
+  project's business), and is maintained **guard-free** — creating/using/deleting
+  files needs no ADR, no plan, and no confirmation guard. It is **committed by
+  default** so gathered material survives across machines and sessions (a repo may
+  gitignore it), and is **left to rot harmlessly** once a plan is done. A plan may
+  carry an informal forward-only prose pointer for findability (not a formal
+  cross-link). The method ships the **mechanism + a documented-but-empty
+  `starter/docs/intermediate-artifacts/` folder** (purpose `README`); this home repo
+  seeds its own `intermediate-artifacts/`. Documented in
+  `starter/docs/working-method.md` (new **Intermediate artifacts** section + layout
+  entry), rendered into this repo's `AGENTS.md`, noted as a guard-free exception in
+  the agent operating guidance (this repo and `starter/AGENTS.md`), and mentioned in
+  both `guide.md` renderings. Provenance citation bumped to v2.5. Minor/additive bump
+  — repos without the folder are unchanged.
+
 ## [2.4.0] - 2026-07-03
 
 ### Added

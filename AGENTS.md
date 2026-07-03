@@ -78,6 +78,7 @@ guide.md      narrative introduction (read this first)
 AGENTS.md     this file — the terse reference + agent guidance
 overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
 travel-diary.md optional human-facing logbook (companion, not a source of truth)
+intermediate-artifacts/ optional scratch persistence layer for execution (not a source of truth)
 ideas/        idea artifacts
 decisions/    proposal + decision artifacts (ADRs)
 plans/        plan + execution artifacts
@@ -152,8 +153,38 @@ artifact.
   of truth; the diary is prose narration over them, sits outside the lifecycle and
   cross-link vocabulary, and may drift harmlessly. It is optional. See ADR-0018.
 
-## How to start working
+## Intermediate artifacts (optional companion)
 
+Intermediate artifacts are an optional, informal **scratch persistence layer for
+the execution stage**. Executing a plan sometimes means *gathering* material first
+— pulling data together, extracting or transcribing findings, capturing
+intermediate outputs — and working on it later, across steps or sessions. That
+working material has no home among the authoritative artifacts (which would pollute
+a plan) and dies with the session's context if left unsaved. Intermediate artifacts
+give it a cheap, conventional place to live (ADR-0020).
+
+- **A folder, `intermediate-artifacts/`.** A scratch space for material gathered
+  while executing a plan.
+- **Not a source of truth.** The ideas, decisions, and plans remain the only source
+  of truth; intermediate artifacts hold disposable working material, sit outside the
+  lifecycle and cross-link vocabulary, and may drift or go stale harmlessly because
+  nothing authoritative depends on them.
+- **Internally unstructured.** The method defines only *where* the folder lives and
+  *what it is not*; how its contents are organized is entirely the project's business
+  (one subfolder per plan is a fine option, not a rule).
+- **Guard-free.** Creating, populating, and removing intermediate artifacts touches
+  nothing authoritative, so it needs **no ADR, no plan, and no confirmation guard**.
+- **Committed by default.** By default the folder is committed to git, so gathered
+  material survives across machines and sessions (Continuity #1). A repo that prefers
+  purely-local scratch may gitignore it instead.
+- **Optional forward-only pointer.** A plan *may* carry an informal prose note like
+  "execution parked material in `intermediate-artifacts/…`" for findability — plain
+  prose, **not** a formal cross-link field, with no reciprocal back-link.
+- **Left to rot harmlessly.** When a plan is `done`, its intermediate artifacts are
+  simply left in place; a repo may prune them, but the method requires no cleanup.
+- **Optional.** A repo that does not need intermediate artifacts simply has none.
+
+## How to start working
 1. Capture a thought as an idea in `ideas/`.
 2. When it matures, open an ADR in `decisions/` with `Status: proposed`.
 3. Accept or reject it; an accepted ADR is a decision.
@@ -182,7 +213,9 @@ These rules are for an AI agent working in this repo:
   new ADR, with amended or superseded ADRs cross-linked (never edited away).
 - **Confirmation guard.** Never rush into writing, editing, or implementing. First
   briefly explain what you intend to do, then wait for explicit approval.
-  Discussing and proposing is always fine — acting requires a green light.
+  Discussing and proposing is always fine — acting requires a green light. Before
+  acting, name your intended scope explicitly — especially when a bare "yes"/"ok"
+  could be read as approving a larger batch rather than just the single next step.
 - **Keep `overview.md` current.** It is a derived snapshot, regenerated wholesale
   from the artifact headers (never hand-patched) and stamped "as of <date>"
   (ADR-0011). Regenerate it whenever the user explicitly asks. A user may flip a
@@ -199,3 +232,10 @@ These rules are for an AI agent working in this repo:
   is left / what is next, with an optional continuation brief. This is a
   light-weight task — **no ADR, no plan, and no confirmation guard**. Full
   instructions live in the diary's own header.
+- **Intermediate artifacts — guard-free.** `intermediate-artifacts/` is an
+  optional, informal scratch persistence layer for material gathered during plan
+  execution, outside the lifecycle and **not a source of truth** (ADR-0020).
+  Creating, populating, and deleting files there is a light-weight task — **no ADR,
+  no plan, and no confirmation guard** — because it touches nothing authoritative.
+  Its internal organization is the project's business; it is committed by default
+  (a repo may gitignore it) and left to rot harmlessly once a plan is done.

@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.4** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.5** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -86,6 +86,7 @@ docs/guide.md           narrative introduction (read this first)
 docs/working-method.md  this file — the terse reference
 docs/overview.md        derived status index (regenerated dated snapshot)
 docs/travel-diary.md    optional human-facing logbook (companion, not a source of truth)
+docs/intermediate-artifacts/  optional scratch persistence layer for execution (not a source of truth)
 docs/ideas/             idea artifacts
 docs/decisions/         proposal + decision artifacts (ADRs)
 docs/plans/             plan + execution artifacts
@@ -156,8 +157,38 @@ artifact.
   cross-link vocabulary, and may drift harmlessly. It is optional — a repo that does
   not want one simply has none.
 
-## How to start working
+## Intermediate artifacts (optional companion)
 
+Intermediate artifacts are an optional, informal **scratch persistence layer for
+the execution stage**. Executing a plan sometimes means *gathering* material first
+— pulling data together, extracting or transcribing findings, capturing
+intermediate outputs — and working on it later, across steps or sessions. That
+working material has no home among the authoritative artifacts (which would pollute
+a plan) and dies with the session's context if left unsaved. Intermediate artifacts
+give it a cheap, conventional place to live.
+
+- **A folder, `docs/intermediate-artifacts/`.** A scratch space for material
+  gathered while executing a plan.
+- **Not a source of truth.** The ideas, decisions, and plans remain the only source
+  of truth; intermediate artifacts hold disposable working material, sit outside the
+  lifecycle and cross-link vocabulary, and may drift or go stale harmlessly because
+  nothing authoritative depends on them.
+- **Internally unstructured.** The method defines only *where* the folder lives and
+  *what it is not*; how its contents are organized is entirely the project's business
+  (one subfolder per plan is a fine option, not a rule).
+- **Guard-free.** Creating, populating, and removing intermediate artifacts touches
+  nothing authoritative, so it needs **no ADR, no plan, and no confirmation guard**.
+- **Committed by default.** By default the folder is committed to git, so gathered
+  material survives across machines and sessions (Continuity #1). A repo that prefers
+  purely-local scratch may gitignore it instead.
+- **Optional forward-only pointer.** A plan *may* carry an informal prose note like
+  "execution parked material in `docs/intermediate-artifacts/…`" for findability —
+  plain prose, **not** a formal cross-link field, with no reciprocal back-link.
+- **Left to rot harmlessly.** When a plan is `done`, its intermediate artifacts are
+  simply left in place; a repo may prune them, but the method requires no cleanup.
+- **Optional.** A repo that does not need intermediate artifacts simply has none.
+
+## How to start working
 1. Capture a thought as an idea in `docs/ideas/`.
 2. When it matures, open an ADR in `docs/decisions/` with `Status: proposed`.
 3. Accept or reject it; an accepted ADR is a decision.

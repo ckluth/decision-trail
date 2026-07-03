@@ -130,6 +130,13 @@ after a break to catch up on *where we are, what changed, what's left, and what'
 next*. It touches no artifact and is never a source of truth; adding a chapter is a
 guard-free, informal task. A repo that doesn't want one simply has none.
 
+For the *execution* stage there's a second optional companion: an
+**intermediate-artifacts** folder (`docs/intermediate-artifacts/`) — a scratch
+space where a plan can park material it gathers along the way (data, findings,
+intermediate outputs) to work on later. Like the diary it's informal, guard-free,
+and never a source of truth; it's committed by default so the material survives a
+break, and a repo that doesn't need one simply has none.
+
 ## How to start
 
 1. Capture a thought as an idea in `docs/ideas/`.
@@ -140,6 +147,39 @@ guard-free, informal task. A repo that doesn't want one simply has none.
 
 Your repo's `docs/decisions/0001-adopt-decision-trail.md` already records the
 decision to adopt the method. Everything else grows from there.
+
+## Working with an agent: a "yes" has a scope
+
+When an AI agent does the work, one rule protects you above all others: the
+**confirmation guard** — the agent discusses and proposes freely, but does not
+*act* (write, edit, implement) until you give an explicit green light. It is the
+seam between thinking and doing.
+
+Here is the uncomfortable truth worth internalizing: **that guard is never
+perfectly safe, and cannot be.** The rule is sound; the weak point is the *word you
+answer with*. A bare "yes", "ok", or "go on" carries an unavoidable ambiguity of
+**scope** — did you approve *just this one next step*, or the whole logical batch
+that step obviously *implies*? You and the agent can each hold a different, silent
+answer. The words matched; the intended scope did not. That is exactly how a
+narrow "yes" to one design choice can be read as blanket approval to draft an idea,
+write the decision, *accept* it, plan it, and implement the lot in a single sweep.
+
+It is tempting to think decision-trail's **step-by-step** nature makes this
+impossible. It does help — small artifacts and explicit stages give many natural
+places to pause. But do not let it lull you into a false sense of safety: the guard
+only truly binds when *both sides share the same picture of what a given
+confirmation covers*. A step-by-step method with ambiguous "yes"es still lets a
+whole batch slip through on one word.
+
+So treat scope as a **shared responsibility**, negotiated in the confirmation
+itself:
+
+- **The agent** should, before acting, take a short look at *what it thinks it is
+  confirming* against *what you might think you confirmed* — and when those could
+  diverge, state its intended scope plainly instead of assuming the larger batch.
+- **You**, when the scope is at all unclear, should bound the approval in words
+  rather than answering with a bare "yes". A few extra words —
+  *"yes, but only this single next step [...]"* — are far cheaper than a rollback.
 
 ## Where to go next
 

@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.4 — https://github.com/ckluth/decision-trail
+Based on decision-trail v2.5 — https://github.com/ckluth/decision-trail
 
 ## Agent operating guidance
 
@@ -33,7 +33,9 @@ These rules are for an AI agent working in this repo:
   ADRs, and plans under `docs/`.)
 - **Confirmation guard.** Never rush into writing, editing, or implementing. First
   briefly explain what you intend to do, then wait for explicit approval.
-  Discussing and proposing is always fine — acting requires a green light.
+  Discussing and proposing is always fine — acting requires a green light. Before
+  acting, name your intended scope explicitly — especially when a bare "yes"/"ok"
+  could be read as approving a larger batch rather than just the single next step.
 - **Keep `docs/overview.md` current.** It is a derived snapshot, regenerated
   wholesale from the artifact headers (never hand-patched) and stamped "as of
   <date>". Regenerate it — and update the stamp — whenever the user explicitly
@@ -46,3 +48,10 @@ These rules are for an AI agent working in this repo:
   …) covering where we are / what we achieved / what is left / what is next, with
   an optional continuation brief. This is a light-weight task — **no ADR, no plan,
   and no confirmation guard**. Full instructions live in the diary's own header.
+- **Intermediate artifacts — guard-free.** `docs/intermediate-artifacts/` is an
+  optional, informal scratch persistence layer for material gathered during plan
+  execution, outside the lifecycle and **not a source of truth**. Creating,
+  populating, and deleting files there is a light-weight task — **no ADR, no plan,
+  and no confirmation guard** — because it touches nothing authoritative. Its
+  internal organization is the project's business; it is committed by default (a
+  repo may gitignore it) and left to rot harmlessly once a plan is done.

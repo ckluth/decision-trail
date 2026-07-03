@@ -25,6 +25,8 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0008 Overview regeneration should be more economical](ideas/0008-overview-regeneration-should-be-more-economical.md) | 2026-06-29 | promoted | |
 | [0009 Cross-cutting concerns have no navigable home — is a "spine" missing?](ideas/0009-cross-cutting-concerns-have-no-home.md) | 2026-07-03 | promoted | |
 | [0010 A human-friendly travel diary for the human-machine interface](ideas/0010-a-human-friendly-travel-diary.md) | 2026-07-03 | promoted | |
+| [0011 The confirmation guard is never perfectly safe — scope lives in the "yes"](ideas/0011-confirmation-guard-never-perfectly-safe.md) | 2026-07-03 | promoted | |
+| [0012 Intermediate artifacts — a scratch persistence layer for execution](ideas/0012-intermediate-artifacts-a-scratch-layer-for-execution.md) | 2026-07-03 | promoted | |
 
 ## Decisions
 
@@ -48,6 +50,8 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0016 Overview regeneration on explicit request only](decisions/0016-overview-regeneration-on-explicit-request-only.md) | 2026-06-29 | accepted | |
 | [0017 An optional `Tags:` axis for cross-cutting navigation](decisions/0017-optional-tags-axis-for-cross-cutting-navigation.md) | 2026-07-03 | accepted | |
 | [0018 A travel diary for the human-machine interface](decisions/0018-a-travel-diary-for-the-human-machine-interface.md) | 2026-07-03 | accepted | |
+| [0019 Teach that the confirmation guard is never perfectly safe](decisions/0019-confirmation-guard-never-perfectly-safe.md) | 2026-07-03 | accepted | |
+| [0020 Intermediate artifacts — a scratch persistence layer for execution](decisions/0020-intermediate-artifacts-a-scratch-layer-for-execution.md) | 2026-07-03 | accepted | |
 
 ## Plans
 
@@ -61,3 +65,5 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0006 Update overview regeneration rule to explicit-request only](plans/0006-update-overview-regeneration-rule.md) | 2026-06-29 | done | |
 | [0007 Add the optional `Tags:` axis for cross-cutting navigation](plans/0007-add-optional-tags-axis.md) | 2026-07-03 | done | |
 | [0008 Ship the travel diary as an optional human-facing companion](plans/0008-ship-the-travel-diary.md) | 2026-07-03 | done | |
+| [0009 Teach that the confirmation guard is never perfectly safe](plans/0009-teach-confirmation-guard-fragility.md) | 2026-07-03 | done | |
+| [0010 Ship intermediate artifacts as an optional execution-stage companion](plans/0010-ship-intermediate-artifacts.md) | 2026-07-03 | done | |
