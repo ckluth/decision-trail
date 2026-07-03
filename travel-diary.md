@@ -32,6 +32,49 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-03-(2)]
+
+**Where we are.** decision-trail is now at **v2.5** — committed, pushed, and tagged
+`v2.5.0` on `main`. The trail runs `ideas` 0001–0012, `decisions` 0001–0020, and
+`plans` 0001–0010. The method stays settled; this change was itself made
+decision-trail, start to finish.
+
+**What we achieved.** We promoted a second concept proven in the sibling repo
+*josyn-builder* — **intermediate artifacts** — into the method:
+- Captured the working-material gap as
+  [idea 0012](ideas/0012-intermediate-artifacts-a-scratch-layer-for-execution.md):
+  executing a plan sometimes means *gathering* material to work on later, and that
+  scratch had no home among the authoritative artifacts.
+- Worked through all seven open questions one at a time, then decided it in
+  [ADR-0020](decisions/0020-intermediate-artifacts-a-scratch-layer-for-execution.md):
+  an optional, informal `intermediate-artifacts/` folder — outside the lifecycle,
+  **not a source of truth**, guard-free, internally unstructured, committed by
+  default, left to rot harmlessly. It's the *execution-stage* cousin of the
+  human-facing travel diary.
+- Carried it into action via
+  [plan 0010](plans/0010-ship-intermediate-artifacts.md): new **Intermediate
+  artifacts** section in the canonical `working-method.md`, a documented-but-empty
+  `starter/docs/intermediate-artifacts/` folder, a seeded home-repo folder,
+  regenerated `AGENTS.md` (method body + guard-free note, mirrored in
+  `starter/AGENTS.md`), a mention in both `guide.md` renderings, a `CHANGELOG.md`
+  **2.5.0** entry, and a regenerated `overview.md`. Provenance bumped to v2.5.
+
+Along the way we also **committed the pending confirmation-guard teaching work**
+(idea 0011, ADR-0019, plan 0009) that had been sitting uncommitted, and added a
+`.gitignore` for Visual Studio's `.vs/` folder.
+
+**What is left.** Nothing on this thread — plan 0010 is `done`. One loose end noted
+for later: **v2.4.0 was never tagged** (the travel-diary release), so the tag
+history skips from v2.3.0 to v2.5.0.
+
+**What is next.** Use intermediate artifacts in anger: the next plan that needs to
+park gathered data now has a conventional home. Optionally, backfill the missing
+`v2.4.0` tag.
+
+*Continuation brief:* State lives in the artifacts. For this feature, the reasoning
+is in [ADR-0020](decisions/0020-intermediate-artifacts-a-scratch-layer-for-execution.md)
+and the execution record in [plan 0010](plans/0010-ship-intermediate-artifacts.md).
+
 ## [2026-07-03]
 
 *(First entry — this diary was born the same session the feature landed, so it
