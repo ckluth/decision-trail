@@ -185,6 +185,11 @@ break to catch up on *where we are, what changed, what's left, and what's next*.
 It touches no artifact and is never a source of truth; adding a chapter is a
 guard-free, informal task. A repo that doesn't want one simply has none.
 
+Try it — you'll love it. It's informal, so there's just one habit worth forming:
+before you end a session, say *"update the diary"*. Once this underrated little
+helper is part of your routine, you'll miss it the moment you forget that last,
+super-useful step.
+
 ## Intermediate artifacts
 
 For the *execution* stage there's a second optional companion: an
