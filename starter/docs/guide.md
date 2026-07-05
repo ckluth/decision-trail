@@ -44,6 +44,33 @@ because every mechanic later is just one of these promises made concrete:
    spec-driven stages, agent hand-off files), the method leans on it instead of
    inventing something proprietary.
 
+## The ADR concept, by Michael Nygard
+
+decision-trail doesn't invent its decision records — it borrows them. In 2011
+Michael Nygard described the **Architecture Decision Record** (ADR): a small,
+plain-text file that captures *one* significant decision, its context, and its
+consequences, living alongside the code it affects. His original post remains the
+seminal source:
+
+- Michael Nygard, *Documenting Architecture Decisions* (2011) —
+  https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions
+
+The idea caught on and grew a small ecosystem of templates, tooling, and
+conventions:
+
+- The ADR community hub, with templates and an overview —
+  https://adr.github.io/
+- Joel Parker Henderson's widely-referenced ADR collection and examples —
+  https://github.com/joelparkerhenderson/architecture-decision-record
+
+The classic Nygard template is deliberately tiny — **Status**, **Context**,
+**Decision**, **Consequences** — which is exactly why it fits our promises:
+cheap to write (Economy), plain markdown anyone can read (Transparency), and a
+portable standard we lean on rather than reinvent (Borrow, don't invent). In
+decision-trail an ADR is the middle of the lifecycle: a matured idea is *promoted*
+into a proposal (`Status: proposed`), and the same file *becomes* the decision
+when it's accepted.
+
 ## The lifecycle: how a thought travels
 
 The heart of the method is a single journey a thought can take, and it always
