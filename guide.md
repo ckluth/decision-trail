@@ -80,6 +80,13 @@ Let's make it concrete by following one small example the whole way — **"add a
 dark-mode toggle to a small web app"** — and watching it change shape at each
 stage.
 
+One thing to settle before we start, so nothing below alarms you: **you won't be
+hand-writing any of these files.** Throughout the example, "you" *name and shape*
+each artifact by talking it through — the agent is what actually drafts the
+markdown and creates the file. Read every "you jot down…" / "you write…" below as
+*"you describe it and the agent writes it up"*; the mechanics of who-types-what are
+covered in full later on.
+
 **Idea.** It starts as an *idea*: a cheap, small markdown file in `ideas/`. The
 whole point is that ideas are cheap to write, so you write them down instead of
 losing them. You jot down `ideas/0007-dark-mode-toggle.md`: *"People using the app
