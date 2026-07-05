@@ -1,9 +1,10 @@
 # A guide to working decision-trail
 
 This is the gentle introduction. It tells you what the method is, why it is shaped
-the way it is, and how to use it day to day. Once the ideas here are familiar, the
-terse [`working-method.md`](working-method.md) is all you'll need as a quick
-reference.
+the way it is, and how to use it day to day — teaching by walking one small
+example (a dark-mode toggle) through its whole life, with a couple of diagrams
+along the way. Once the ideas here are familiar, the terse
+[`working-method.md`](working-method.md) is all you'll need as a quick reference.
 
 > Based on **decision-trail vX.Y** — https://github.com/ckluth/decision-trail
 
@@ -45,34 +46,65 @@ because every mechanic later is just one of these promises made concrete:
 
 ## The lifecycle: how a thought travels
 
-The heart of the method is a single journey a thought can take. Not every thought
-goes all the way — most ideas stay ideas — but the path is always the same, and
-each stage has a home.
+The heart of the method is a single journey a thought can take, and it always
+starts as an **idea**. That word is deliberately broad — an idea can be:
+
+- a straight new requirement (*"we need a dark-mode toggle"*);
+- a tiny passing thought;
+- a question you can't yet answer;
+- a big, still-fuzzy concept;
+- the takeaway from a discussion with colleagues;
+- or just an observation that *something* might be improved.
+
+If it's worth not losing, it's worth capturing as an idea — that's the whole point
+of keeping them cheap. Not every idea goes all the way — most ideas stay ideas, and
+that's fine — but the path is always the same, each stage has a home, and each
+stage has its own set of *status* values:
+
+```mermaid
+flowchart LR
+    idea["idea<br/><i>seed → promoted / dropped</i>"] -->|promote| prop["proposal<br/><i>proposed</i>"]
+    prop -->|"accept / reject"| dec["decision<br/><i>accepted / rejected</i>"]
+    dec -->|implement| plan["plan<br/><i>draft → active</i>"]
+    plan -->|execute| exe["execution<br/><i>done / abandoned</i>"]
+```
+
+Let's make it concrete by following one small example the whole way — **"add a
+dark-mode toggle to a small web app"** — and watching it change shape at each
+stage.
 
 **Idea.** It starts as an *idea*: a cheap, small markdown file in `docs/ideas/`.
 The whole point is that ideas are cheap to write, so you write them down instead
-of losing them. An idea is just a seed; it carries a short note of the thought and
-why it might matter. Most ideas wait here. Some get *dropped*. A few mature.
+of losing them. You jot down `docs/ideas/0007-dark-mode-toggle.md`: *"People using
+the app at night want a dark theme — a toggle in settings might help. Worth
+exploring."* Its status is `seed`. That's the entire artifact — a seed, cheap to
+write. Most ideas wait here like this one; some get `dropped`; a few mature.
 
-**Proposal.** When an idea has ripened enough to act on, you *promote* it. It
-becomes a *proposal* — an [ADR](https://adr.github.io/) (Architecture Decision
-Record) in `docs/decisions/`, opened with `Status: proposed`. The ADR is where you
-lay out the context, weigh the options, and state what you propose to do.
+**Proposal.** The dark-mode idea gathers support, so you *promote* it. It becomes a
+*proposal* — an [ADR](https://adr.github.io/) (Architecture Decision Record) in
+`docs/decisions/`, say `docs/decisions/0009-dark-mode-toggle.md`, opened with
+`Status: proposed`. (Notice the number jumped from `0007` to `0009`: numbers are
+just the next free slot *within each family*, never matched across them.) In the
+ADR you write the context (who needs it, which screens), weigh the options
+(auto-detect the OS preference, offer a manual toggle, or do both), and state the
+one you propose.
 
-**Decision.** A proposal doesn't move to a new file when you decide — it *becomes*
-a decision in place. You flip its status to `accepted` (or `rejected`). The same
-file now records both the proposal and its resolution, so the reasoning and the
-outcome live together forever.
+**Decision.** You talk it over and settle on *"a manual toggle that defaults to the
+OS preference."* The proposal doesn't move to a new file — it *becomes* a decision
+in place: you flip its status to `accepted` (it could just as easily have been
+`rejected`). The same file now holds both the reasoning and the outcome, together
+forever.
 
-**Plan.** An accepted decision says *what* and *why*, but not *how*. That's a
-*plan* in `docs/plans/`, which `Implements:` the decision and breaks it into
-concrete tasks written as GitHub checkboxes (`- [ ]`).
+**Plan.** The accepted ADR says *what* and *why*, but not *how*. That's a *plan* in
+`docs/plans/` — `docs/plans/0004-dark-mode-toggle.md` — which `Implements:` the
+decision and breaks it into concrete tasks written as GitHub checkboxes: `- [ ]
+add a theme context`, `- [ ] persist the choice`, `- [ ] add the settings toggle`.
 
-**Execution.** Execution isn't a separate place — it's the plan in motion. You
-move the plan from `draft` to `active` to `done`, ticking checkboxes as the work
-lands. When the last box is checked, the thought has travelled its whole life, and
-the trail of *idea → proposal → decision → plan → execution* is there to walk
-later.
+**Execution.** Execution isn't a separate place — it's the plan in motion. You move
+the plan from `draft` to `active`, then tick checkboxes as the work lands, until
+the last box is checked and the plan is `done`. The dark-mode toggle has now
+travelled its whole life — *idea → proposal → decision → plan → execution* — and
+anyone can walk that trail later to see not just what shipped, but why.
 
 ## The vocabulary of links
 
@@ -80,6 +112,18 @@ Artifacts don't just sit in folders; they point at each other, so you can follow
 trail from either end. The links are ordinary relative markdown links, but the
 *field names* in the headers are fixed and greppable, so both humans and tools can
 find them:
+
+```mermaid
+flowchart TD
+    childIdea["idea"] -->|Parent| parentIdea["idea it budded from"]
+    matureIdea["idea"] <-->|"Promoted to / Promoted from"| adr["ADR<br/>(proposal → decision)"]
+    adr <-->|"Amends / Amended by"| adr2["earlier ADR"]
+    adr <-->|"Supersedes / Superseded by"| adr3["earlier ADR"]
+    plan["plan"] -->|Implements| adr
+```
+
+*Double-headed arrows are reciprocal (both files carry the link); single-headed
+arrows are forward-only.*
 
 - **`Parent:`** (idea → idea) — this idea budded from another one.
 - **`Promoted to:`** / **`Promoted from:`** (idea ↔ ADR) — the idea matured into a
@@ -117,11 +161,15 @@ it current is the **agent's** job, not yours. If you flip a state directly in an
 artifact, the next regeneration reconciles the overview. You can ask the agent to
 regenerate it at any time.
 
-Artifacts may also carry an optional `Tags:` header line — comma-separated theme
-words that re-slice the work along a shared-theme axis, so cross-cutting threads
-stay findable. Tags show up as a `Tags` column in the overview. The vocabulary is
-recommended, not enforced, and curated per repo; a repo with no need simply uses
-no tags.
+## Tags: an optional cross-cutting axis
+
+Any idea, decision, or plan may carry an optional `Tags:` header line —
+comma-separated theme words that re-slice the work along a shared-theme axis, so
+cross-cutting threads stay findable without reading every artifact in order. Tags
+show up as a `Tags` column in the overview. The vocabulary is recommended, not
+enforced, and curated per repo; a repo with no need simply uses no tags.
+
+## The travel diary
 
 Alongside the overview sits an optional, human-facing companion: the **travel
 diary** (`docs/travel-diary.md`). Where the overview is a terse, derived status
@@ -129,6 +177,8 @@ board, the diary is loose prose — a growing, newest-first logbook you can skim
 after a break to catch up on *where we are, what changed, what's left, and what's
 next*. It touches no artifact and is never a source of truth; adding a chapter is a
 guard-free, informal task. A repo that doesn't want one simply has none.
+
+## Intermediate artifacts
 
 For the *execution* stage there's a second optional companion: an
 **intermediate-artifacts** folder (`docs/intermediate-artifacts/`) — a scratch
@@ -147,6 +197,43 @@ break, and a repo that doesn't need one simply has none.
 
 Your repo's `docs/decisions/0001-adopt-decision-trail.md` already records the
 decision to adopt the method. Everything else grows from there.
+
+## Working with an agent: a conversation, not a command line
+
+If you come from classic development, your instincts are finely tuned for
+*precision*: exact syntax, type-safety, schemas, well-named parameters and
+arguments, a compiler that rejects anything ambiguous. That rigor is a superpower
+when you're writing code — and it is exactly the wrong reflex here.
+
+Working with an AI on decision-trail has **no command to memorize, no API surface,
+no schema, no flags**. There is nothing to get syntactically "right." The interface
+is a conversation, and the skill is *conversing* — prompting, explaining,
+discussing, pushing back.
+
+So don't hunt for the magic incantation; open a dialogue. Treat the AI as a
+**co-pilot and consultant**, not a code-generator you invoke. Tell it what you're
+trying to do and *why*. Think out loud. Ask it to argue the other side, to poke
+holes in your reasoning — and be healthily skeptical of its first answer in return.
+The best results come from an intellectual, slightly adversarial back-and-forth,
+not from a perfectly-phrased request.
+
+And here's the part that lifts the real burden: **the agent writes every markdown
+file for you.** You never hand-craft an artifact. You throw in a rough description
+of your idea — as precise as you can make it *right now*, but never mind the
+wording, the typos, or the structure — and simply say *"make this an idea."* The
+agent turns it into a well-structured, readable document, finds the next free slot
+in `docs/ideas/`, and creates the file — often after asking you a few clarifying
+questions first. The same goes for every artifact that follows: the proposal, the
+decision, the plan. You talk your way through the work, and the persisted artifacts
+come out with a consistency and polish you could rarely reach by hand — and you no
+longer have to.
+
+This is genuinely liberating once it clicks: you don't have to phrase things exactly
+right, because you can always refine on the next turn. Ambiguity isn't an error to
+be rejected — it's the opening of a conversation. decision-trail is built for
+exactly this rhythm: ideas are cheap, proposals are debated, decisions are reasoned
+in the open. The one guardrail on all that free-flowing conversation is the
+confirmation guard — which is what the next section is about.
 
 ## Working with an agent: a "yes" has a scope
 

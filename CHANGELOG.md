@@ -13,6 +13,25 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.8.0] - 2026-07-05
+
+### Added
+- ADR-0023 — **promote and teach the method** (idea 0014): the guide is reworked
+  from a narrative introduction into a **didactical tutorial** — it motivates the
+  problem before the mechanics, introduces the lifecycle progressively, and walks
+  one canonical worked example (*"add a dark-mode toggle to a small web app"*) from
+  a first idea through proposal, decision, plan, and execution. Two **Mermaid
+  diagrams** (rendered natively by GitHub) visualize the lifecycle stages + status
+  transitions and the cross-link vocabulary. Applied to **both** guide renderings
+  (`guide.md` and `starter/docs/guide.md`).
+
+### Changed
+- Both `starter/` renderings bump their provenance citation to **v2.8**.
+
+- **Adopter migration:** none — additive documentation only. The reworked
+  `starter/docs/guide.md` reaches you automatically via the copy-driven "bring me
+  current" update (ADR-0022). No behavioral change is required.
+
 ## [2.7.0] - 2026-07-04
 
 ### Added

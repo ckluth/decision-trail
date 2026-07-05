@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.7** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.8** — https://github.com/ckluth/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.

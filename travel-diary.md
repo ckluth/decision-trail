@@ -32,6 +32,42 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-05]
+
+**Where we are.** v2.8.0 is ready to cut — the guide has been reworked from a plain
+narrative introduction into a genuinely *didactical* tutorial. This was the first
+change driven by the "promote and teach the method" thread (idea 0014 → ADR-0023 →
+plan 0013).
+
+**What we achieved.**
+- **Reworked both guide renderings** (`guide.md` and `starter/docs/guide.md`) into a
+  teaching piece: motivate-first, a progressively-introduced lifecycle, and one
+  canonical worked example — *"add a dark-mode toggle to a small web app"* — walked
+  all the way from idea to ticking execution checkboxes.
+- **Added two Mermaid diagrams** (GitHub-rendered, plain-text): the lifecycle stages
+  + status transitions, and the cross-link vocabulary (reciprocal vs. forward-only).
+- **Opened up the term "idea"** with a list of what counts (a requirement, a tiny
+  thought, a question, a big concept, a discussion takeaway, an improvement
+  observation) — lowering the barrier to capturing one.
+- **Added two mindset chapters:** "a conversation, not a command line" (the AI as
+  co-pilot/consultant; no syntax, just dialogue — and the agent writes every
+  markdown artifact for you, burden gone) sitting before the existing "a 'yes' has a
+  scope" guard section.
+- **Promoted Tags, the travel diary, and intermediate artifacts** into their own
+  top-level chapters, so they're no longer buried under "The overview."
+- **Dropped the German translation** thread (ADR-0023's second thread): the
+  machine-drafted first pass was clumsy and uninspiring; revised the ADR/plan in
+  place while still uncommitted, so it leaves no trace in permanent history.
+- Cut the release scaffolding: `[2.8.0]` CHANGELOG entry (`Adopter migration: none`,
+  copy-driven), provenance bumped to **v2.8** in the starter files, and regenerated
+  `overview.md`.
+
+**What is left.** Commit, push, tag `v2.8.0`, and cut the GitHub release.
+
+**What is next.** Ship 2.8.0. Then teaching-material improvements can continue as
+their own ideas (a properly-done translation could be one). See
+[plan 0013](plans/0013-promote-and-teach-the-method.md).
+
 ## [2026-07-04-(2)]
 
 **Where we are.** v2.7.0 is **released and tagged**, and the update path it added
