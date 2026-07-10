@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.10 — https://github.com/ckluth/decision-trail
+Based on decision-trail v2.10 — https://github.com/haevg-rz/decision-trail
 
 ## Agent operating guidance
 

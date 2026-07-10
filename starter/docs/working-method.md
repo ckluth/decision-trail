@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.10** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.10** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -259,6 +259,6 @@ To **(re)adopt or update** decision-trail — including how to **bring an older
 adopter fully current** (re-copy the method-owned set from the target's `starter/`),
 apply each release's `Adopter migration:` steps, and run the **conformance check** —
 see `adopting.md` in the standard repo:
-https://github.com/ckluth/decision-trail/blob/main/adopting.md. This pointer travels
+https://github.com/haevg-rz/decision-trail/blob/main/adopting.md. This pointer travels
 with every copied version, so your repo always carries a breadcrumb back to the
 update on-ramp.

@@ -11,7 +11,7 @@ scenarios:
    decision-trail to a newer one.
 
 > This document lives in the **decision-trail standard repo**
-> (https://github.com/ckluth/decision-trail), not in your repo. Your repo carries a
+> (https://github.com/haevg-rz/decision-trail), not in your repo. Your repo carries a
 > `Based on decision-trail vX.Y` citation that points back here; come back to this
 > page whenever you need to (re)adopt or upgrade.
 
@@ -89,7 +89,7 @@ anything that is already there**.
    records live in [`docs/decisions/`](docs/decisions/), starting with
    [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-   Based on decision-trail vX.Y — https://github.com/ckluth/decision-trail
+   Based on decision-trail vX.Y — https://github.com/haevg-rz/decision-trail
    ```
 3. **Seed the adoption decision.** Keep `docs/decisions/0001-adopt-decision-trail.md`,
    set its `Date:`, and record the version you copied. Your pre-existing history and

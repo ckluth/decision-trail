@@ -6,7 +6,7 @@ example (a dark-mode toggle) through its whole life, with a couple of diagrams
 along the way. Once the ideas here are familiar, the terse
 [`working-method.md`](working-method.md) is all you'll need as a quick reference.
 
-> Based on **decision-trail v2.10** — https://github.com/ckluth/decision-trail
+> Based on **decision-trail v2.10** — https://github.com/haevg-rz/decision-trail
 
 ## The problem it solves
 
@@ -347,5 +347,5 @@ itself:
   the confirmation guard, keeping the overview current, treating the method as
   settled).
 - To **update or (re)adopt** decision-trail, see `adopting.md` in the standard
-  repo: https://github.com/ckluth/decision-trail/blob/main/adopting.md — it covers
+  repo: https://github.com/haevg-rz/decision-trail/blob/main/adopting.md — it covers
   starting fresh, injecting into an existing repo, and moving to a newer version.

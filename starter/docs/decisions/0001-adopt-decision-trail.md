@@ -15,7 +15,7 @@ families, described in [`docs/working-method.md`](../working-method.md).
 ## Decision
 
 This project adopts **decision-trail at version vX.Y** (replace with the version you
-copied; see https://github.com/ckluth/decision-trail and its `CHANGELOG.md`).
+copied; see https://github.com/haevg-rz/decision-trail and its `CHANGELOG.md`).
 
 - We work the lifecycle in `docs/ideas/`, `docs/decisions/`, `docs/plans/` as
   described in `docs/working-method.md`.
