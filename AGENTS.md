@@ -61,7 +61,10 @@ artifact families:
 - **Decisions** are [ADRs](decisions/) — a proposal *becomes* a decision in place
   when accepted. Use the classic template (Status / Context / Decision /
   Consequences); add **Decision Drivers** / **Considered Options** when weighing
-  alternatives.
+  alternatives. The decision heading tracks status: while `Status: proposed` the
+  section is headed **`## Proposed decision`**; on acceptance the status flips to
+  `accepted` **and** the heading is renamed to **`## Decision`** — status and
+  heading move together. (ADR-0033)
 - **Plans** carry an accepted decision into action: the ADR is the spec, the plan
   is the *how*, execution is the plan in motion. Tasks use portable task-list
   markdown (`- [ ]` / `- [x]`).
@@ -103,10 +106,18 @@ artifact, rewire reciprocal cross-links and prose references, and regenerate
 snapshot of each artifact's name, creation date, and state. It is **regenerated
 wholesale from the artifact headers** (never hand-patched) and stamped "as of
 <date>" (ADR-0011). Regenerate it whenever the user explicitly asks (ADR-0016).
+It also carries a derived **ADR → plans sub-index**: for each ADR, the plan(s)
+whose `Implements:` field points to it, each with its current status (`draft` /
+`active` / `done` / `abandoned`) — built from the same header scan, with no new
+hand-maintained field and no back-link added to the ADR itself (ADR-0034). Each
+ADR row renders as **`ADR-000n – Title`** (link text carries the title, not just
+the number), so a human recognizes the decision without opening it.
 
 **Refresh procedure:** scan each family for its typed title line (`# Idea NNNN:`,
 `# ADR-NNNN:`, or `# Plan NNNN:`) and `- Status:` / `- Date:` / `- Tags:` (header
-block) → rewrite the three tables in `overview.md`. If an artifact's header fields
+block) → rewrite the three tables in `overview.md`. Also read each plan's
+`- Implements:` field and group plans by target ADR to (re)build the ADR → plans
+sub-index in the same pass. If an artifact's header fields
 carry no leading `-` bullet, or its title-line ordinal doesn't match its filename
 slot, do **not** silently skip or trust it — both are non-conformant; fix the header
 to the canonical bulleted form and align the ordinals before regenerating, so no
@@ -270,6 +281,21 @@ only flags the trap to avoid and points to it.
     `decomposed`, document the reasons in the parent; never multi-promote, never
     stack `promoted` and `decomposed`. **Propose** the split; the human decides
     (§ *Disentangling a large idea*; ADR-0027).
+  - **Decision heading transition** — a proposal uses `## Proposed decision`
+    while `Status: proposed`; on acceptance the status flips to `accepted` and
+    the heading is renamed to `## Decision` — status and heading move together;
+    check and fix this whenever authoring or accepting an ADR
+    (§ *The lifecycle*; ADR-0033).
+  - **Reciprocal cross-links** — forward link always; add the reciprocal
+    back-link when amending/superseding an ADR or promoting an idea — never
+    ship only the forward half (§ *Cross-link vocabulary*; ADR-0012).
+- **Author from the spec, never from a sibling.** A new artifact's header, title
+  line, status, and body template are fully specified (§ *The lifecycle*). Do not
+  open an existing artifact as a *template* — copying imports incidental reality
+  (a wrong status, the wrong cross-links). Reading a sibling **to check that the
+  format is being followed** is fine; using one as a **fill-in-the-blanks scaffold
+  is not.** If you feel you need an example to know the shape, that is a signal the
+  *spec* is unclear — sharpen the spec, don't copy (ADR-0033).
 - **The method is settled.** Use it; don't redesign decision-trail casually. Any
   change to the method itself is made decision-trail — proposed and recorded as a
   new ADR, with amended or superseded ADRs cross-linked (never edited away).

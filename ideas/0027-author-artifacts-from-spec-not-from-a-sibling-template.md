@@ -1,7 +1,8 @@
 # Idea 0027: author new artifacts from the spec, not from a sibling as a template
 
 - Date: 2026-07-11
-- Status: seed
+- Status: promoted
+- Promoted to: [ADR-0033](../decisions/0033-author-from-the-spec-not-from-a-sibling.md)
 
 ## Observation
 
@@ -62,17 +63,24 @@ strictly from the spec has no instruction telling it `## Proposed decision` vs
 a sibling in the first place. Pinning this convention both removes an ambiguity and
 strengthens the "author from the spec" rule by making the spec actually sufficient.
 
-## Open questions
+## Open questions — resolved
 
-- Is the fix purely a **new agent-guidance rule** ("author from the spec, never
-  from a sibling"), a **spec sharpening** (pin the `## Proposed decision` heading
-  convention), or **both** — likely both, since each reinforces the other?
-- Where does the rule live? Agent operating guidance is carried in both this
-  repo's `AGENTS.md` and `starter/AGENTS.md`; the spec text lives canonically in
-  `starter/docs/working-method.md`. Which additions land where?
-- Should the `## Proposed decision` → `## Decision` transition be stated as a rule
-  (rename on acceptance) or left as the single heading `## Decision` throughout,
-  with status alone marking proposal-vs-decision?
-- Does "never from a sibling" over-reach — are there legitimate cases (e.g. a
-  genuinely novel section an agent has no spec for) where consulting prior art is
-  the honest move, and how is that bounded without reopening the judgment-call door?
+Worked through in conversation (2026-07-11); these resolutions are what the
+promoted ADR will carry.
+
+- **Fix shape → both.** A **new agent-guidance rule** ("author from the spec,
+  never from a sibling") *and* a **spec sharpening** (pin the `## Proposed
+  decision` heading convention) — each reinforces the other, so neither alone is
+  enough.
+- **Placement → split by kind.** The rule lives in the **agent operating
+  guidance**, shipped to adopters via `starter/AGENTS.md` and mirrored in this
+  repo's `AGENTS.md`; the `## Proposed decision` heading convention lives in the
+  **canonical spec**, `starter/docs/working-method.md` (whence this repo's
+  `AGENTS.md` method body is regenerated).
+- **Heading transition → rename on acceptance.** A proposal uses **`## Proposed
+  decision`** while `Status: proposed`; it is **renamed to `## Decision`** when the
+  ADR is accepted — status and heading move together, not status alone.
+- **Over-reach → bounded exception, not absolute.** Consulting prior art is fine to
+  **check that the format is being followed**; using a sibling as a
+  **fill-in-the-blanks scaffold is not**. Feeling you need an example to know the
+  shape is a **signal the spec is unclear — sharpen the spec, don't copy.**

@@ -13,6 +13,63 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.14.0] - 2026-07-11
+
+**Adopter migration:** After copying this version, **regenerate `docs/overview.md`**
+so it gains the new derived **ADR → plans sub-index** (ADR-0034) — the three family
+tables are unchanged, but the sub-index section is only produced by a regeneration.
+No other behavioral changes: the proposal-heading convention (ADR-0033) requires
+**no back-migration** — existing accepted ADRs already carry `## Decision` and
+existing proposals already use `## Proposed decision`; the new agent-guidance
+checklist bullets (ADR-0033, ADR-0035) and the sync-model refinement (ADR-0032)
+reach adopters automatically via the copy-driven update and need no manual step.
+
+### Added
+- ADR-0034 — **a derived ADR → plans sub-index in `overview.md`** (idea 0028,
+  promoted): a human reading an accepted ADR had no one-click path to the plan(s)
+  implementing it — the `Implements:` cross-link is forward-only (plan → ADR) and
+  ADR-0012 deliberately declined a reciprocal ADR→plan back-link. This closes the
+  human-discoverability gap the *method-consistent* way: `overview.md` gains a
+  second, **derived** view — for each ADR, the plan(s) whose `Implements:` field
+  points to it, each with its current status (`draft` / `active` / `done` /
+  `abandoned`), grouped by target ADR and built from the same header scan during
+  the normal wholesale regeneration. Each ADR row renders as `ADR-000n – Title`.
+  **No new hand-maintained field and no back-link on the settled ADR** — it amends
+  ADR-0011's overview shape only and leaves ADR-0012 untouched. The spec
+  (`working-method.md` §*The lifecycle* + refresh procedure), this repo's `AGENTS.md`
+  derived body, and the `starter/docs/overview.md` scaffold all carry the new view.
+- ADR-0035 — **enumerate two missing "lookup, not judgment call" rules in the agent
+  operating checklist** (idea 0029, promoted): dogfooding ADR-0033 surfaced that its
+  heading-transition rule, though stated plainly in the spec, was **absent from the
+  enumerated checklist** an agent scans before acting — so it was skipped in favor of
+  a sibling's observed form. A quick audit found one more gap of the same shape (the
+  reciprocal cross-link rule). Two bullets are added to the "Follow the spec's
+  mechanics" checklist in both `starter/AGENTS.md` and this repo's `AGENTS.md`:
+  **decision heading transition** (`## Proposed decision` → `## Decision` on
+  acceptance; ADR-0033) and **reciprocal cross-links** (forward link always, add the
+  reciprocal back-link on amend/supersede/promotion; ADR-0012). No underlying rule
+  changes — a pure discoverability/placement fix respecting the audience-fork delta
+  (adopter rendering carries no ADR citations; the method-home one does).
+
+### Changed
+- ADR-0032 — **audience-forked sections are a declared delta class in the sync
+  model** (idea 0026, promoted): the guide's sync note claimed a "paths-only" delta
+  while two sections had quietly forked by *audience*. A new **audience-forked**
+  delta class is introduced so the derived-rendering sync model can hold sections
+  that legitimately differ between the home repo and adopter renderings, instead of
+  pretending they are identical. (Committed in `38e7a43`, released here.)
+- ADR-0033 — **author new artifacts from the spec, not from a sibling as a
+  template** (idea 0027, promoted): copying a sibling artifact as a fill-in-the-blanks
+  scaffold imports incidental reality (a wrong status, the wrong cross-links). A new
+  agent-guidance rule pins **author from the spec, never from a sibling** (reading a
+  sibling to *check* format conformance is fine; using one as a scaffold is not), and
+  a **spec sharpening** pins the proposal-heading convention: a proposal uses
+  `## Proposed decision` while `Status: proposed`, renamed to `## Decision` on
+  acceptance — status and heading move together. Landed in `starter/AGENTS.md`, this
+  repo's `AGENTS.md`, and `starter/docs/working-method.md`.
+- All three `starter/` renderings bump their provenance citation to **v2.14**
+  (`starter/docs/working-method.md`, `starter/docs/guide.md`, `starter/AGENTS.md`).
+
 ## [2.13.0] - 2026-07-11
 
 ### Added

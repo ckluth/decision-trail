@@ -28,3 +28,9 @@ You can ask the agent to **regenerate the overview** at any time.
 | Name | Created | State | Tags |
 |------|---------|-------|------|
 | _none yet_ | | | |
+
+## Implements (ADR → plans)
+
+| ADR | Plan | Status |
+|-----|------|--------|
+| _none yet_ | | |

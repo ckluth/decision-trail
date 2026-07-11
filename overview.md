@@ -41,7 +41,9 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0024 Pin the title-line format so the ordinal is always visible in the H1](ideas/0024-pin-the-title-line-format-ordinal-in-h1.md) | 2026-07-11 | promoted | |
 | [0025 Clarify how a consuming repo adopts a newer version of decision-trail](ideas/0025-clarify-how-a-consuming-repo-adopts-a-newer-version.md) | 2026-07-11 | promoted | |
 | [0026 The guide's derived-rendering sync model can't hold audience deltas](ideas/0026-guide-sync-model-cant-hold-audience-deltas.md) | 2026-07-11 | promoted | |
-| [0027 Author new artifacts from the spec, not from a sibling as a template](ideas/0027-author-artifacts-from-spec-not-from-a-sibling-template.md) | 2026-07-11 | seed | |
+| [0027 Author new artifacts from the spec, not from a sibling as a template](ideas/0027-author-artifacts-from-spec-not-from-a-sibling-template.md) | 2026-07-11 | promoted | |
+| [0028 A derived ADR→plan map so a human can find how a decision was implemented](ideas/0028-derived-adr-to-plan-map-for-human-discoverability.md) | 2026-07-11 | promoted | |
+| [0029 Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](ideas/0029-enumerate-heading-transition-in-agent-checklist.md) | 2026-07-11 | promoted | |
 
 ## Decisions
 
@@ -79,6 +81,9 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0030 Resume economy as a human-facing discipline in the guide](decisions/0030-resume-economy-as-a-human-facing-guide-discipline.md) | 2026-07-11 | accepted | |
 | [0031 The adopter update path is human intent, agent execution](decisions/0031-adopter-update-is-human-intent-agent-execution.md) | 2026-07-11 | accepted | |
 | [0032 Audience-forked sections are a declared delta class in the sync model](decisions/0032-audience-forked-sections-are-a-declared-delta-class.md) | 2026-07-11 | accepted | |
+| [0033 Author new artifacts from the spec, not from a sibling as a template](decisions/0033-author-from-the-spec-not-from-a-sibling.md) | 2026-07-11 | accepted | |
+| [0034 A derived ADR → plans sub-index in `overview.md`](decisions/0034-derived-adr-to-plans-sub-index-in-overview.md) | 2026-07-11 | accepted | |
+| [0035 Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](decisions/0035-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | 2026-07-11 | accepted | |
 
 ## Plans
 
@@ -106,3 +111,37 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0020 Teach resume economy as a human-facing guide discipline](plans/0020-teach-resume-economy-as-human-facing-guide-discipline.md) | 2026-07-11 | done | |
 | [0021 Split the adopter update path — human intent + agent-facing `updating.agent.md`](plans/0021-split-adopter-update-into-human-intent-and-agent-file.md) | 2026-07-11 | done | |
 | [0022 Carry the audience-forked delta class into the guide sync model](plans/0022-carry-audience-forked-delta-class-into-guide-sync.md) | 2026-07-11 | done | |
+| [0023 Carry ADR-0033 into the method — author-from-spec rule + proposal heading convention](plans/0023-carry-adr-0033-into-the-method.md) | 2026-07-11 | done | |
+| [0024 Add the ADR → plans sub-index to `overview.md`](plans/0024-add-adr-to-plans-sub-index-to-overview.md) | 2026-07-11 | done | |
+| [0025 Enumerate the heading-transition and reciprocal-cross-link rules in the agent checklist](plans/0025-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | 2026-07-11 | done | |
+
+## Implements (ADR → plans)
+
+| ADR | Plan | Status |
+|-----|------|--------|
+| [ADR-0011 – An `overview.md` status index, regenerated as a dated snapshot](decisions/0011-an-always-up-to-date-overview-as-a-derived-status-index.md) | [Plan 0001](plans/0001-build-overview-and-mandatory-date.md) | done |
+| [ADR-0012 – Promotion carries a reciprocal `Promoted from:` back-link](decisions/0012-promotion-carries-a-reciprocal-promoted-from-back-link.md) | [Plan 0002](plans/0002-make-the-promoted-link-reciprocal.md) | done |
+| [ADR-0013 – Rename the method from "the-way" to "decision-trail"](decisions/0013-rename-the-way-to-decision-trail.md) | [Plan 0003](plans/0003-rename-the-way-to-decision-trail.md) | done |
+| [ADR-0014 – Single-source method renderings; split into guide / spec / agent guidance](decisions/0014-sync-method-renderings-and-separate-audiences.md) | [Plan 0004](plans/0004-split-method-into-guide-spec-agent-guidance.md) | done |
+| [ADR-0015 – Artifact numbering is ordinal only — always use the next free slot](decisions/0015-artifact-numbering-is-ordinal-only.md) | [Plan 0005](plans/0005-add-explicit-numbering-rule-to-method-texts.md) | done |
+| [ADR-0016 – Overview regeneration on explicit request only](decisions/0016-overview-regeneration-on-explicit-request-only.md) | [Plan 0006](plans/0006-update-overview-regeneration-rule.md) | done |
+| [ADR-0017 – An optional `Tags:` axis for cross-cutting navigation](decisions/0017-optional-tags-axis-for-cross-cutting-navigation.md) | [Plan 0007](plans/0007-add-optional-tags-axis.md) | done |
+| [ADR-0018 – A travel diary for the human-machine interface](decisions/0018-a-travel-diary-for-the-human-machine-interface.md) | [Plan 0008](plans/0008-ship-the-travel-diary.md) | done |
+| [ADR-0019 – Teach that the confirmation guard is never perfectly safe](decisions/0019-confirmation-guard-never-perfectly-safe.md) | [Plan 0009](plans/0009-teach-confirmation-guard-fragility.md) | done |
+| [ADR-0020 – Intermediate artifacts — a scratch persistence layer for execution](decisions/0020-intermediate-artifacts-a-scratch-layer-for-execution.md) | [Plan 0010](plans/0010-ship-intermediate-artifacts.md) | done |
+| [ADR-0021 – A single adopter on-ramp covering fresh, inject, and update](decisions/0021-a-single-adopter-on-ramp-fresh-inject-update.md) | [Plan 0011](plans/0011-ship-adopter-on-ramp-and-migration-contract.md) | done |
+| [ADR-0022 – Every release ships precise, agent-reliable "bring me current" instructions](decisions/0022-every-release-ships-reliable-update-instructions.md) | [Plan 0012](plans/0012-carry-adr-0022-into-the-method.md) | done |
+| [ADR-0023 – Promote and teach the method — a didactical guide](decisions/0023-promote-and-teach-the-method.md) | [Plan 0013](plans/0013-promote-and-teach-the-method.md) | done |
+| [ADR-0024 – Status vocabulary is per-family — state entry status and guard against cross-contamination](decisions/0024-status-vocabulary-guard-per-family.md) | [Plan 0014](plans/0014-status-vocabulary-guard-in-method-texts.md) | done |
+| [ADR-0025 – Harden next-slot numbering with a collision-proof procedure](decisions/0025-harden-slot-numbering-with-collision-proof-procedure.md) | [Plan 0015](plans/0015-harden-slot-numbering-procedure.md) | done |
+| [ADR-0026 – Pin the canonical artifact-header format](decisions/0026-pin-canonical-artifact-header-format.md) | [Plan 0016](plans/0016-pin-canonical-artifact-header-format.md) | done |
+| [ADR-0027 – A `decomposed` status for a budded parent idea](decisions/0027-a-decomposed-status-for-a-budded-parent-idea.md) | [Plan 0017](plans/0017-carry-decomposed-status-into-the-method.md) | done |
+| [ADR-0028 – Pin the title-line format so the ordinal is always visible in the H1](decisions/0028-pin-the-title-line-format-ordinal-in-h1.md) | [Plan 0018](plans/0018-pin-the-title-line-format-ordinal-in-h1.md) | done |
+| [ADR-0029 – Shrink the always-loaded agent instruction weight](decisions/0029-shrink-the-always-loaded-agent-instruction-weight.md) | [Plan 0019](plans/0019-shrink-the-always-loaded-agent-instruction-weight.md) | done |
+| [ADR-0030 – Resume economy as a human-facing discipline in the guide](decisions/0030-resume-economy-as-a-human-facing-guide-discipline.md) | [Plan 0020](plans/0020-teach-resume-economy-as-human-facing-guide-discipline.md) | done |
+| [ADR-0031 – The adopter update path is human intent, agent execution](decisions/0031-adopter-update-is-human-intent-agent-execution.md) | [Plan 0021](plans/0021-split-adopter-update-into-human-intent-and-agent-file.md) | done |
+| [ADR-0032 – Audience-forked sections are a declared delta class in the sync model](decisions/0032-audience-forked-sections-are-a-declared-delta-class.md) | [Plan 0022](plans/0022-carry-audience-forked-delta-class-into-guide-sync.md) | done |
+| [ADR-0033 – author new artifacts from the spec, not from a sibling as a template](decisions/0033-author-from-the-spec-not-from-a-sibling.md) | [Plan 0023](plans/0023-carry-adr-0033-into-the-method.md) | done |
+| [ADR-0034 – A derived ADR → plans sub-index in `overview.md`](decisions/0034-derived-adr-to-plans-sub-index-in-overview.md) | [Plan 0024](plans/0024-add-adr-to-plans-sub-index-to-overview.md) | done |
+| [ADR-0035 – Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](decisions/0035-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | [Plan 0025](plans/0025-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | done |
+

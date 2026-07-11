@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.13 — https://github.com/haevg-rz/decision-trail
+Based on decision-trail v2.14 — https://github.com/haevg-rz/decision-trail
 
 ## Agent operating guidance
 
@@ -41,6 +41,20 @@ points to it.
     `decomposed`, document the reasons in the parent; never multi-promote, never
     stack `promoted` and `decomposed`. **Propose** the split; the human decides
     (§ *Disentangling a large idea*).
+  - **Decision heading transition** — a proposal uses `## Proposed decision`
+    while `Status: proposed`; on acceptance the status flips to `accepted` and
+    the heading is renamed to `## Decision` — status and heading move together;
+    check and fix this whenever authoring or accepting an ADR (§ *The lifecycle*).
+  - **Reciprocal cross-links** — forward link always; add the reciprocal
+    back-link when amending/superseding an ADR or promoting an idea — never
+    ship only the forward half (§ *Cross-link vocabulary*).
+- **Author from the spec, never from a sibling.** A new artifact's header, title
+  line, status, and body template are fully specified (§ *The lifecycle*). Do not
+  open an existing artifact as a *template* — copying imports incidental reality
+  (a wrong status, the wrong cross-links). Reading a sibling **to check that the
+  format is being followed** is fine; using one as a **fill-in-the-blanks scaffold
+  is not.** If you feel you need an example to know the shape, that is a signal the
+  *spec* is unclear — sharpen the spec, don't copy.
 - **The method is settled.** Use decision-trail; don't redesign the *method*
   casually. (Your project's own decisions are normal work — captured as ideas,
   ADRs, and plans under `docs/`.)

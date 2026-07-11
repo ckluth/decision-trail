@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.13** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.14** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -66,7 +66,10 @@ artifact families:
   (flip back to `seed` to bud one more child).
 - **Decisions** are ADRs — a proposal *becomes* a decision in place when accepted.
   Use the classic template (Status / Context / Decision / Consequences); add
-  **Decision Drivers** / **Considered Options** when weighing alternatives.
+  **Decision Drivers** / **Considered Options** when weighing alternatives. The
+  decision heading tracks status: while `Status: proposed` the section is headed
+  **`## Proposed decision`**; on acceptance the status flips to `accepted` **and**
+  the heading is renamed to **`## Decision`** — status and heading move together.
 - **Plans** carry an accepted decision into action: the ADR is the spec, the plan
   is the *how*, execution is the plan in motion. Tasks use portable task-list
   markdown (`- [ ]` / `- [x]`).
@@ -107,11 +110,19 @@ regenerate `docs/overview.md`.
 `docs/overview.md` is a derived status index over all three families — a single
 dated snapshot of each artifact's name, creation date, and state. It is
 **regenerated wholesale from the artifact headers** (never hand-patched) and stamped
-"as of <date>". Regenerate it whenever the user explicitly asks.
+"as of <date>". Regenerate it whenever the user explicitly asks. It also carries
+a derived **ADR → plans sub-index**: for each ADR, the plan(s) whose
+`Implements:` field points to it, each with its current status (`draft` /
+`active` / `done` / `abandoned`) — built from the same header scan, with no new
+hand-maintained field and no back-link added to the ADR itself. Each ADR row
+renders as **`ADR-000n – Title`** (link text carries the title, not just the
+number), so a human recognizes the decision without opening it.
 
   **Refresh procedure:** scan each family for its typed title line
   (`# Idea NNNN:`, `# ADR-NNNN:`, or `# Plan NNNN:`) and `- Status:` / `- Date:` /
-  `- Tags:` (header block) → rewrite the three tables in `docs/overview.md`. If
+  `- Tags:` (header block) → rewrite the three tables in `docs/overview.md`. Also
+  read each plan's `- Implements:` field and group plans by target ADR to
+  (re)build the ADR → plans sub-index in the same pass. If
   an artifact's header fields carry no leading `-` bullet, or its title-line
   ordinal doesn't match its filename slot, do **not** silently skip or trust it —
   both are non-conformant; fix the header to the canonical bulleted form and

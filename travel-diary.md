@@ -32,6 +32,123 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-11-(7)]
+
+**Where we are.** Same day, same still-uncut release — provenance citations still
+read **v2.13**. Two more threads landed since chapter (6), and we're now at the
+point of finally cutting the release that bundles everything held open.
+
+**What we achieved.**
+- **Idea 0028 → ADR-0034 → Plan 0024 (done).** Promoted the ADR↔plan
+  discoverability idea after resolving its four open questions in conversation
+  (dedicated ADR→plans **sub-index**, not a column; render the plan **with its
+  status**; worth it, not YAGNI; amends **ADR-0011** only, ADR-0012 untouched).
+  `overview.md` now carries a derived **Implements (ADR → plans)** sub-index, each
+  ADR row rendered as `ADR-000n – Title`. Codified that rendering in the spec too,
+  so it survives future regenerations.
+- **A dogfooding catch.** While authoring ADR-0034 (still a proposal), its section
+  was headed `## Decision` instead of `## Proposed decision` — a fresh violation of
+  the *very* ADR-0033 rule we'd just shipped. Root cause: pattern-matched off an
+  accepted sibling instead of the status-conditional spec rule. That sparked the
+  next thread.
+- **Idea 0029 → ADR-0035 → Plan 0025 (done).** The rule text wasn't vague — it just
+  wasn't in the enumerated "lookups, not judgment calls" **checklist**. Added two
+  bullets (**decision heading transition** + **reciprocal cross-links**, the latter
+  found by a quick audit) to `starter/AGENTS.md` and this repo's `AGENTS.md`,
+  respecting the audience-fork delta (adopter rendering has no ADR citations; the
+  method-home one does).
+
+**What is left.** **Cut the release** — now bundling **four** threads since v2.13:
+0026/ADR-0032 (committed, unpushed), 0027/ADR-0033, 0028/ADR-0034, 0029/ADR-0035.
+Bump the provenance citations, add a `CHANGELOG.md` entry with its mandatory
+`Adopter migration:` line, commit + push, git-tag, and make the GitHub release.
+
+**What is next.** Cutting that release now as the final step of this session.
+**Continuation brief:** everything is `done` and `overview.md` is in sync; the only
+remaining work is the release mechanics (changelog → commit → push → tag →
+GitHub release) for the four bundled ADRs.
+
+---
+
+## [2026-07-11-(6)]
+
+**Where we are.** Still post-2.13, still **no release cut** — the provenance
+citations remain **v2.13**. The 0027 thread from the previous chapter is now fully
+closed, and a fresh discussion spun off a third release candidate.
+
+**What we achieved.**
+- **Idea 0027 → ADR-0033 → Plan 0023 (done).** Took *"author from the spec, not
+  from a sibling"* all the way through the lifecycle. Resolved its four open
+  questions in conversation (both a guidance rule *and* a spec sharpening; rule in
+  the agent operating guidance, heading convention in the spec; rename-on-acceptance
+  `## Proposed decision` → `## Decision`; a bounded format-conformance exception).
+  Landed: the new **"author from the spec, never from a sibling"** rule in
+  `starter/AGENTS.md` **and** this repo's `AGENTS.md`, and the pinned proposal
+  heading convention in `starter/docs/working-method.md` (mirrored into the derived
+  `AGENTS.md` body). Fittingly, we authored ADR-0033 from the spec — not a sibling —
+  and applied its own rename rule at the moment of acceptance.
+- **Design chat → idea 0028 (seed).** A question about why a plan links forward to
+  its ADR but the ADR has no back-link surfaced a real but *narrow*
+  human-discoverability friction: a human reading an accepted ADR can't one-click to
+  the plan(s) that implement it (agents just grep `Implements:`). Captured the
+  method-consistent fix — a **derived ADR↔plan view in `overview.md`**, generated
+  from existing headers, so ADR-0012 stays untouched (no reciprocal link on the
+  settled ADR; likely amends ADR-0011 instead).
+
+**What is left.**
+- **Cut one release** — now covering **three** threads held open together: the 0026
+  audience-forked-delta work, the 0027 author-from-spec work, and (if promoted) the
+  0028 ADR↔plan map. Bump **v2.13 → next** across the provenance citations
+  (`working-method.md`, `AGENTS.md` "How we work"), add a `CHANGELOG.md` entry with
+  its mandatory `Adopter migration:` line, regenerate `overview.md`, then tag.
+- **Process idea 0028** through the lifecycle if it's judged worth more than
+  grep-plus-ask.
+
+**What is next.** Session is closing here. **Continuation brief:** three threads are
+now queued for the still-pending release — 0026 (done), 0027 (done), 0028 (seed,
+optional). Do **not** reopen 0026 or 0027; decide 0028's fate, then bundle whatever
+is ready into a single new release as the final step. Repo is still at v2.13.
+
+---
+
+## [2026-07-11-(5)]
+
+**Where we are.** Post-2.13.0. This session opened the next batch of method work.
+Two threads are in flight and **one is fully closed and committed** (commit
+`38e7a43`) — but **no release has been cut yet**; the provenance citations still
+read **v2.13**.
+
+**What we achieved.**
+- **Idea 0026 → ADR-0032 → Plan 0022 (done, committed).** The guide's sync note
+  claimed a "paths-only" delta while two sections ("How to start", "Where to go
+  next") had quietly forked by *audience*. We introduced a new **audience-forked
+  section** delta class (ADR-0032, Amends ADR-0014), bracketed those sections in
+  `guide.md` as preserved-on-regen, rewrote the sync note to tell the truth, and
+  added a mechanical regeneration rule. An audit also caught the **same fork in the
+  spec pair** ("How to start working" has an adopter-only tail) and brought it under
+  the class across `working-method.md` + `AGENTS.md`.
+- **Captured idea 0027 (seed).** *Author new artifacts from the spec, not from a
+  sibling as a template* — the agent nearly copied a sibling ADR and imported its
+  incidental reality (wrong status, wrong cross-links). Also flags a latent spec
+  gap: the unwritten `## Proposed decision` → `## Decision` heading convention.
+
+**What is left.**
+- **Process idea 0027** through the full lifecycle (promote → ADR → accept → plan →
+  execute). It will edit the agent operating guidance (both `AGENTS.md` copies) and
+  likely pin the proposal-heading convention in the spec.
+- **Cut one release** covering *both* threads: bump **v2.13 → next** across the
+  provenance citations (`working-method.md`, `AGENTS.md` "How we work"), add a
+  `CHANGELOG.md` entry with its mandatory `Adopter migration:` line, regenerate
+  `overview.md`, then tag.
+
+**What is next.** Start idea 0027. **Continuation brief:** the 0026 thread is done
+and committed — do **not** reopen it; pick up at
+[idea 0027](ideas/0027-author-artifacts-from-spec-not-from-a-sibling-template.md),
+then bundle both threads into a single new release. The repo is at v2.13; the bump
+is the final step, done once at the end.
+
+---
+
 ## [2026-07-11-(4)]
 
 **Where we are.** v2.13.0 is complete and about to be committed, tagged, and
