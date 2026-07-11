@@ -32,6 +32,37 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-11-(8)]
+
+**Where we are.** Took idea 0022 (render the method's fixed procedures as optional
+skills) all the way through the lifecycle in one sitting — under a controller's
+lens: pure tokens and cents, no other axis.
+
+**What we achieved.** Costed it honestly: method-tax : business-cost ≈ **1 : 15**,
+and the slice skills could actually remove ≈ **1 : 80** of session cost — ~1%,
+~90% of which prompt-caching already neutralizes, and net-negative once the
+derived-rendering sync burden (ADR-0014) is booked. Captured the full analysis in
+idea 0022, then **promoted** it to **ADR-0036** and **weighed accept vs reject**
+together. Landed on **reject** — the reliability gain has a cheaper substitute
+(sharpen/compact the prose, idea 0021 + ADR-0026), and the structured-guidance/UX
+benefit is real but still *speculative*. Kept the "no" transparent as a rejected
+ADR rather than dropping the idea. Because a rejected ADR is passive, we added an
+**active revisit reminder** as parent-less seed idea **0030**, so the reopen
+condition surfaces in the overview. Regenerated `overview.md`.
+
+**What is left.** Nothing on this thread. A tiny latent spec gap surfaced worth
+noting: the heading-transition rule (ADR-0033) is written only for *acceptance* —
+rejection's `## Decision` heading is by-parallel, not yet pinned. Could be its own
+small ADR someday.
+
+**What is next.** Commit and push (no new version cut). Revisit skills only if a
+concrete adopter demands structured/guided operation — tracked by idea 0030.
+
+**Continuation brief.** If you're picking this up: the decision against skills is
+[ADR-0036](decisions/0036-render-fixed-procedures-as-optional-skills.md); its
+trip-wire lives in
+[idea 0030](ideas/0030-revisit-skills-if-adopters-demand-structured-operation.md).
+
 ## [2026-07-11-(7)]
 
 **Where we are.** Same day, same still-uncut release — provenance citations still

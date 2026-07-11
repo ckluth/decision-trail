@@ -36,7 +36,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0019 Pin the canonical artifact-header format so it can't drift](ideas/0019-pin-canonical-artifact-header-format.md) | 2026-07-10 | promoted | |
 | [0020 Advice and means to run the method economically and token-saving](ideas/0020-use-the-method-economically-and-token-saving.md) | 2026-07-10 | decomposed | |
 | [0021 Shrink the always-loaded agent instruction weight](ideas/0021-shrink-the-always-loaded-agent-instruction-weight.md) | 2026-07-11 | promoted | |
-| [0022 Render the method's fixed procedures as optional skills](ideas/0022-render-fixed-procedures-as-optional-skills.md) | 2026-07-11 | seed | |
+| [0022 Render the method's fixed procedures as optional skills](ideas/0022-render-fixed-procedures-as-optional-skills.md) | 2026-07-11 | promoted | |
 | [0023 Name the resume-time economy practices as a stated discipline](ideas/0023-name-the-resume-time-economy-practices-as-a-discipline.md) | 2026-07-11 | promoted | |
 | [0024 Pin the title-line format so the ordinal is always visible in the H1](ideas/0024-pin-the-title-line-format-ordinal-in-h1.md) | 2026-07-11 | promoted | |
 | [0025 Clarify how a consuming repo adopts a newer version of decision-trail](ideas/0025-clarify-how-a-consuming-repo-adopts-a-newer-version.md) | 2026-07-11 | promoted | |
@@ -44,6 +44,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0027 Author new artifacts from the spec, not from a sibling as a template](ideas/0027-author-artifacts-from-spec-not-from-a-sibling-template.md) | 2026-07-11 | promoted | |
 | [0028 A derived ADR→plan map so a human can find how a decision was implemented](ideas/0028-derived-adr-to-plan-map-for-human-discoverability.md) | 2026-07-11 | promoted | |
 | [0029 Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](ideas/0029-enumerate-heading-transition-in-agent-checklist.md) | 2026-07-11 | promoted | |
+| [0030 Revisit optional skills if adopters demand structured operation](ideas/0030-revisit-skills-if-adopters-demand-structured-operation.md) | 2026-07-11 | seed | |
 
 ## Decisions
 
@@ -84,6 +85,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0033 Author new artifacts from the spec, not from a sibling as a template](decisions/0033-author-from-the-spec-not-from-a-sibling.md) | 2026-07-11 | accepted | |
 | [0034 A derived ADR → plans sub-index in `overview.md`](decisions/0034-derived-adr-to-plans-sub-index-in-overview.md) | 2026-07-11 | accepted | |
 | [0035 Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](decisions/0035-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | 2026-07-11 | accepted | |
+| [0036 Render the method's fixed procedures as optional skills](decisions/0036-render-fixed-procedures-as-optional-skills.md) | 2026-07-11 | rejected | |
 
 ## Plans
 
