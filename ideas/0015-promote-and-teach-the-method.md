@@ -1,4 +1,4 @@
-# 15. Promote and teach the method — a didactical guide, and a German translation
+# Idea 0015: Promote and teach the method — a didactical guide, and a German translation
 
 - Status: promoted
 - Date: 2026-07-05

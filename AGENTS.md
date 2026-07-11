@@ -89,6 +89,12 @@ and the optional `- Tags:` — each field on its own `-`-prefixed line. The bull
 matter: the overview refresh procedure greps them, so a bare (bullet-less) header
 line is silently missed (ADR-0026).
 
+The `# Title` line itself is pinned too: **typed and zero-padded, the ordinal
+echoing the filename slot, family named** — `# Idea 0017: Title`,
+`# ADR-0017: Title`, `# Plan 0017: Title`. The filename stays authoritative (the
+number lives in the slot); the H1 ordinal is a *visible echo* of it, not a second
+source of truth — so the two must always agree (ADR-0028).
+
 Artifact numbers are **ordinal
 only**: assign the next unused number in that family (`ideas/`, `decisions/`,
 `plans/` are independent sequences). Never derive a number from a related artifact
@@ -294,6 +300,11 @@ These rules are for an AI agent working in this repo:
   Never write a bare (bullet-less) header line: the overview refresh procedure
   greps the bullets, so a bare header is silently missed and can leave a stale row
   in `overview.md`. (ADR-0026)
+- **Title line carries the ordinal.** Every artifact's `# Title` line is typed
+  and zero-padded to match its filename slot, naming the family —
+  `# Idea 0017: Title`, `# ADR-0017: Title`, `# Plan 0017: Title`. The filename
+  stays authoritative; the H1 number is a visible echo of it, so the two must
+  always agree — treat a mismatch as a conformance failure. (ADR-0028)
 - **The method is settled.** Use it; don't redesign decision-trail casually. Any
   change to the method itself is made decision-trail — proposed and recorded as a
   new ADR, with amended or superseded ADRs cross-linked (never edited away).
@@ -307,12 +318,14 @@ These rules are for an AI agent working in this repo:
   (ADR-0011). Regenerate it whenever the user explicitly asks. A user may flip a
   state directly in an artifact; the next regeneration reconciles the index.
 
-  **Refresh procedure:** scan each family for `# N. Title` (line 1) and
-  `- Status:` / `- Date:` / `- Tags:` (header block) → rewrite the three tables
-  in `overview.md`. If an artifact's header fields carry no leading `-` bullet, do
-  **not** silently skip it — a bare header means the artifact is non-conformant;
-  fix the header to the canonical bulleted form before regenerating, so no
-  artifact is dropped from the index.
+  **Refresh procedure:** scan each family for its typed title line
+  (`# Idea NNNN:`, `# ADR-NNNN:`, or `# Plan NNNN:`) and `- Status:` / `- Date:` /
+  `- Tags:` (header block) → rewrite the three tables in `overview.md`. If an
+  artifact's header fields carry no leading `-` bullet, or its title-line
+  ordinal doesn't match its filename slot, do **not** silently skip or trust it —
+  both are non-conformant; fix the header to the canonical bulleted form and
+  align the ordinals before regenerating, so no artifact is dropped or misfiled
+  in the index.
 - **Travel diary — guard-free.** `travel-diary.md` is an optional, informal
   human-facing logbook, outside the lifecycle and **not a source of truth**
   (ADR-0018). When the user says *"add a chapter to the travel diary"* (or

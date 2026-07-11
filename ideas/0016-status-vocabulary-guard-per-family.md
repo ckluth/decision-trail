@@ -1,4 +1,4 @@
-# Idea: status vocabulary is per-family — guard against cross-contamination
+# Idea 0016: status vocabulary is per-family — guard against cross-contamination
 
 - Date: 2026-07-10
 - Status: promoted

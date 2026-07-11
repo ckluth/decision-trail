@@ -1,4 +1,4 @@
-# 1. Record decisions as ADRs
+# ADR-0001: Record decisions as ADRs
 
 - Status: accepted
 - Date: 2026-06-28

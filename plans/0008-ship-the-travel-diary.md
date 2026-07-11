@@ -1,4 +1,4 @@
-# Plan: ship the travel diary as an optional human-facing companion
+# Plan 0008: ship the travel diary as an optional human-facing companion
 
 - Date: 2026-07-03
 - Status: done

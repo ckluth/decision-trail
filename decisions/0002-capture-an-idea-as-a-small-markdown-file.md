@@ -1,4 +1,4 @@
-# 2. Capture an idea as a small markdown file
+# ADR-0002: Capture an idea as a small markdown file
 
 - Status: accepted
 - Date: 2026-06-28

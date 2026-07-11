@@ -32,6 +32,48 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-11]
+
+**Where we are.** v2.11.0 is cut, closing plan 0018 (ADR-0028) — the last thread
+open under v2.10's release. Along the way we also budded a new decomposed idea map
+(0020 → 0021/0022/0023) about running the method economically.
+
+**What we achieved.**
+- **Budded idea 0020** ("run the method economically and token-saving") into
+  three children after an agent's-eye token-cost analysis: 0021 (shrink the
+  always-loaded agent-instruction weight), 0022 (render fixed procedures as
+  optional skills), and 0023 (name the resume-time economy practices as a stated
+  discipline). 0020 itself became a proper `decomposed` pure map, with its
+  original content moved into 0023 and the branching reasons recorded in place —
+  the first real-world use of ADR-0027's mechanism.
+- **ADR-0028 — pin the title-line format (idea 0024, amends ADR-0026).** While
+  investigating a drift question ("why did idea headlines stop carrying their
+  number?"), we found the same drift class ADR-0026 had just fixed for header
+  bullets had recurred in the H1 title line. The decisive argument: the ordinal
+  is the *spoken handle* ("promote idea 17") used constantly in conversation, so
+  forcing a filename lookup after reading the editor is bad UX. Decided on a
+  typed, zero-padded, family-named form — `# Idea 0017: Title` / `# ADR-0017:
+  Title` / `# Plan 0017: Title` — with title↔filename agreement as a new
+  conformance check.
+- **Executed plan 0018 step by confirmed step**, all 10 tasks: canonical
+  template + refresh-procedure hardening in both renderings, the new
+  conformance-check step in `adopting.md`, a full sweep of this repo's 56
+  artifact files to the canonical title-line form, the derived-rendering fix,
+  the provenance bump to v2.11, and the CHANGELOG entry.
+- Along the way, clarified for the human colleague the real difference between
+  the three method files (`working-method.md` canonical spec, `AGENTS.md`
+  derived rendering, `starter/AGENTS.md` adopter hand-off) and confirmed the
+  "Agent operating guidance" register (ADR-0014) is deliberate — though flagged
+  that it has grown beyond its original scope, feeding directly into idea 0021.
+
+**What is left.** Ideas 0021, 0022, 0023 are all still `seed` — none promoted
+yet. The "Agent operating guidance" duplication/growth concern is noted but
+unaddressed.
+
+**What is next.** Pick up one of 0021/0022/0023 when ready to mature it into a
+proposal; idea 0021 (shrink always-loaded weight) is the most directly connected
+to the guidance-bloat concern just observed.
+
 ## [2026-07-10-(2)]
 
 **Where we are.** v2.10.0 is ready to cut — a three-ADR guardrail-and-vocabulary

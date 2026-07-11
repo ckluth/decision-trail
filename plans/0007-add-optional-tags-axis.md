@@ -1,4 +1,4 @@
-# Plan: add the optional `Tags:` axis for cross-cutting navigation
+# Plan 0007: add the optional `Tags:` axis for cross-cutting navigation
 
 - Date: 2026-07-03
 - Status: done

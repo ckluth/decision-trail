@@ -1,4 +1,4 @@
-# 5. Repo layout and cross-linking conventions
+# ADR-0005: Repo layout and cross-linking conventions
 
 - Status: accepted
 - Date: 2026-06-28

@@ -1,4 +1,4 @@
-# Plan: teach that the confirmation guard is never perfectly safe
+# Plan 0009: teach that the confirmation guard is never perfectly safe
 
 - Date: 2026-07-03
 - Status: done

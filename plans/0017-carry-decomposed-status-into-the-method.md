@@ -1,4 +1,4 @@
-# Plan: carry the `decomposed` idea status into the method
+# Plan 0017: carry the `decomposed` idea status into the method
 
 - Date: 2026-07-10
 - Status: done

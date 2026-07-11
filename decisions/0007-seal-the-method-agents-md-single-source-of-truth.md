@@ -1,4 +1,4 @@
-# 7. Seal the method: AGENTS.md is the single source of truth
+# ADR-0007: Seal the method: AGENTS.md is the single source of truth
 
 - Status: accepted
 - Date: 2026-06-28

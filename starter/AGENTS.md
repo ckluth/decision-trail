@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.10 — https://github.com/haevg-rz/decision-trail
+Based on decision-trail v2.11 — https://github.com/haevg-rz/decision-trail
 
 ## Agent operating guidance
 
@@ -54,6 +54,11 @@ These rules are for an AI agent working in this repo:
   Never write a bare (bullet-less) header line: the overview refresh procedure
   greps the bullets, so a bare header is silently missed and can leave a stale row
   in the overview.
+- **Title line carries the ordinal.** Every artifact's `# Title` line is typed
+  and zero-padded to match its filename slot, naming the family —
+  `# Idea 0017: Title`, `# ADR-0017: Title`, `# Plan 0017: Title`. The filename
+  stays authoritative; the H1 number is a visible echo of it, so the two must
+  always agree — treat a mismatch as a conformance failure.
 - **The method is settled.** Use decision-trail; don't redesign the *method*
   casually. (Your project's own decisions are normal work — captured as ideas,
   ADRs, and plans under `docs/`.)

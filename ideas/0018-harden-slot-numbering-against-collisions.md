@@ -1,4 +1,4 @@
-# Idea: harden next-slot numbering so it can't collide
+# Idea 0018: harden next-slot numbering so it can't collide
 
 - Date: 2026-07-10
 - Status: promoted

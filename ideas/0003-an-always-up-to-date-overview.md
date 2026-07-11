@@ -1,4 +1,4 @@
-# 3. An always up-to-date `overview.md`
+# Idea 0003: An always up-to-date `overview.md`
 
 - Status: promoted
 - Date: 2026-06-28

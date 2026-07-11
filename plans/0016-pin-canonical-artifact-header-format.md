@@ -1,4 +1,4 @@
-# Plan: pin the canonical artifact-header format
+# Plan 0016: pin the canonical artifact-header format
 
 - Date: 2026-07-10
 - Status: done

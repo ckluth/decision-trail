@@ -1,4 +1,4 @@
-# 2. Adopting the-way in other project repos
+# Idea 0002: Adopting the-way in other project repos
 
 - Status: promoted
 - Date: 2026-06-28

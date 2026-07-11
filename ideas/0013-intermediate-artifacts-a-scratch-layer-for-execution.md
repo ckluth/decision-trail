@@ -1,4 +1,4 @@
-# Idea: intermediate artifacts — a scratch persistence layer for execution
+# Idea 0013: intermediate artifacts — a scratch persistence layer for execution
 
 - Date: 2026-07-03
 - Status: promoted

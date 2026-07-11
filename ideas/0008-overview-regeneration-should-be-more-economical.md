@@ -1,4 +1,4 @@
-# Idea: overview regeneration should be more economical
+# Idea 0008: overview regeneration should be more economical
 
 - Date: 2026-06-29
 - Status: promoted

@@ -1,4 +1,4 @@
-# Idea: cross-cutting concerns have no navigable home — is a "spine" missing?
+# Idea 0009: cross-cutting concerns have no navigable home — is a "spine" missing?
 
 - Date: 2026-07-03
 - Status: promoted

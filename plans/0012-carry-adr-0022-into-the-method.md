@@ -1,4 +1,4 @@
-# Plan: carry ADR-0022 into the method — copy-driven update, `starter/`-derived manifest, in-repo pointer, conformance check
+# Plan 0012: carry ADR-0022 into the method — copy-driven update, `starter/`-derived manifest, in-repo pointer, conformance check
 
 - Date: 2026-07-04
 - Status: done

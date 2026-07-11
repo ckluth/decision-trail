@@ -1,4 +1,4 @@
-# 3. Rename the-way to decision-trail
+# Plan 0003: Rename the-way to decision-trail
 
 - Status: done
 - Date: 2026-06-28

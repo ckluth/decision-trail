@@ -1,4 +1,4 @@
-# 3. A proposal is an ADR in the `proposed` status
+# ADR-0003: A proposal is an ADR in the `proposed` status
 
 - Status: accepted
 - Date: 2026-06-28

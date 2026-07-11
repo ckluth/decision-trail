@@ -1,4 +1,4 @@
-# Idea: documentation flaw — sync and audience
+# Idea 0006: documentation flaw — sync and audience
 
 - Date: 2026-06-28
 - Status: promoted

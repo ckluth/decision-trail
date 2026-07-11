@@ -1,4 +1,4 @@
-# Idea: the confirmation guard is never perfectly safe — scope lives in the "yes"
+# Idea 0012: the confirmation guard is never perfectly safe — scope lives in the "yes"
 
 - Date: 2026-07-03
 - Status: promoted

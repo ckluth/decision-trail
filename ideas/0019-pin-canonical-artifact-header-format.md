@@ -1,4 +1,4 @@
-# Idea: pin the canonical artifact-header format so it can't drift
+# Idea 0019: pin the canonical artifact-header format so it can't drift
 
 - Date: 2026-07-10
 - Status: promoted

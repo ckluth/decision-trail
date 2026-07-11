@@ -1,4 +1,4 @@
-# Plan: ship the adopter on-ramp (`adopting.md`) and the release-migration contract
+# Plan 0011: ship the adopter on-ramp (`adopting.md`) and the release-migration contract
 
 - Date: 2026-07-03
 - Status: done

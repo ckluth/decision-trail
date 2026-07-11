@@ -13,6 +13,41 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.11.0] - 2026-07-11
+
+### Added
+- ADR-0028 — **pin the title-line format: ordinal in H1** (idea 0024, amends
+  ADR-0026): ADR-0026 pinned the header-block bullet format but left the H1
+  title-line rendering unpinned, and the same drift class recurred — ideas,
+  decisions, and plans split between a numbered `# N. Title` form and a bare
+  `# Idea: Title` / descriptive form. The decisive argument: the ordinal is the
+  **spoken handle** ("promote idea 17") used constantly in conversation, so
+  forcing a filename lookup after reading content in the editor is bad UX. The
+  method texts now state a **canonical title-line template** — typed and
+  zero-padded, family named — `# Idea 0017: Title` / `# ADR-0017: Title` / `# Plan
+  0017: Title`, filename remains authoritative (ADR-0015) and the title is its
+  visible echo. The **refresh procedure is hardened** to treat a title↔filename
+  ordinal mismatch as a conformance failure, and a **title-line match** step is
+  added to the conformance check (`adopting.md`). Applied to both renderings
+  (`starter/docs/working-method.md` + `AGENTS.md`), the starter hand-off file
+  (`starter/AGENTS.md`), and the starter exemplar
+  (`starter/docs/decisions/0001-adopt-decision-trail.md`). This repo's own 56
+  artifact files (ideas, decisions, plans) were swept to the canonical title-line
+  form (text preserved exactly, only the ordinal prefix added/normalized).
+
+### Changed
+- All three `starter/` renderings bump their provenance citation to **v2.11**
+  (`starter/docs/working-method.md`, `starter/docs/guide.md`, `starter/AGENTS.md`).
+
+**Adopter migration:** backfill each existing artifact's H1 to the canonical
+`# Idea NNNN: Title` / `# ADR-NNNN: Title` / `# Plan NNNN: Title` form (ordinal
+zero-padded to match the filename slot, text otherwise preserved), then
+regenerate `overview.md`. The new wording itself reaches adopters automatically
+via the copy-driven "bring me current" update (ADR-0022); only the backfill of
+already-existing artifact titles is a required, hand-done step. (Adopters may
+optionally run the new title-line-match conformance check to confirm their
+existing artifacts are clean.)
+
 ## [2.10.0] - 2026-07-10
 
 ### Added

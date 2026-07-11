@@ -1,4 +1,4 @@
-# Plan: promote and teach the method — didactical guide with Mermaid visuals
+# Plan 0013: promote and teach the method — didactical guide with Mermaid visuals
 
 - Date: 2026-07-05
 - Status: done

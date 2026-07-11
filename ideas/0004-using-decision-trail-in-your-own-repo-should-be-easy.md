@@ -1,4 +1,4 @@
-# 4. Using decision-trail in your own repo should be as easy as possible
+# Idea 0004: Using decision-trail in your own repo should be as easy as possible
 
 - Status: promoted
 - Date: 2026-06-28

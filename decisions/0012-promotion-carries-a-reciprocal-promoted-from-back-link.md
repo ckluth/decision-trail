@@ -1,4 +1,4 @@
-# 12. Promotion carries a reciprocal `Promoted from:` back-link
+# ADR-0012: Promotion carries a reciprocal `Promoted from:` back-link
 
 - Status: accepted
 - Date: 2026-06-28

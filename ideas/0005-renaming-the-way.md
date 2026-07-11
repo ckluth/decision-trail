@@ -1,4 +1,4 @@
-# 5. The name "the-way" may be too pretentious to share
+# Idea 0005: The name "the-way" may be too pretentious to share
 
 - Status: promoted
 - Date: 2026-06-28

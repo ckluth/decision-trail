@@ -1,4 +1,4 @@
-# 10. Adopters keep the method text in `docs/working-method.md`; `AGENTS.md` only points to it
+# ADR-0010: Adopters keep the method text in `docs/working-method.md`; `AGENTS.md` only points to it
 
 - Status: accepted
 - Date: 2026-06-28

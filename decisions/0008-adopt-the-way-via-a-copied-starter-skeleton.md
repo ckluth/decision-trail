@@ -1,4 +1,4 @@
-# 8. Adopt the-way via a copied starter skeleton; version this repo as the standard
+# ADR-0008: Adopt the-way via a copied starter skeleton; version this repo as the standard
 
 - Status: accepted
 - Date: 2026-06-28

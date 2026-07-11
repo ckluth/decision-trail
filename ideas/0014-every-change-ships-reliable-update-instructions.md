@@ -1,4 +1,4 @@
-# 14. Every change must ship precise, agent-reliable update instructions for older adopters
+# Idea 0014: Every change must ship precise, agent-reliable update instructions for older adopters
 
 - Status: promoted
 - Date: 2026-07-03

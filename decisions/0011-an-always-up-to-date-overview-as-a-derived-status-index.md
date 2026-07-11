@@ -1,4 +1,4 @@
-# 11. An `overview.md` status index, regenerated as a dated snapshot
+# ADR-0011: An `overview.md` status index, regenerated as a dated snapshot
 
 - Status: accepted
 - Date: 2026-06-28

@@ -1,4 +1,4 @@
-# Idea: a large idea has no home to decompose into — is a "container" idea missing?
+# Idea 0017: a large idea has no home to decompose into — is a "container" idea missing?
 
 - Date: 2026-07-10
 - Status: promoted

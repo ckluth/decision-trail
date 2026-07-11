@@ -1,4 +1,4 @@
-# 6. A single tool-agnostic entry point (AGENTS.md)
+# ADR-0006: A single tool-agnostic entry point (AGENTS.md)
 
 - Status: accepted
 - Date: 2026-06-28

@@ -1,4 +1,4 @@
-# Plan: make the per-family status vocabulary explicit and guarded
+# Plan 0014: make the per-family status vocabulary explicit and guarded
 
 - Date: 2026-07-10
 - Status: done

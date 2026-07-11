@@ -1,4 +1,4 @@
-# 14. Single-source the method text across renderings, and split it into three registers (guide / spec / agent guidance)
+# ADR-0014: Single-source the method text across renderings, and split it into three registers (guide / spec / agent guidance)
 
 - Status: accepted
 - Date: 2026-06-28

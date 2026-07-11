@@ -1,4 +1,4 @@
-# Plan: update overview regeneration rule to explicit-request only
+# Plan 0006: update overview regeneration rule to explicit-request only
 
 - Date: 2026-06-29
 - Status: done

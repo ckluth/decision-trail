@@ -5,6 +5,7 @@
 - Promoted from: [Idea-0019](../ideas/0019-pin-canonical-artifact-header-format.md)
 - Amends: [ADR-0011](0011-an-always-up-to-date-overview-as-a-derived-status-index.md)
 - Amends: [ADR-0022](0022-every-release-ships-reliable-update-instructions.md)
+- Amended by: [ADR-0028](0028-pin-the-title-line-format-ordinal-in-h1.md)
 
 ## Context
 

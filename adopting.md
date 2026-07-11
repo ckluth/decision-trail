@@ -166,13 +166,17 @@ script, your agent verifies each point directly.
    and any cross-link / `- Tags:` fields, each on its own `-`-prefixed line. Flag
    any bare (bullet-less) header and fix it, so the overview refresh can't
    silently drop the artifact.
-4. **Overview in sync.** `docs/overview.md` matches the artifact headers — same
+4. **Title line matches filename.** Every artifact's `# Title` line is typed and
+   zero-padded to match its filename slot, naming the family —
+   `# Idea 0017: …`, `# ADR-0017: …`, `# Plan 0017: …`. Flag any artifact whose
+   title-line ordinal disagrees with (or omits) its filename ordinal, and fix it.
+5. **Overview in sync.** `docs/overview.md` matches the artifact headers — same
    names, dates, and states — and is stamped with a current "as of" date. If not,
    regenerate it.
-5. **Citation consistent.** The `Based on decision-trail vX.Y` citation is identical
+6. **Citation consistent.** The `Based on decision-trail vX.Y` citation is identical
    in `docs/working-method.md` and the `## How we work` block of `AGENTS.md`.
 
-If all five hold, the repo conforms to the version it cites.
+If all six hold, the repo conforms to the version it cites.
 
 ---
 

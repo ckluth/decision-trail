@@ -1,4 +1,4 @@
-# Idea: a human-friendly travel diary for the human-machine interface
+# Idea 0010: a human-friendly travel diary for the human-machine interface
 
 - Date: 2026-07-03
 - Status: promoted

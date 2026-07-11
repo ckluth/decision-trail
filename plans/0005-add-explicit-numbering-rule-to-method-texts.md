@@ -1,4 +1,4 @@
-# Plan: add explicit numbering rule to method texts
+# Plan 0005: add explicit numbering rule to method texts
 
 - Date: 2026-06-29
 - Status: done

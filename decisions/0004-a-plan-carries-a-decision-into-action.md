@@ -1,4 +1,4 @@
-# 4. A plan carries a decision into action; execution is the plan in motion
+# ADR-0004: A plan carries a decision into action; execution is the plan in motion
 
 - Status: accepted
 - Date: 2026-06-28

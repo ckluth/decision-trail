@@ -1,4 +1,4 @@
-# 2. Make the `Promoted` link reciprocal
+# Plan 0002: Make the `Promoted` link reciprocal
 
 - Status: done
 - Date: 2026-06-28

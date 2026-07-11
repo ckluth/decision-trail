@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.10** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.11** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -88,6 +88,12 @@ and the optional `- Tags:` — each field on its own `-`-prefixed line. The bull
 matter: the overview refresh procedure greps them, so a bare (bullet-less) header
 line is silently missed.
 
+The `# Title` line itself is pinned too: **typed and zero-padded, the ordinal
+echoing the filename slot, family named** — `# Idea 0017: Title`,
+`# ADR-0017: Title`, `# Plan 0017: Title`. The filename stays authoritative (the
+number lives in the slot); the H1 ordinal is a *visible echo* of it, not a second
+source of truth — so the two must always agree.
+
 Artifact numbers are **ordinal only**: assign the next unused
 number in that family (`docs/ideas/`, `docs/decisions/`, `docs/plans/` are
 independent sequences). Never derive a number from a related artifact — a plan
@@ -106,12 +112,14 @@ state. It is **regenerated wholesale from the artifact headers** (never
 hand-patched) and stamped "as of <date>". Regenerate it whenever the user
 explicitly asks.
 
-  **Refresh procedure:** scan each family for `# N. Title` (line 1) and
-  `- Status:` / `- Date:` / `- Tags:` (header block) → rewrite the three tables
-  in `docs/overview.md`. If an artifact's header fields carry no leading `-`
-  bullet, do **not** silently skip it — a bare header means the artifact is
-  non-conformant; fix the header to the canonical bulleted form (see the header
-  template above) before regenerating, so no artifact is dropped from the index.
+  **Refresh procedure:** scan each family for its typed title line
+  (`# Idea NNNN:`, `# ADR-NNNN:`, or `# Plan NNNN:`) and `- Status:` / `- Date:` /
+  `- Tags:` (header block) → rewrite the three tables in `docs/overview.md`. If
+  an artifact's header fields carry no leading `-` bullet, or its title-line
+  ordinal doesn't match its filename slot, do **not** silently skip or trust it —
+  both are non-conformant; fix the header to the canonical bulleted form and
+  align the ordinals (see the header template above) before regenerating, so no
+  artifact is dropped or misfiled in the index.
 
 ## Layout
 

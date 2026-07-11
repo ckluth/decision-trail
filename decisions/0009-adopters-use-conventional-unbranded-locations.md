@@ -1,4 +1,4 @@
-# 9. Adopters use conventional, unbranded locations — no `the-way/` folder
+# ADR-0009: Adopters use conventional, unbranded locations — no `the-way/` folder
 
 - Status: accepted
 - Date: 2026-06-28

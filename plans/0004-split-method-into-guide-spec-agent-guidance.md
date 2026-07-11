@@ -1,4 +1,4 @@
-# 4. Split the method text into guide / spec / agent guidance, and single-source the spec
+# Plan 0004: Split the method text into guide / spec / agent guidance, and single-source the spec
 
 - Status: done
 - Date: 2026-06-28

@@ -1,4 +1,4 @@
-# 13. Rename the method from "the-way" to "decision-trail"
+# ADR-0013: Rename the method from "the-way" to "decision-trail"
 
 - Status: accepted
 - Date: 2026-06-28

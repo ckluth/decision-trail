@@ -1,4 +1,4 @@
-# 1. Build `overview.md` and the mandatory `Date:` convention
+# Plan 0001: Build `overview.md` and the mandatory `Date:` convention
 
 - Status: done
 - Date: 2026-06-28

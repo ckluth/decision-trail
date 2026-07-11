@@ -1,4 +1,4 @@
-# 1. Adopt decision-trail
+# ADR-0001: Adopt decision-trail
 
 - Date: <YYYY-MM-DD>
 - Status: accepted

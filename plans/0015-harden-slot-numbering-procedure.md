@@ -1,4 +1,4 @@
-# Plan: harden next-slot numbering with a collision-proof procedure
+# Plan 0015: harden next-slot numbering with a collision-proof procedure
 
 - Date: 2026-07-10
 - Status: done

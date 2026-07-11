@@ -1,4 +1,4 @@
-# Idea: artifact numbering is ordinal only — always use the next free slot
+# Idea 0007: artifact numbering is ordinal only — always use the next free slot
 
 - Date: 2026-06-29
 - Status: promoted

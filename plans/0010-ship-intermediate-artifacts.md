@@ -1,4 +1,4 @@
-# Plan: ship intermediate artifacts as an optional execution-stage companion
+# Plan 0010: ship intermediate artifacts as an optional execution-stage companion
 
 - Date: 2026-07-03
 - Status: done
