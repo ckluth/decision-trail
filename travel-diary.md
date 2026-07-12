@@ -32,6 +32,39 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-12]
+
+**Where we are.** Fresh off an incident: while using the method in a *consumer*
+repo, an agent derived a plan whose tasks included *deciding undecided things*
+("decide X" / "clarify Y"). That is a core-concept violation — a plan collapsing
+into the decision stage, letting decisions slip through as unreviewed steps and
+bypassing the confirmation guard. We hardened the method against it, decision-trail
+style.
+
+**What we achieved.** Walked the whole lifecycle in one sitting: captured the
+lesson as **idea 0031** (plans execute — they never "plan decisions"), answered its
+open questions step-by-step, **promoted** it to **ADR-0037** (which **amends
+ADR-0004**), accepted it, and carried it into the method via **plan 0026**. The
+rule now lives in five places — the spec Plans bullet, the `AGENTS.md` derived
+body, a new "Plans are mechanical execution" checklist bullet in both `AGENTS.md`
+renderings (audience-fork delta preserved), and a note in both guides — plus a
+`overview.md` regeneration. Then cut **release v2.15.0**: CHANGELOG entry with an
+executable `Adopter migration:` line, provenance bumps, commit, tag, push, and a
+GitHub release.
+
+**What is left.** Nothing on this thread — it's shipped end-to-end. The new rule
+is forward-looking; no artifact back-migration was needed (ADR-0004 stands,
+amended not rewritten).
+
+**What is next.** Back to normal use. If a plan ever tempts an agent toward a
+"decide X" task again, the guard is now in the spec, the checklist, and the guide —
+the answer is to step back up to the ADR, not to plan the decision.
+
+*Continuation brief.* Thread is closed; see [ADR-0037](decisions/0037-plans-are-mechanical-execution-questions-return-to-the-decision-stage.md)
+and [plan 0026](plans/0026-carry-adr-0037-into-the-method.md) if you want the trail.
+
+---
+
 ## [2026-07-11-(8)]
 
 **Where we are.** Took idea 0022 (render the method's fixed procedures as optional
