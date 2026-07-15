@@ -4,6 +4,7 @@
 - Date: 2026-07-11
 - Promoted from: [idea 0028](../ideas/0028-derived-adr-to-plan-map-for-human-discoverability.md)
 - Amends: ADR-0011 (extends the overview's shape with a second, ADR-oriented view)
+- Amended by: [ADR-0038](0038-stub-plan-at-acceptance-and-derived-no-plan-backstop.md)
 
 ## Context
 

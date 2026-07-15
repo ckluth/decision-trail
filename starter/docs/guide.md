@@ -8,7 +8,7 @@ along the way. Once the ideas here are familiar, lean on the terse
 [`working-method.md`](working-method.md) for quick lookups, and come back here for
 the human-facing advice the spec doesn't carry.
 
-> Based on **decision-trail v2.15** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.16** — https://github.com/haevg-rz/decision-trail
 
 ## The problem it solves
 
@@ -145,7 +145,11 @@ decision and breaks it into concrete tasks written as GitHub checkboxes: `- [ ]
 add a theme context`, `- [ ] persist the choice`, `- [ ] add the settings toggle`.
 A plan is purely the mechanical *how* — it never holds a "decide this" task. If a
 question comes up while you're executing, you don't settle it inside the plan; you
-step back to the ADR, clarify or amend it, then carry on.
+step back to the ADR, clarify or amend it, then carry on. When you accept an ADR
+that needs a plan to come alive, it's worth opening that plan straight away — even
+a one-line `draft` stub — so an accepted-but-unexecuted decision never quietly
+slips through, and a decision left with *no* plan reads as "this one stands on its
+own."
 
 **Execution.** Execution isn't a separate place — it's the plan in motion. You move
 the plan from `draft` to `active`, then tick checkboxes as the work lands, until
@@ -229,6 +233,13 @@ artifacts are the truth; the overview is just a convenient mirror. Second, keepi
 it current is the **agent's** job, not yours. If you flip a state directly in an
 artifact, the next regeneration reconciles the overview. You can ask the agent to
 regenerate it at any time.
+
+The overview also renders an **ADR — stand-alone decision** list — the accepted ADRs
+that no plan carries out. Paired with the write-a-stub-at-acceptance habit above,
+it's a gentle backstop: a short review queue you skim now and then, leaving the
+decisions that stand on their own and writing the missing stub for any that were
+genuinely forgotten. It can't tell the two apart for you — that's your call — but
+it makes sure an unexecuted decision never stays out of sight.
 
 ## Tags: an optional cross-cutting axis
 

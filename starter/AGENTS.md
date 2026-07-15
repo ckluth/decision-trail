@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.15 — https://github.com/haevg-rz/decision-trail
+Based on decision-trail v2.16 — https://github.com/haevg-rz/decision-trail
 
 ## Agent operating guidance
 
@@ -53,6 +53,12 @@ points to it.
     A question surfacing during execution returns to the decision stage — clarify
     / patch / amend the governing ADR, or open a new one — then resume; never
     fold the decision into the plan (§ *The lifecycle*).
+  - **Stub plan at acceptance** — when accepting an ADR that needs execution to
+    come alive, write its plan then and there (at minimum a one-line `draft` stub
+    that `Implements:` it), so that a *plan-less* accepted ADR reads as
+    "self-standing," not "forgotten." The derived **ADR — stand-alone decision** list
+    in `docs/overview.md` is a review-queue *backstop*, not a classifier — clear it
+    periodically (§ *The lifecycle*).
 - **Author from the spec, never from a sibling.** A new artifact's header, title
   line, status, and body template are fully specified (§ *The lifecycle*). Do not
   open an existing artifact as a *template* — copying imports incidental reality

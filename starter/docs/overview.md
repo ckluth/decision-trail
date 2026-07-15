@@ -34,3 +34,14 @@ You can ask the agent to **regenerate the overview** at any time.
 | ADR | Plan | Status |
 |-----|------|--------|
 | _none yet_ | | |
+
+## ADR — stand-alone decision
+
+Accepted ADRs that no plan carries out via `Implements:` — decisions that stand on
+their own and need no execution. Worth a quick check now and then: if a decision
+here accidentally has no plan but actually does need one, write its `draft` stub so
+it is not forgotten.
+
+| ADR | Accepted |
+|-----|----------|
+| _none yet_ | |

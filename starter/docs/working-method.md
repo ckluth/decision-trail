@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.15** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.16** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -83,6 +83,15 @@ artifact families:
   to the decision stage is fixed; *which* form the return takes (patch, amend, or
   new ADR) is a judgment call sized to the question.
 
+**A stub plan at acceptance.** When an accepted ADR needs execution to come alive
+(it is a *spec*, not self-executing), write its plan at acceptance — at minimum a
+one-line `draft` stub that `Implements:` it. This reuses the existing `draft`
+status ("accepted decision, execution not yet started") and adds no new status,
+verb, or field. Its purpose is to make *absence* meaningful: once the discipline
+holds, an accepted ADR with **no** plan reads as "stands for itself," not "someone
+forgot." The discipline is where the intended-vs-gap line is drawn — once, by a
+human, at the right moment.
+
 **Each family's status vocabulary is its own — never borrow another family's.** New
 idea → `seed`, new proposal → `proposed`, new plan → `draft`; decision and execution
 are in-place continuations that add no separate entry status. Pick a status only
@@ -127,11 +136,21 @@ hand-maintained field and no back-link added to the ADR itself. Each ADR row
 renders as **`ADR-000n – Title`** (link text carries the title, not just the
 number), so a human recognizes the decision without opening it.
 
+It also carries a derived **ADR — stand-alone decision** list: every accepted ADR that
+**no** plan points at via `Implements:`, built from the same header scan. This is a
+review-queue *backstop*, not a classifier — it cannot itself tell an intentionally
+self-standing ADR from a genuine gap; the stub-plan-at-acceptance discipline draws
+that line, and a human periodically clears the queue (leave a self-standing row,
+write the missing `draft` stub for a real gap). Held with the discipline above, the
+list stays low-noise and makes an unexecuted decision impossible to walk past.
+
   **Refresh procedure:** scan each family for its typed title line
   (`# Idea NNNN:`, `# ADR-NNNN:`, or `# Plan NNNN:`) and `- Status:` / `- Date:` /
   `- Tags:` (header block) → rewrite the three tables in `docs/overview.md`. Also
   read each plan's `- Implements:` field and group plans by target ADR to
-  (re)build the ADR → plans sub-index in the same pass. If
+  (re)build the ADR → plans sub-index in the same pass; collect the accepted ADRs
+  that no plan's `- Implements:` points at to (re)build the **ADR — stand-alone
+  decision** list in the same pass. If
   an artifact's header fields carry no leading `-` bullet, or its title-line
   ordinal doesn't match its filename slot, do **not** silently skip or trust it —
   both are non-conformant; fix the header to the canonical bulleted form and

@@ -32,6 +32,42 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-15]
+
+**Where we are.** About to cut a release that bundles the *stub-plan-at-acceptance*
+enhancement (ADR-0038) with a small readability fix to the overview it introduced.
+The method now surfaces, right in `overview.md`, which accepted decisions carry no
+plan — so an unexecuted decision can't hide.
+
+**What we achieved.** Earlier work landed **ADR-0038** — a two-part mechanism: a
+*discipline* (write a one-line `draft` stub plan when you accept an ADR that needs
+execution) plus a *derived backstop* (a new `overview.md` section listing accepted
+ADRs no plan implements), amending ADR-0011 and ADR-0034. Today we sharpened its
+human-facing wording: the section was titled **"Accepted — no plan yet"**, which
+read like an accusation ("you forgot a plan"). We renamed it to **"ADR —
+stand-alone decision"** and reframed the blurb to lead with *these stand on their
+own*, with a gentle "check now and then in case a decision here accidentally needs
+a plan." Plain English, no jargon, synced across both `overview.md`s, both guides,
+both `AGENTS.md`s, and the canonical spec — historical artifacts left untouched.
+We also seeded **idea 0033**: overview regeneration is mechanical yet error-prone,
+and we weighed a script/skill/verifier against method-purity with real measured
+numbers (token costs, drift classes, the generation-vs-detection asymmetry). It
+stays `seed`, parked like idea 0030.
+
+**What is left.** The release mechanics: CHANGELOG entry, provenance bumps to
+v2.16, commit, tag, push, GitHub release.
+
+**What is next.** Ship v2.16.0. Later, if overview drift keeps biting, idea 0033 is
+ready to promote — the leading candidate is a cheap, portable *conformance check*
+(detection) rather than a generation script.
+
+**Continuation brief.** The stand-alone-decision section is live and low-noise; keep
+the stub-at-acceptance discipline so it stays meaningful. See
+[ADR-0038](decisions/0038-stub-plan-at-acceptance-and-derived-no-plan-backstop.md)
+and [idea 0033](ideas/0033-overview-regen-mechanical-yet-error-prone-script-or-skill.md).
+
+---
+
 ## [2026-07-12]
 
 **Where we are.** Fresh off an incident: while using the method in a *consumer*

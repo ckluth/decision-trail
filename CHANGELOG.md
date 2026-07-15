@@ -13,6 +13,51 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.16.0] - 2026-07-15
+
+**Adopter migration:** After copying this version, **regenerate `docs/overview.md`**
+so it gains the new derived **"ADR — stand-alone decision"** section (ADR-0038) —
+the list of accepted ADRs that no plan carries out via `Implements:`. The three
+family tables and the ADR → plans sub-index are unchanged; this section is only
+produced by a regeneration. **No artifact back-migration** is required: the
+**stub-plan-at-acceptance discipline** (write a one-line `draft` stub plan when you
+accept an ADR that needs execution) is forward-looking agent-and-human guidance —
+internalize it and apply it going forward; existing accepted ADRs need no change.
+
+### Added
+- ADR-0038 — **a stub-plan-at-acceptance discipline plus a derived
+  "stand-alone decision" backstop** (idea 0032, promoted). An accepted ADR is
+  sometimes only a *spec* that comes alive when a plan carries it out (ADR-0037),
+  and such a decision could silently sit undone with nothing in the rendered trail
+  surfacing it. Two halves that complete each other, reusing only existing verbs
+  and the existing `draft` plan status — **no new field, status, or cross-link**:
+  (1) a **discipline** — when accepting an ADR that needs execution, write its plan
+  then and there, at minimum a one-line `draft` stub that `Implements:` it, so a
+  *plan-less* accepted ADR reads as "self-standing," not "forgotten"; and (2) a
+  **derived backstop** — a new `overview.md` section listing every accepted ADR that
+  no plan points at via `Implements:`, regenerated in the same header scan as the
+  ADR → plans sub-index. The discipline is the classifier; the derived list is a
+  review-queue *backstop*, not a classifier — a human periodically clears it. This
+  **amends ADR-0011** (extends the overview's shape with a third derived view) and
+  **ADR-0034** (adds the blind-complement view alongside the sub-index); both gain
+  reciprocal `Amended by:` back-links. ADR-0012 (no ADR→plan back-link) stands
+  untouched. Landed in `starter/docs/working-method.md` (§ *The lifecycle* and the
+  refresh procedure), this repo's `AGENTS.md` derived body and a new
+  **"Stub plan at acceptance"** checklist bullet in both `AGENTS.md` renderings, a
+  note in both guides, and the `overview.md` templates.
+
+### Changed
+- The derived overview section is titled **"ADR — stand-alone decision"** with a
+  plain-English blurb that leads with *these decisions stand on their own*, and only
+  gently notes to check now and then in case a decision here accidentally needs a
+  plan. (The working title during ADR-0038's development read "Accepted — no plan
+  yet", which came across as an accusation rather than a neutral list.) Synced across
+  both `overview.md`s, both guides, both `AGENTS.md`s, and the canonical spec.
+- Two title-line conformance fixes: ADR-0016 and ADR-0035 H1s aligned to the pinned
+  `# ADR-NNNN:` form (ADR-0028).
+- All three `starter/` renderings bump their provenance citation to **v2.16**
+  (`working-method.md`, `guide.md`, and `AGENTS.md`).
+
 ## [2.15.0] - 2026-07-12
 
 **Adopter migration:** The **plans rule is tightened** (ADR-0037) — internalize

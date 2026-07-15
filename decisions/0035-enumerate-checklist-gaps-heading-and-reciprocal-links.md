@@ -1,4 +1,4 @@
-# Proposal 0035: Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist
+# ADR-0035: Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist
 
 - Status: accepted
 - Date: 2026-07-11

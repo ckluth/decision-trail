@@ -1,4 +1,4 @@
-# ADR-0016: Overview regeneration should be more economical
+# ADR-0016: Overview regeneration on explicit request only
 
 - Date: 2026-06-29
 - Status: accepted
