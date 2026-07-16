@@ -340,6 +340,8 @@ A quick rule of thumb when you're unsure where something belongs: if re-running 
 generator brings it back, it's `derived-artifacts/`; if only re-doing creative work
 brings it back, it's `delivered-artifacts/`; if losing it costs nothing, it was
 `intermediate-artifacts/` scratch all along.
+
+<!-- AUDIENCE-FORKED SECTION (home-repo variant) — "How to start" — BEGIN.
      Per the sync note in this file's header and ADR-0032, this section is
      preserved on regeneration: do NOT overwrite it with the canonical (adopter)
      variant from starter/docs/guide.md. -->
