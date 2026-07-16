@@ -283,7 +283,7 @@ before you end a session, say *"update the diary"*. Once this underrated little
 helper is part of your routine, you'll miss it the moment you forget that last,
 super-useful step.
 
-## Intermediate artifacts
+## Companion artifact locations
 
 For the *execution* stage there's a second optional companion: an
 **intermediate-artifacts** folder (`docs/intermediate-artifacts/`) — a scratch
