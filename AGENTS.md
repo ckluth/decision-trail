@@ -159,6 +159,8 @@ AGENTS.md     this file — the terse reference + agent guidance
 overview.md   derived status index (regenerated dated snapshot, see ADR-0011)
 travel-diary.md optional human-facing logbook (companion, not a source of truth)
 intermediate-artifacts/ optional scratch persistence layer for execution (not a source of truth)
+delivered-artifacts/ optional home for plan-created content (companion)
+derived-artifacts/ optional distilled projections from the ADRs (not a source of truth)
 ideas/        idea artifacts
 decisions/    proposal + decision artifacts (ADRs)
 plans/        plan + execution artifacts
@@ -270,6 +272,60 @@ conventional place to live.
 - **Left to rot harmlessly** when a plan is `done` (pruning is optional). The whole
   mechanism is optional — a repo that does not need it simply has none.
 
+## Delivered artifacts (optional companion)
+
+An optional, informal home for **content *created* as the output of a plan**
+(ADR-0039) — a report, a spec document, a diagram: work authored fresh rather than
+*distilled* from other artifacts. It completes the `*-artifacts/` companion family
+with `intermediate-artifacts/` (gathered scratch) and `derived-artifacts/` (distilled
+projections); the three are split by the **origin** of what they hold — *gathered*,
+*created*, *derived*.
+
+- **A folder, `delivered-artifacts/`** — the home for plan-created content, written
+  fresh (not derived from anything).
+- **Defined by origin, not authority** — this is *not* a fourth lifecycle family and
+  *not* a new source of truth: the ideas, decisions, and plans stay the only
+  lifecycle sources of truth. The folder gives created content a conventional home and
+  distinguishes it by origin; where a deliverable's existence or shape is itself a
+  decision, an ADR governs it, but the folder adds no lifecycle status and no
+  cross-link field.
+- **Guard split** — folder *mechanics* (creating the folder, dropping the README,
+  filing or moving files) are guard-free like `intermediate-artifacts/`, but *creating
+  the deliverable content* is real plan work and follows the **normal confirmation
+  guard**; there is no blanket guard-free grant for content.
+- **Internally unstructured** — the method defines only *where* it lives and *what it
+  is*; how its contents are organized is the project's business.
+- **A rule of thumb** — if losing the file means *re-running a generator* it is
+  `derived-artifacts/`; if it means *re-doing creative work* it is
+  `delivered-artifacts/`; if it costs nothing it was `intermediate-artifacts/` scratch.
+  The whole mechanism is optional — a repo that does not need it simply has none.
+
+## Derived artifacts (optional companion)
+
+An optional, informal home for **human-facing projections mechanically distilled from
+the authoritative artifacts** (chiefly the ADRs) (ADR-0039). Each one summarizes
+decisions otherwise scattered across many records, links back to its sources, and can
+be **regenerated on request** when those sources change.
+
+- **A folder, `derived-artifacts/`** — distilled, curated projections kept current
+  against their sources.
+- **Not a source of truth** — a convenience, never authoritative. To change a rule,
+  amend the governing ADR (write a new amending ADR — never edit an accepted one in
+  place), then regenerate the affected derived document. It sits outside the lifecycle
+  and cross-link vocabulary and may drift harmlessly if left stale.
+- **Distinct from `overview.md`** — `overview.md` is the *special, always-present*
+  derived **status index** over all three families at the repo root (ADR-0011);
+  `derived-artifacts/` holds *optional, topical* projections. Their only kinship is
+  that both are regenerated, not-a-source-of-truth projections — their roles do not
+  merge.
+- **Cite your sources (recommended)** — a derived document *should* link back to the
+  artifacts it distills, so it stays regenerable and auditable; the exact rendering is
+  the project's business (an inline "Derived from ADR-00nn" note is a natural example,
+  not a mandated format).
+- **User-triggered regeneration** — like `overview.md`, a derived document is
+  regenerated when you ask for it. The whole mechanism is optional — a repo that does
+  not need it simply has none.
+
 ## How to start working
 1. Capture a thought as an idea in `ideas/`.
 2. When it matures, open an ADR in `decisions/` with `Status: proposed`.
@@ -359,6 +415,15 @@ only flags the trap to avoid and points to it.
   files under `intermediate-artifacts/` is light-weight — **no ADR, no plan, no
   confirmation guard** — because it touches nothing authoritative
   (§ *Intermediate artifacts*; ADR-0020).
+- **Delivered / derived artifacts — guard split, and one authority line.** Folder
+  *mechanics* for `delivered-artifacts/` and `derived-artifacts/` (creating the
+  folder, dropping a README, filing/moving files) are guard-free; but **creating
+  deliverable *content* follows the normal confirmation guard** as real plan work,
+  and regenerating a `derived-artifacts/` document is **user-triggered** like
+  `overview.md`. Never frame `delivered-artifacts/` as a new source of truth — it is
+  defined by *origin* (plan-created), not authority; `derived-artifacts/` is
+  explicitly **not a source of truth** and stays distinct from `overview.md`
+  (§ *Delivered artifacts*, § *Derived artifacts*; ADR-0039).
 - **Release-migration contract (release-author rule, ADR-0021, refined by
   ADR-0022).** When cutting a new release of decision-trail, every `CHANGELOG.md`
   entry **must** carry an **`Adopter migration:`** line — **even when it is

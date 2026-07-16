@@ -8,7 +8,7 @@ along the way. Once the ideas here are familiar, lean on the terse
 [`working-method.md`](working-method.md) for quick lookups, and come back here for
 the human-facing advice the spec doesn't carry.
 
-> Based on **decision-trail v2.16** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.17** — https://github.com/haevg-rz/decision-trail
 
 ## The problem it solves
 
@@ -271,6 +271,15 @@ space where a plan can park material it gathers along the way (data, findings,
 intermediate outputs) to work on later. Like the diary it's informal, guard-free,
 and never a source of truth; it's committed by default so the material survives a
 break, and a repo that doesn't need one simply has none.
+
+Two more optional companions round out the `*-artifacts/` family, split by where
+their contents *come from*: **delivered-artifacts** (`docs/delivered-artifacts/`) is
+the home for content a plan *creates* — a report, a spec, a diagram, authored fresh;
+and **derived-artifacts** (`docs/derived-artifacts/`) holds human-facing projections
+*distilled* from the ADRs, regenerated on request and, like the overview, never a
+source of truth. The rule of thumb: re-running a generator gets it back →
+`derived-artifacts/`; re-doing creative work gets it back → `delivered-artifacts/`;
+losing it costs nothing → it was `intermediate-artifacts/` scratch.
 
 ## How to start
 

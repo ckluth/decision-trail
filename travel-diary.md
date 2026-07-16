@@ -32,6 +32,39 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-16]
+
+**Where we are.** About to cut **v2.17.0**, which promotes two more optional
+companion folders into the method: `delivered-artifacts/` and `derived-artifacts/`.
+Together with the existing `intermediate-artifacts/` they now form a visibly-parallel
+`*-artifacts/` family, split by the **origin** of what they hold — *gathered* scratch,
+*created* output, *derived* projections.
+
+**What we achieved.** Ran the whole lifecycle in one sitting. Captured **idea 0034**
+from a real pattern proven in the sibling repo *josyn-builder* (two folders, each just
+a folder + README), then worked the seven open questions to ground one at a time:
+promote as **one ADR** (not two children); **weaken** the deliverables definition to
+"home for plan-*created* content" so it never becomes a fourth source of truth; a
+**guard split** (folder mechanics guard-free, deliverable *content* under the normal
+guard); keep `derived-artifacts/` **distinct** from `overview.md`; **recommend** (not
+mandate) source back-links; ship the **parallel `*-artifacts/` names**; and confirm it
+**clears the bar**. Promoted to **ADR-0039** (accepted), wrote and executed **plan
+0028**: canonical spec sections + layout, two starter READMEs, the derived `AGENTS.md`
+body and a new guard-split guidance bullet (both renderings), a note in both guides,
+home-repo dogfood folders, the `[2.17.0]` CHANGELOG entry (with the josyn-builder
+folder-rename `Adopter migration:` line), and a wholesale `overview.md` regeneration.
+
+**What is left.** Nothing on this thread — plan 0028 is `done` and the trail is
+consistent. Release mechanics (commit, tag, GitHub release) are the closing chores.
+
+**What is next.** Cut the release: commit the working tree, tag `v2.17.0`, and open
+the GitHub release from the CHANGELOG entry.
+
+**Continuation brief.** The `delivered-artifacts/` / `derived-artifacts/` mechanism is
+settled in [ADR-0039](decisions/0039-delivered-and-derived-artifacts-companion-folders.md);
+if a future need surfaces (e.g. a mandated citation format for derived docs, or a real
+authority question for a deliverable), open a fresh ADR rather than bending this one.
+
 ## [2026-07-15]
 
 **Where we are.** About to cut a release that bundles the *stub-plan-at-acceptance*

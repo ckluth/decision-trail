@@ -13,6 +13,43 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.17.0] - 2026-07-16
+
+**Adopter migration:** If your repo already uses folders named `docs/deliverables/`
+and/or `docs/derived/` (the pre-promotion names from josyn-builder), **rename them**
+to the parallel form: `docs/deliverables/` → `docs/delivered-artifacts/` and
+`docs/derived/` → `docs/derived-artifacts/` (move the contents, keep git history with
+`git mv`), and update any links that point at the old paths. Repos that never had
+these folders need do **nothing** — the empty documented starter folders arrive
+automatically via the copy-driven "bring me current" update.
+
+### Added
+- ADR-0039 — **`delivered-artifacts/` and `derived-artifacts/` as two optional
+  companion folders** (idea 0034, promoted). Completes a visibly-parallel
+  `*-artifacts/` family with the existing `intermediate-artifacts/` (ADR-0020), the
+  three split by the **origin** of what they hold: `intermediate-artifacts/` holds
+  *gathered* scratch, `delivered-artifacts/` is the home for content a plan *creates*
+  (a report, a spec, a diagram — authored fresh, not distilled), and
+  `derived-artifacts/` holds human-facing projections *distilled* from the ADRs
+  (regenerable on request, **never a source of truth**, distinct from the
+  always-present `overview.md` status index). `delivered-artifacts/` is defined by
+  *origin*, not authority — deliberately **not** a fourth lifecycle family or a new
+  source of truth — so no new status, verb, or cross-link field is added. **Guard
+  split:** folder *mechanics* (creating the folder, dropping a README, filing/moving
+  files) are guard-free like `intermediate-artifacts/`; but *creating deliverable
+  content* follows the normal confirmation guard as real plan work, and regenerating
+  a `derived-artifacts/` document is user-triggered like `overview.md`. A derived
+  document *should* link back to the artifacts it distills (recommended, no mandated
+  format). Landed in `starter/docs/working-method.md` (two new companion sections +
+  layout entries), this repo's `AGENTS.md` derived body and a new **"Delivered /
+  derived artifacts"** guidance bullet in both `AGENTS.md` renderings, a note in both
+  guides, and two documented-but-empty `starter/docs/…-artifacts/README.md` starter
+  folders (mirrored by this home repo's own seeded folders).
+
+### Changed
+- All three `starter/` renderings bump their provenance citation to **v2.17**
+  (`working-method.md`, `guide.md`, and `AGENTS.md`).
+
 ## [2.16.0] - 2026-07-15
 
 **Adopter migration:** After copying this version, **regenerate `docs/overview.md`**

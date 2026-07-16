@@ -302,7 +302,14 @@ intermediate outputs) to work on later. Like the diary it's informal, guard-free
 and never a source of truth; it's committed by default so the material survives a
 break, and a repo that doesn't need one simply has none.
 
-<!-- AUDIENCE-FORKED SECTION (home-repo variant) — "How to start" — BEGIN.
+Two more optional companions round out the `*-artifacts/` family, split by where
+their contents *come from*: **delivered-artifacts** (`delivered-artifacts/`) is the
+home for content a plan *creates* — a report, a spec, a diagram, authored fresh; and
+**derived-artifacts** (`derived-artifacts/`) holds human-facing projections *distilled*
+from the ADRs, regenerated on request and, like the overview, never a source of truth.
+The rule of thumb: re-running a generator gets it back → `derived-artifacts/`; re-doing
+creative work gets it back → `delivered-artifacts/`; losing it costs nothing → it was
+`intermediate-artifacts/` scratch.
      Per the sync note in this file's header and ADR-0032, this section is
      preserved on regeneration: do NOT overwrite it with the canonical (adopter)
      variant from starter/docs/guide.md. -->

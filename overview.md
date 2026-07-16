@@ -9,7 +9,7 @@ snapshot. Keeping it current is the agent's responsibility (see
 
 You can ask the agent to **regenerate the overview** at any time.
 
-**As of: 2026-07-15**
+**As of: 2026-07-16**
 
 ## Ideas
 
@@ -48,6 +48,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0031 plans execute — they never "plan decisions"](ideas/0031-plans-execute-they-never-plan-decisions.md) | 2026-07-12 | promoted |  |
 | [0032 A stub-plan-at-acceptance discipline plus a derived "accepted, no plan" backstop](ideas/0032-surface-accepted-adrs-still-awaiting-a-plan.md) | 2026-07-15 | promoted |  |
 | [0033 Overview regeneration is mechanical yet error-prone — is a script/skill/tool worth the agnosticism cost?](ideas/0033-overview-regen-mechanical-yet-error-prone-script-or-skill.md) | 2026-07-15 | seed |  |
+| [0034 delivered-artifacts and derived-artifacts — two more companion folders](ideas/0034-deliverables-and-derived-as-companion-folders.md) | 2026-07-16 | promoted |  |
 
 ## Decisions
 
@@ -91,6 +92,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0036 render the method's fixed procedures as optional skills](decisions/0036-render-fixed-procedures-as-optional-skills.md) | 2026-07-11 | rejected |  |
 | [0037 plans are mechanical execution — a surfaced question returns to the decision stage](decisions/0037-plans-are-mechanical-execution-questions-return-to-the-decision-stage.md) | 2026-07-12 | accepted |  |
 | [0038 A stub-plan-at-acceptance discipline plus a derived "accepted, no plan" backstop](decisions/0038-stub-plan-at-acceptance-and-derived-no-plan-backstop.md) | 2026-07-15 | accepted |  |
+| [0039 delivered-artifacts and derived-artifacts — two more companion folders](decisions/0039-delivered-and-derived-artifacts-companion-folders.md) | 2026-07-16 | accepted |  |
 
 ## Plans
 
@@ -123,6 +125,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0025 enumerate the heading-transition and reciprocal-cross-link rules in the agent checklist](plans/0025-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | 2026-07-11 | done |  |
 | [0026 carry ADR-0037 into the method — plans are mechanical execution, questions return to the decision stage](plans/0026-carry-adr-0037-into-the-method.md) | 2026-07-12 | done |  |
 | [0027 Carry ADR-0038 into the method — stub-plan-at-acceptance discipline and the "accepted, no plan" backstop](plans/0027-stub-plan-discipline-and-no-plan-backstop.md) | 2026-07-15 | done |  |
+| [0028 ship delivered-artifacts and derived-artifacts as optional companion folders](plans/0028-ship-delivered-and-derived-artifacts.md) | 2026-07-16 | done |  |
 
 ## Implements (ADR → plans)
 
@@ -155,6 +158,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [ADR-0035 – Enumerate two missing "lookup, not judgment call" rules in the agent operating checklist](decisions/0035-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | [Plan 0025](plans/0025-enumerate-checklist-gaps-heading-and-reciprocal-links.md) | done |
 | [ADR-0037 – plans are mechanical execution — a surfaced question returns to the decision stage](decisions/0037-plans-are-mechanical-execution-questions-return-to-the-decision-stage.md) | [Plan 0026](plans/0026-carry-adr-0037-into-the-method.md) | done |
 | [ADR-0038 – A stub-plan-at-acceptance discipline plus a derived "accepted, no plan" backstop](decisions/0038-stub-plan-at-acceptance-and-derived-no-plan-backstop.md) | [Plan 0027](plans/0027-stub-plan-discipline-and-no-plan-backstop.md) | done |
+| [ADR-0039 – delivered-artifacts and derived-artifacts — two more companion folders](decisions/0039-delivered-and-derived-artifacts-companion-folders.md) | [Plan 0028](plans/0028-ship-delivered-and-derived-artifacts.md) | done |
 
 ## ADR — stand-alone decision
 
@@ -176,3 +180,4 @@ if a decision here accidentally has no plan but actually does need one, write it
 | [ADR-0008 – Adopt the-way via a copied starter skeleton; version this repo as the standard](decisions/0008-adopt-the-way-via-a-copied-starter-skeleton.md) | 2026-06-28 |
 | [ADR-0009 – Adopters use conventional, unbranded locations — no `the-way/` folder](decisions/0009-adopters-use-conventional-unbranded-locations.md) | 2026-06-28 |
 | [ADR-0010 – Adopters keep the method text in `docs/working-method.md`; `AGENTS.md` only points to it](decisions/0010-adopters-keep-the-method-text-in-working-method-md.md) | 2026-06-28 |
+

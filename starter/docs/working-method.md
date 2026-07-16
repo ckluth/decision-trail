@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.16** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.17** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -166,6 +166,8 @@ docs/working-method.md  this file — the terse reference
 docs/overview.md        derived status index (regenerated dated snapshot)
 docs/travel-diary.md    optional human-facing logbook (companion, not a source of truth)
 docs/intermediate-artifacts/  optional scratch persistence layer for execution (not a source of truth)
+docs/delivered-artifacts/  optional home for plan-created content (companion)
+docs/derived-artifacts/  optional distilled projections from the ADRs (not a source of truth)
 docs/ideas/             idea artifacts
 docs/decisions/         proposal + decision artifacts (ADRs)
 docs/plans/             plan + execution artifacts
@@ -271,6 +273,61 @@ place to live.
   plain prose, **not** a formal cross-link field, with no reciprocal back-link.
 - **Left to rot harmlessly** when a plan is `done` (pruning is optional). The whole
   mechanism is optional — a repo that does not need it simply has none.
+
+## Delivered artifacts (optional companion)
+
+An optional, informal home for **content *created* as the output of a plan** — a
+report, a spec document, a diagram: work authored fresh rather than *distilled* from
+other artifacts. It completes the `*-artifacts/` companion family with
+`intermediate-artifacts/` (gathered scratch) and `derived-artifacts/` (distilled
+projections); the three are split by the **origin** of what they hold — *gathered*,
+*created*, *derived*.
+
+- **A folder, `docs/delivered-artifacts/`** — the home for plan-created content,
+  written fresh (not derived from anything).
+- **Defined by origin, not authority.** This is *not* a fourth lifecycle family and
+  *not* a new source of truth: the ideas, decisions, and plans stay the only
+  lifecycle sources of truth. `delivered-artifacts/` simply gives created content a
+  conventional home and distinguishes it from its neighbours by origin. Where a
+  deliverable's existence or shape is itself a decision, an ADR governs it — as for
+  any work — but the folder adds no lifecycle status and no cross-link field.
+- **Guard split.** The folder *mechanics* — creating the folder, dropping the README,
+  filing or moving files — are guard-free, like `intermediate-artifacts/`. But
+  *creating the deliverable content* is real plan work and follows the **normal
+  confirmation guard**; there is no blanket guard-free grant for content.
+- **Internally unstructured** — the method defines only *where* it lives and *what it
+  is*; how its contents are organized is the project's business.
+- **A rule of thumb** for placing material: if losing the file means *re-running a
+  generator*, it is `derived-artifacts/`; if it means *re-doing creative work*, it is
+  `delivered-artifacts/`; if it costs nothing, it was `intermediate-artifacts/`
+  scratch. The whole mechanism is optional — a repo that does not need it simply has
+  none.
+
+## Derived artifacts (optional companion)
+
+An optional, informal home for **human-facing projections mechanically distilled from
+the authoritative artifacts** (chiefly the ADRs). Each one summarizes decisions
+otherwise scattered across many records, links back to its sources, and can be
+**regenerated on request** when those sources change.
+
+- **A folder, `docs/derived-artifacts/`** — distilled, curated projections kept
+  current against their sources.
+- **Not a source of truth** — a convenience, never authoritative. To change a rule,
+  amend the governing ADR (write a new amending ADR — never edit an accepted one in
+  place), then regenerate the affected derived document. It sits outside the lifecycle
+  and cross-link vocabulary and may drift harmlessly if left stale.
+- **Distinct from `docs/overview.md`.** `overview.md` is the *special, always-present*
+  derived **status index** over all three families, living at the `docs/` root by
+  convention; `derived-artifacts/` holds *optional, topical* projections. Their only
+  kinship is that both are regenerated, not-a-source-of-truth projections — their
+  roles do not merge.
+- **Cite your sources (recommended).** A derived document *should* link back to the
+  artifacts it distills, so it stays regenerable and auditable; the exact rendering is
+  the project's business (an inline "Derived from ADR-00nn" note is a natural example,
+  not a mandated format).
+- **User-triggered regeneration** — like `overview.md`, a derived document is
+  regenerated when you ask for it. The whole mechanism is optional — a repo that does
+  not need it simply has none.
 
 ## How to start working
 1. Capture a thought as an idea in `docs/ideas/`.

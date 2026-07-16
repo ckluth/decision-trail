@@ -16,7 +16,7 @@ terse reference is [`docs/working-method.md`](docs/working-method.md); decision
 records live in [`docs/decisions/`](docs/decisions/), starting with
 [`0001-adopt-decision-trail.md`](docs/decisions/0001-adopt-decision-trail.md).
 
-Based on decision-trail v2.16 — https://github.com/haevg-rz/decision-trail
+Based on decision-trail v2.17 — https://github.com/haevg-rz/decision-trail
 
 ## Agent operating guidance
 
@@ -90,3 +90,12 @@ points to it.
   files under `docs/intermediate-artifacts/` is light-weight — **no ADR, no plan,
   no confirmation guard** — because it touches nothing authoritative
   (§ *Intermediate artifacts*).
+- **Delivered / derived artifacts — guard split, and one authority line.** Folder
+  *mechanics* for `docs/delivered-artifacts/` and `docs/derived-artifacts/` (creating
+  the folder, dropping a README, filing/moving files) are guard-free; but **creating
+  deliverable *content* follows the normal confirmation guard** as real plan work,
+  and regenerating a `docs/derived-artifacts/` document is **user-triggered** like
+  `docs/overview.md`. Never frame `docs/delivered-artifacts/` as a new source of
+  truth — it is defined by *origin* (plan-created), not authority;
+  `docs/derived-artifacts/` is explicitly **not a source of truth** and stays distinct
+  from `docs/overview.md` (§ *Delivered artifacts*, § *Derived artifacts*).
