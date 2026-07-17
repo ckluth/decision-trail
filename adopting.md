@@ -12,7 +12,7 @@ scenarios:
 
 > This document lives in the **decision-trail standard repo**
 > (https://github.com/haevg-rz/decision-trail), not in your repo. Your repo carries a
-> `Based on decision-trail vX.Y` citation that points back here; come back to this
+> `Based on decision-trail vX.Y.Z` citation that points back here; come back to this
 > page whenever you need to (re)adopt or upgrade.
 
 ## Preconditions
@@ -48,7 +48,7 @@ Goal: a near-empty repo becomes a decision-trail repo in one move.
    - In `AGENTS.md`, replace the `# <project name>` heading with your project's name
      and a one-line description.
    - In `docs/decisions/0001-adopt-decision-trail.md`, set the `Date:` and replace
-     `vX.Y` with the version you copied (see the citation in
+     `vX.Y.Z` with the full three-component version you copied (see the citation in
      `AGENTS.md` / `docs/working-method.md`).
 3. **Commit.** Your repo now owns its artifacts and its own ADR log starting at
    `0001`. It never inherits the decision-trail standard repo's construction ADRs.
@@ -104,7 +104,7 @@ method, and give it two things:
 > *"Update the method from `<path/URL-to-target>`. The how-to is
 > `<path/URL-to-target>/updating.agent.md`."*
 
-Your agent then reads your current version from the `Based on decision-trail vX.Y`
+Your agent then reads your current version from the `Based on decision-trail vX.Y.Z`
 citation, follows `updating.agent.md` (re-copy the method-owned set with the
 preserve rule, apply required migrations in order, bump the citation, regenerate
 `docs/overview.md`, run the conformance check, record a bump ADR, commit), and does
@@ -129,7 +129,7 @@ it cites — your agent can run the **conformance check**. It is **pure agent
 do-guidance** (no script): the six-point checklist lives with the update procedure
 in [`updating.agent.md`](updating.agent.md#conformance-check), and verifies that
 headers are present and canonical, numbers don't collide, title lines match
-filenames, `docs/overview.md` is in sync, and the `Based on decision-trail vX.Y`
+filenames, `docs/overview.md` is in sync, and the `Based on decision-trail vX.Y.Z`
 citation is consistent across `docs/working-method.md` and the `AGENTS.md`
 `## How we work` block.
 

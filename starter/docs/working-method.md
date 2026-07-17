@@ -3,7 +3,7 @@
 > This project works **decision-trail** — carrying a thought through its whole life
 > (idea → proposal → decision → plan → execution) in plain markdown.
 >
-> Based on **decision-trail v2.18.2** — https://github.com/haevg-rz/decision-trail
+> Based on **decision-trail v2.19.0** — https://github.com/haevg-rz/decision-trail
 
 <!--
 Sync note — this file is CANONICAL.
@@ -15,7 +15,7 @@ the two renderings are:
     `docs/plans/`); the decision-trail repo uses repo-root families;
   - construction-ADR cross-references (ADR-00NN) appear only in the decision-trail
     repo's rendering, not here;
-  - the `Based on decision-trail vX.Y` provenance citation is adopter-only (this file);
+  - the `Based on decision-trail vX.Y.Z` provenance citation is adopter-only (this file);
   - entry-point framing: here `AGENTS.md` points to this file; in the decision-trail
     repo `AGENTS.md` carries the text.
   - audience-forked sections (ADR-0032): a section may carry audience-specific

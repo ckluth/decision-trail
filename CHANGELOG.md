@@ -13,6 +13,41 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.19.0] - 2026-07-17
+
+**Adopter migration:** **Required.** Ensure your `Based on decision-trail` provenance
+citation carries the **full three-component semver** (`vX.Y.Z` — major.minor.patch) in
+**both** `docs/working-method.md` and the `AGENTS.md` "How we work" block. If it reads
+only `major.minor` (e.g. `v2.7`), append the patch component of the version you are on
+(→ `v2.7.0`). From now on, cite **and compare** the full three-component version, so a
+patch/fix release is recognized. An adopter already citing a full `vX.Y.Z` (e.g.
+`v2.18.2`) needs only the normal version bump — nothing else.
+
+### Fixed
+- ADR-0043 (idea 0037, promoted; **amends ADR-0008**) — **the provenance citation
+  format dropped the patch component, so fix releases fell out of scope.** ADR-0008
+  introduced the citation as a two-component string, and every live surface pinned it
+  as the placeholder `Based on decision-trail vX.Y`. Because that placeholder
+  advertises the *scope* at which a version is read and compared, a consumer reading
+  "the `vX.Y` citation" modelled its version as `major.minor` and **collapsed patch
+  releases together** — a repo on `v2.18.1` and a target `v2.18.2` both read as
+  "v2.18", so a fix-level change went unrecognized (observed in a real consumer repo).
+  Fix: pin the citation to **full three-component semver `vX.Y.Z`** across the live
+  surfaces — the adopter template `starter/docs/decisions/0001-adopt-decision-trail.md`,
+  `updating.agent.md` (read-version step **and** conformance item #6), `adopting.md`
+  (four spots), the delta note in `starter/docs/working-method.md`, and this repo's
+  `AGENTS.md` (preamble delta note + conformance guidance) — and make
+  `updating.agent.md`'s read-version step read the **full major.minor.patch** so a
+  patch bump is never mistaken for the version already held. Historical prose that
+  merely *records* the old two-component string (accepted ADRs, past plans, past
+  `CHANGELOG` entries) is left as history. This **amends ADR-0008** in the
+  component-count of the citation format only; copy-driven adoption is otherwise
+  unchanged (reciprocal `Amended by: ADR-0043` added to ADR-0008). Deliberately *not*
+  added: any special-case "also compare the patch" rule on top of a two-component
+  placeholder — the single three-component format removes the defect at the source.
+- All three `starter/` renderings bump their provenance citation to **v2.19.0**
+  (`starter/AGENTS.md`, `starter/docs/working-method.md`, `starter/docs/guide.md`).
+
 ## [2.18.2] - 2026-07-17
 
 **Adopter migration:** **none.** Pure wording refinement of `updating.agent.md`

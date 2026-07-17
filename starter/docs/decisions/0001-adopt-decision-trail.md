@@ -14,8 +14,9 @@ families, described in [`docs/working-method.md`](../working-method.md).
 
 ## Decision
 
-This project adopts **decision-trail at version vX.Y** (replace with the version you
-copied; see https://github.com/haevg-rz/decision-trail and its `CHANGELOG.md`).
+This project adopts **decision-trail at version vX.Y.Z** (replace with the full
+three-component version you copied; see https://github.com/haevg-rz/decision-trail and
+its `CHANGELOG.md`).
 
 - We work the lifecycle in `docs/ideas/`, `docs/decisions/`, `docs/plans/` as
   described in `docs/working-method.md`.

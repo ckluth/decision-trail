@@ -40,9 +40,12 @@ Do **not** silently auto-apply, and do **not** nag step-by-step. Instead:
 
 ## Procedure
 
-1. **Read the adopter's current version.** Find the `Based on decision-trail vX.Y`
+1. **Read the adopter's current version.** Find the `Based on decision-trail vX.Y.Z`
    citation in the adopter's `docs/working-method.md` (and the `AGENTS.md` "How we
-   work" block). That is the anchor version you are updating *from*.
+   work" block). Read the **full three-component version** (major.minor.patch) — a
+   patch/fix release differs only in the third component, so a two-component read
+   would mistake a newer patch for the version you already have. That full version is
+   the anchor you are updating *from*.
 
 2. **Re-copy the method-owned set** from `<source>`'s `starter/` into the adopter's
    `docs/` locations, overwriting those files — this lands the adopter in the exact
@@ -112,7 +115,7 @@ directly.
 5. **Overview in sync.** `docs/overview.md` matches the artifact headers — same
    names, dates, and states — and is stamped with a current "as of" date. If not,
    regenerate it.
-6. **Citation consistent.** The `Based on decision-trail vX.Y` citation is identical
+6. **Citation consistent.** The `Based on decision-trail vX.Y.Z` citation is identical
    in `docs/working-method.md` and the `## How we work` block of `AGENTS.md`.
 
 If all six hold, the repo conforms to the version it cites.

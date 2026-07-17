@@ -32,6 +32,35 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-17-(3)]
+
+**Where we are.** Cutting **v2.19.0** — a small but sharp fix on the versioning
+machinery itself. A consumer repo failed to recognize a semver *fix* change, and the
+root cause was embarrassingly simple: the provenance citation was pinned everywhere as
+the two-component placeholder `Based on decision-trail vX.Y`. That template advertises
+the *scope* at which a version is read and compared — so patches collapsed together
+(`v2.18.1` and `v2.18.2` both read as "v2.18") and a fix release went invisible.
+
+**What we achieved.** Fixed it the full decision-trail way: **idea 0037 → ADR-0043**
+(accepted, **amends ADR-0008**, the origin of the two-component string) **→ plan 0032**
+(done). Pinned the citation to full three-component semver **`vX.Y.Z`** across every
+live surface — the adopter template, `updating.agent.md` (read-version step +
+conformance #6), `adopting.md` (four spots), the spec delta note, and this repo's
+`AGENTS.md` — and strengthened the read-version step to read the full
+major.minor.patch so a patch bump is never mistaken for the version already held.
+Bumped the three `starter/` citations to **v2.19.0**, added a **required**
+`Adopter migration:` note (re-cite with the patch component if you dropped it), wired
+the reciprocal `Amended by: ADR-0043` onto ADR-0008, and regenerated `overview.md`.
+
+**What is left.** Nothing on this thread — the defect is removed at the source; no
+special-case "also compare the patch" rule was needed.
+
+**What is next.** Ship it: commit, push, tag `v2.19.0`, and publish the GitHub release.
+
+*Continuation brief.* If you pick this up, the rationale lives in
+[`decisions/0043-*`](decisions/0043-pin-the-provenance-citation-to-full-three-component-semver.md)
+and the executed steps in [`plans/0032-*`](plans/0032-widen-provenance-citation-to-full-semver.md).
+
 ## [2026-07-17-(2)]
 
 **Where we are.** Cutting **v2.18.2** — a second patch, one rung deeper on the same

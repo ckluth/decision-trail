@@ -11,7 +11,7 @@ differences (deltas) from the canonical text are:
     adopters use `docs/`-prefixed ones;
   - construction-ADR cross-references (ADR-00NN) appear here, not in the canonical
     text;
-  - no `Based on decision-trail vX.Y` provenance citation (this repo IS the method);
+  - no `Based on decision-trail vX.Y.Z` provenance citation (this repo IS the method);
   - entry-point framing: here `AGENTS.md` carries the method text; an adopter's
     `AGENTS.md` points to `docs/working-method.md`.
 Edit the method in `starter/docs/working-method.md`; regenerate this file.
@@ -460,7 +460,7 @@ only flags the trap to avoid and points to it.
   `overview.md`) — so additive scaffolds arrive without per-release bookkeeping.
   After an update (or on request), run the **conformance check** (do-guidance, no
   tool): mandatory `Date:` headers present, `overview.md` in sync with headers, and
-  the `Based on decision-trail vX.Y` citation consistent across
+  the `Based on decision-trail vX.Y.Z` citation consistent across
   `docs/working-method.md` and the `AGENTS.md` "How we work" block. Per ADR-0031 the
   two audiences are separated: the **human** trigger is one intent naming the source
   **and** the how-to file — *"update the method from `<source>`; the how-to is
