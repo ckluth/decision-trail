@@ -46,20 +46,20 @@ Do **not** silently auto-apply, and do **not** nag step-by-step. Instead:
 
 2. **Re-copy the method-owned set** from `<source>`'s `starter/` into the adopter's
    `docs/` locations, overwriting those files — this lands the adopter in the exact
-   shape a *fresh* adopter of the target would have ("bring me current"). Copy
-   **everything** under `starter/`, including but not limited to the method **text
-   and templates** (`working-method.md`, `guide.md`) and any companion scaffolds the
-   target ships (e.g. `travel-diary.md`, `intermediate-artifacts/`, and `scripts/` —
-   e.g. `docs/scripts/regen-overview.ps1`). The named files are *examples, not a
-   closed set*: `starter/`'s own contents are the single source of truth, so copy the
-   whole tree, not just the items listed here. Because additive scaffolds live in
-   `starter/`, re-copying lands new companions **automatically** — no changelog hunt
-   for "what files were added."
+   shape a *fresh* adopter of the target would have ("bring me current"). Do this by
+   **enumerating the subfolders you detect** under `<source>/starter/docs/` and
+   copying **each one, with all its contents, overwriting existing versions** — plus
+   the method text and templates at the `docs/` root (`working-method.md`,
+   `guide.md`, …) the same way. Copy by *discovering* what is there, **not** from a
+   remembered list of names: because the agent copies whatever subfolders exist, a
+   new companion subtree the target ships (e.g. `scripts/` with
+   `docs/scripts/regen-overview.ps1`) is picked up **automatically** — no changelog
+   hunt for "what files were added," and no per-folder instruction line to maintain.
+   `starter/`'s own contents are the single source of truth.
 
    **Preserve rule — copy method text/templates, preserve project content.** The
-   method-owned set is exactly `starter/`'s own contents (the single source of
-   truth; there is no separate manifest). **Never overwrite what the project
-   authored:**
+   one thing enumerate-and-copy must **not** overwrite is what the project authored.
+   **Never overwrite:**
    - `docs/decisions/`, `docs/ideas/`, `docs/plans/` (the artifact families);
    - a populated `docs/travel-diary.md` and `docs/intermediate-artifacts/`;
    - `docs/overview.md` (regenerated in step 5, not copied).

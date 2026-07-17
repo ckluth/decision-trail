@@ -50,6 +50,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0033 Overview regeneration is mechanical yet error-prone — is a script/skill/tool worth the agnosticism cost?](ideas/0033-overview-regen-mechanical-yet-error-prone-script-or-skill.md) | 2026-07-15 | promoted |  |
 | [0034 delivered-artifacts and derived-artifacts — two more companion folders](ideas/0034-deliverables-and-derived-as-companion-folders.md) | 2026-07-16 | promoted |  |
 | [0035 The copy-driven "bring me current" update can silently miss a shipped scaffold](ideas/0035-copy-driven-update-can-silently-miss-a-shipped-scaffold.md) | 2026-07-17 | promoted |  |
+| [0036 Step 2's "copy everything under starter/" still leans on agent judgment](ideas/0036-step-2-copy-everything-still-relies-on-agent-judgment.md) | 2026-07-17 | promoted |  |
 
 ## Decisions
 
@@ -96,6 +97,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0039 delivered-artifacts and derived-artifacts — two more companion folders](decisions/0039-delivered-and-derived-artifacts-companion-folders.md) | 2026-07-16 | accepted |  |
 | [0040 An optional, deterministic overview-regen script, prose-normative and instruction-triggered](decisions/0040-optional-deterministic-overview-regen-script.md) | 2026-07-16 | accepted |  |
 | [0041 Harden the copy-driven re-copy against a silently missed scaffold](decisions/0041-harden-the-copy-driven-recopy-against-missed-scaffolds.md) | 2026-07-17 | accepted |  |
+| [0042 Reframe update step 2 as an enumerate-and-copy operation](decisions/0042-reframe-update-step-2-as-enumerate-and-copy.md) | 2026-07-17 | accepted |  |
 
 ## Plans
 
@@ -131,6 +133,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [0028 ship delivered-artifacts and derived-artifacts as optional companion folders](plans/0028-ship-delivered-and-derived-artifacts.md) | 2026-07-16 | done |  |
 | [0029 Ship the optional deterministic overview-regen script and its agent-guidance trigger](plans/0029-ship-optional-overview-regen-script.md) | 2026-07-16 | done |  |
 | [0030 Harden updating.agent.md step 2 and ship the 2.18.1 bugfix release](plans/0030-harden-updating-agent-step2-and-ship-2181.md) | 2026-07-17 | done |  |
+| [0031 Reframe updating.agent.md step 2 as enumerate-and-copy, ship 2.18.2](plans/0031-reframe-updating-agent-step2-enumerate-and-copy.md) | 2026-07-17 | done |  |
 
 ## Implements (ADR → plans)
 
@@ -166,6 +169,7 @@ You can ask the agent to **regenerate the overview** at any time.
 | [ADR-0039 – delivered-artifacts and derived-artifacts — two more companion folders](decisions/0039-delivered-and-derived-artifacts-companion-folders.md) | [Plan 0028](plans/0028-ship-delivered-and-derived-artifacts.md) | done |
 | [ADR-0040 – An optional, deterministic overview-regen script, prose-normative and instruction-triggered](decisions/0040-optional-deterministic-overview-regen-script.md) | [Plan 0029](plans/0029-ship-optional-overview-regen-script.md) | done |
 | [ADR-0041 – Harden the copy-driven re-copy against a silently missed scaffold](decisions/0041-harden-the-copy-driven-recopy-against-missed-scaffolds.md) | [Plan 0030](plans/0030-harden-updating-agent-step2-and-ship-2181.md) | done |
+| [ADR-0042 – Reframe update step 2 as an enumerate-and-copy operation](decisions/0042-reframe-update-step-2-as-enumerate-and-copy.md) | [Plan 0031](plans/0031-reframe-updating-agent-step2-enumerate-and-copy.md) | done |
 
 ## ADR — stand-alone decision
 

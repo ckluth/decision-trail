@@ -13,6 +13,17 @@ then regenerate `overview.md`"). **New optional scaffolds are not listed here** 
 reach adopters automatically via the copy-driven "bring me current" update. This is
 the contract the [`adopting.md`](adopting.md) update path relies on.
 
+## [2.18.2] - 2026-07-17
+
+**Adopter migration:** **none.** Pure wording refinement of `updating.agent.md`
+step 2 (ADR-0042): the re-copy is now expressed as *"enumerate every subfolder you
+detect under the source's `starter/docs/` and copy each one, overwriting — except the
+project-authored folders/files"* instead of "copy everything, e.g. …". This changes
+no adopter-visible behavior — enumerate-and-copy lands exactly the same files — it
+only makes a *future* under-copy impossible to author, because the agent now
+*discovers* subfolders (like v2.18's `docs/scripts/`) instead of working from a named
+example list. Nothing to do; a fresh update naturally uses the sharper wording.
+
 ## [2.18.1] - 2026-07-17
 
 **Adopter migration:** **Required if you took v2.18.** v2.18 introduced the optional

@@ -32,6 +32,41 @@ Keep it short and human. It's a diary, not a report.
 
 ---
 
+## [2026-07-17-(2)]
+
+**Where we are.** Cutting **v2.18.2** — a second patch, one rung deeper on the same
+thread as v2.18.1. v2.18.1 fixed the *immediate* miss (an example list that read as
+exhaustive) by wording it "copy **everything** … including but not limited to …".
+But that still leaves step 2 as a *prose paragraph an agent interprets file-by-file*
+— under-copying became *wrong*, not *impossible*. The next new subfolder could be
+dropped the same way.
+
+**What we achieved.** Full trail, kept lean: **idea 0036 → ADR-0042 (amends
+ADR-0022) → plan 0031**. The fix removes the interpretation at the *source*: step 2
+is now a deterministic **enumerate-and-copy** rule — *"copy every subfolder you
+**detect** under the source's `starter/docs/`, overwriting — except the
+project-authored preserve-list."* Because the agent **discovers** subfolders instead
+of reading a named set, a future scaffold subtree (like v2.18's `docs/scripts/`) is
+picked up automatically, and no per-folder instruction line is ever needed. We again
+*declined* the heavier safety nets (tree-parity, conformance item) — ADR-0041 already
+weighed and dropped them, and that judgment still holds. Shipped as **2.18.2** with a
+**"none"** migration note (pure wording refinement, no adopter-visible behavior
+change). ADR-0042 renamed to `…-enumerate-and-copy`, citations bumped, `overview.md`
+regenerated clean.
+
+**What is left.** Nothing on this thread — the trail is complete, executed, indexed.
+
+**What is next.** Finalize the release: commit, push, tag `v2.18.2`, cut the GitHub
+release.
+
+*Continuation brief:* the fix lives in
+[ADR-0042](decisions/0042-reframe-update-step-2-as-enumerate-and-copy.md) and
+[plan 0031](plans/0031-reframe-updating-agent-step2-enumerate-and-copy.md). The
+lesson that carried across two patches: *don't hand an agent a list to interpret when
+you can hand it a set to enumerate* — determinism beats careful wording.
+
+---
+
 ## [2026-07-17]
 
 **Where we are.** Just cut **v2.18.1** — decision-trail's *first patch release*
